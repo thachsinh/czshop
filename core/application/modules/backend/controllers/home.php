@@ -15,6 +15,11 @@ class Home extends CI_Controller {
         $this->_buildTemplate();
     }
     
+    public function login()
+    {
+        $this->load->view('login');
+    }
+    
     private function _buildTemplate()
     {
         $this->data['header'] = $this->load->view('header', $this->data, true);

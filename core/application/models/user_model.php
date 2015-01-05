@@ -52,7 +52,8 @@ class User_model extends CI_Model
         return false;
     }
     
-    public function getList($where = null, $order = null, $limit = 10, $offset = 0) {
+    public function getList($where = null, $order = null, $page = 1, $limit = 10) {
+        $offset = ($page - 1) * $limit;
         $this->db->select();       
         if(!empty($where)) $this->db->where($where);
         if(is_array($order)) {
