@@ -1,0 +1,1278 @@
+2015-01-11 8:46:32 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/longnt/czshop/public_html/system/database/DB.php:2) in /Users/longnt/czshop/public_html/system/library/session.php on line 12
+2015-01-11 8:46:32 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/system/database/DB.php:2) in /Users/longnt/czshop/public_html/index.php on line 174
+2015-01-11 8:46:32 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/system/database/DB.php:2) in /Users/longnt/czshop/public_html/system/library/currency.php on line 45
+2015-01-11 8:56:12 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/longnt/czshop/public_html/admin/index.php:40) in /Users/longnt/czshop/public_html/system/library/session.php on line 12
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/index.php on line 122
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/index.php on line 122
+2015-01-11 8:56:12 - PHP Notice:  Undefined index: en in /Users/longnt/czshop/public_html/admin/index.php on line 126
+2015-01-11 8:56:12 - PHP Notice:  Undefined index: en in /Users/longnt/czshop/public_html/admin/index.php on line 129
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:12 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/admin/index.php:40) in /Users/longnt/czshop/public_html/system/library/currency.php on line 45
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:56:12 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/longnt/czshop/public_html/admin/index.php:40) in /Users/longnt/czshop/public_html/system/library/session.php on line 12
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/index.php on line 122
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/index.php on line 122
+2015-01-11 8:56:12 - PHP Notice:  Undefined index: en in /Users/longnt/czshop/public_html/admin/index.php on line 126
+2015-01-11 8:56:12 - PHP Notice:  Undefined index: en in /Users/longnt/czshop/public_html/admin/index.php on line 129
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:12 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/admin/index.php:40) in /Users/longnt/czshop/public_html/system/library/currency.php on line 45
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:56:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:56:13 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/longnt/czshop/public_html/admin/index.php:40) in /Users/longnt/czshop/public_html/system/library/session.php on line 12
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/index.php on line 122
+2015-01-11 8:56:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/index.php on line 122
+2015-01-11 8:56:13 - PHP Notice:  Undefined index: en in /Users/longnt/czshop/public_html/admin/index.php on line 126
+2015-01-11 8:56:13 - PHP Notice:  Undefined index: en in /Users/longnt/czshop/public_html/admin/index.php on line 129
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:13 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/admin/index.php:40) in /Users/longnt/czshop/public_html/system/library/currency.php on line 45
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:56:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:56:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:45 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/currency.php on line 15
+2015-01-11 8:56:45 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/admin/index.php:86) in /Users/longnt/czshop/public_html/system/library/currency.php on line 45
+2015-01-11 8:56:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:45 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:56:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:45 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:56:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:56:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:56:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:46 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:46 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:46 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:46 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:57:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:47 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:47 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:47 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/weight.php on line 11
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:47 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:57:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:05 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:58:05 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/length.php on line 11
+2015-01-11 8:58:05 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:05 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:05 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 8:58:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:26 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:26 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:26 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:27 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:27 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:27 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:27 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:27 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:27 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:28 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:28 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:28 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:38 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:38 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:38 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:01:39 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:02 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:03 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:34 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:34 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:34 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:35 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:02:36 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 16
+2015-01-11 9:02:36 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 17
+2015-01-11 9:02:36 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 18
+2015-01-11 9:06:15 - PHP Notice:  Array to string conversion in /Users/longnt/czshop/public_html/system/database/DB_driver.php on line 1199
+2015-01-11 9:06:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:15 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:16 - PHP Notice:  Array to string conversion in /Users/longnt/czshop/public_html/system/database/DB_driver.php on line 1199
+2015-01-11 9:06:16 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:16 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:16 - PHP Notice:  Array to string conversion in /Users/longnt/czshop/public_html/system/database/DB_driver.php on line 1199
+2015-01-11 9:06:16 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:16 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:16 - PHP Notice:  Array to string conversion in /Users/longnt/czshop/public_html/system/database/DB_driver.php on line 1199
+2015-01-11 9:06:16 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:16 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:20 - PHP Notice:  Array to string conversion in /Users/longnt/czshop/public_html/system/database/DB_driver.php on line 1199
+2015-01-11 9:06:20 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:20 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:06:57 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/system/library/openbay.php on line 118
+2015-01-11 9:08:53 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 40
+2015-01-11 9:11:18 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 41
+2015-01-11 9:12:11 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 41
+2015-01-11 9:12:11 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 43
+2015-01-11 9:12:11 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 44
+2015-01-11 9:12:11 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 45
+2015-01-11 9:12:11 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 47
+2015-01-11 9:12:11 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 49
+2015-01-11 9:12:11 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/admin/index.php:86) in /Users/longnt/czshop/public_html/system/library/response.php on line 12
+2015-01-11 9:12:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 41
+2015-01-11 9:12:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 43
+2015-01-11 9:12:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 44
+2015-01-11 9:12:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 45
+2015-01-11 9:12:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 47
+2015-01-11 9:12:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/system/library/user.php on line 49
+2015-01-11 9:12:24 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/longnt/czshop/public_html/admin/index.php:86) in /Users/longnt/czshop/public_html/system/library/response.php on line 12
+2015-01-11 9:13:15 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/system/library/user.php on line 40
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:14:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:14:04 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:14:04 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:14:04 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:14:04 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:14:04 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:14:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/activity.php on line 6
+2015-01-11 9:14:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-11 9:14:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 235
+2015-01-11 9:14:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-11 9:14:04 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:14:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:14:06 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:14:06 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:14:06 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:14:06 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:14:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 20
+2015-01-11 9:14:06 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/map.php on line 23
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:16:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:16:48 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:16:48 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:16:48 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:16:48 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:16:48 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:16:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/activity.php on line 6
+2015-01-11 9:16:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-11 9:16:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 235
+2015-01-11 9:16:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-11 9:16:48 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:16:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:16:50 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:16:50 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:16:50 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:16:50 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:16:50 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 20
+2015-01-11 9:16:50 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/map.php on line 23
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:17:14 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:17:14 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:17:14 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:17:14 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:17:14 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:17:14 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:17:14 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/activity.php on line 6
+2015-01-11 9:17:14 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-11 9:17:14 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 235
+2015-01-11 9:17:14 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-11 9:17:14 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:17:14 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:17:17 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:17:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:17:17 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:17:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:17:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 20
+2015-01-11 9:17:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/map.php on line 23
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 316
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 256
+2015-01-11 9:18:59 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:18:59 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:19:00 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:19:00 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:19:00 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:19:00 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:19:00 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:19:00 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:19:00 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:19:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 319
+2015-01-11 9:21:32 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:21:32 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:21:32 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:21:32 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:21:32 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:21:32 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:21:32 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:21:32 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:21:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:30:42 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:30:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:30:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:30:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:30:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:31:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:31:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:31:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:31:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 327
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 331
+2015-01-11 9:34:03 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:34:03 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:34:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:34:03 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:34:03 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:34:03 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:34:03 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:34:03 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:34:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:34:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:34:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:34:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:34:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:34:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:40:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 355
+2015-01-11 9:40:52 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:40:52 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:40:52 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 9:40:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:40:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:40:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:40:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:40:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:40:53 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:40:53 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:40:53 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:40:53 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:40:53 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:40:53 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:40:53 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:40:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 357
+2015-01-11 9:42:56 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:42:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:42:56 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:42:56 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:42:56 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:42:56 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:42:56 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:42:56 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:42:56 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:42:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:43:21 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:43:21 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:43:21 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:36 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:44:36 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:36 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:50 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:44:50 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:50 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:50 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:44:50 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:50 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:44:51 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:51 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:44:51 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:44:51 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:45:53 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:53 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:55 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:45:55 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:55 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:55 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:45:55 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:55 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:55 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:45:55 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:55 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:56 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 358
+2015-01-11 9:45:56 - PHP Notice:  Undefined variable: sort_data in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:45:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 236
+2015-01-11 9:46:50 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 363
+2015-01-11 9:46:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 363
+2015-01-11 9:46:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 363
+2015-01-11 9:46:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 363
+2015-01-11 9:46:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 363
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 9:48:58 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 9:48:58 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:48:58 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 9:48:58 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:48:58 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 9:48:58 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 9:48:58 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 13
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/activity.php on line 6
+2015-01-11 9:48:58 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-11 9:48:58 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 235
+2015-01-11 9:48:58 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-11 9:48:58 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:48:58 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/currency.php on line 114
+2015-01-11 9:49:00 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:49:00 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 104
+2015-01-11 9:49:00 - PHP Notice:  Trying to get property of non-object in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:49:00 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 65
+2015-01-11 9:49:00 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/report/sale.php on line 20
+2015-01-11 9:49:00 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/dashboard/map.php on line 23
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:05:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:05:34 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:05:34 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:05:34 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:05:34 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:05:34 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:05:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:05:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:05:44 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:05:44 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:05:44 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:05:44 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:05:44 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:05:44 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:05:44 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:05:44 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:05:46 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:05:46 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:05:46 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:05:46 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:05:46 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:05:46 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:05:46 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:05:46 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 213
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:06:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 312
+2015-01-11 10:06:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 312
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 330
+2015-01-11 10:06:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 330
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 342
+2015-01-11 10:06:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 342
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 354
+2015-01-11 10:06:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/catalog/category.php on line 354
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:06:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:06:27 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:06:27 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:06:27 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:06:27 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:06:27 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:06:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:06:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:06:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:06:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:06:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:06:31 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:06:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:06:32 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:06:32 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:06:32 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:06:32 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:06:32 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:06:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:06:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:06:32 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:06:32 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:08 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:07:08 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:07:08 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:08 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:08 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:08 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:08 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:07:08 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:07:08 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:07:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:07:12 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:12 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:12 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:12 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:12 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:07:12 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:07:12 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:15 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:07:15 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:07:15 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:15 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:15 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:15 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:15 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:07:15 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:07:15 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:30 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 193
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:07:30 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:07:30 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:30 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:07:30 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:30 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:07:30 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:07:30 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:07:30 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:09:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:09:04 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:04 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:04 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:04 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:04 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:09:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:09:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:09:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:09:17 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:17 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:17 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:17 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:17 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:09:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:09:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:09:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:09:18 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:18 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:18 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:18 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:18 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:09:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:09:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 195
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: name in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 196
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: sort_order in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 197
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 198
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 199
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 195
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: name in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 196
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: sort_order in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 197
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 198
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 199
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 195
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: name in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 196
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: sort_order in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 197
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 198
+2015-01-11 10:09:37 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 199
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:09:37 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:09:37 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:37 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:37 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:37 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:37 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:09:37 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:09:37 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 195
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: name in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 196
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: sort_order in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 197
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 198
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 199
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 195
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: name in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 196
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: sort_order in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 197
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 198
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 199
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 195
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: name in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 196
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: sort_order in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 197
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 198
+2015-01-11 10:09:47 - PHP Notice:  Undefined index: category_id in /Users/longnt/czshop/public_html/admin/controller/catalog/category.php on line 199
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:09:47 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:09:47 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:47 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:09:47 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:47 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:09:47 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:09:47 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:09:47 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:19:57 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:19:57 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:19:57 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:19:57 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:19:57 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:19:57 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:19:57 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:19:57 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:20:03 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:20:03 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:20:03 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:20:03 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:20:03 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:20:03 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:20:03 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:20:03 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:20:06 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:20:06 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:20:06 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:20:06 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:20:06 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:20:06 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:20:06 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:20:06 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:27:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:27:13 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:13 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:13 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:13 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:13 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:27:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:27:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:27:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:27:17 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:17 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:17 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:17 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:17 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:27:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:27:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:27:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:27:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:27:28 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:28 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:28 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:28 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:28 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:27:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:27:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:27:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:27:28 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:27:35 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:27:35 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:35 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:27:35 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:35 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:27:35 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:27:35 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:40:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:40:04 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:40:04 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:40:04 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:40:04 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:40:04 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:40:04 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:40:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:46:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:46:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:46:34 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:46:34 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:46:34 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:46:34 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:46:34 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:46:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:46:34 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:46:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:46:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:46:34 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:47:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:47:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:47:13 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:47:13 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:47:13 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:47:13 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:47:13 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:47:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:47:13 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:47:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:47:13 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:47:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:47:17 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:47:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:47:18 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:47:18 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:47:18 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:47:18 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:47:18 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:47:18 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:47:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:47:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:47:48 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:47:48 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:47:48 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:47:48 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:47:48 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:47:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:47:48 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:47:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:47:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:47:48 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:48:22 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:48:22 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:48:22 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:48:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:48:23 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:48:23 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:48:23 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:48:23 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:48:23 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:48:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:48:23 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:48:23 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:23 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:48:23 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:48:23 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:48:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/model/localisation/language.php on line 320
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/design/layout.php on line 101
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/return.php on line 146
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/report/customer.php on line 314
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/customer.php on line 302
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/product.php on line 633
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/catalog/review.php on line 120
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/setting/store.php on line 57
+2015-01-11 10:48:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/header.php on line 128
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/user/user.php on line 30
+2015-01-11 10:48:27 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:48:27 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 2
+2015-01-11 10:48:27 - PHP Notice:  Undefined variable: firstname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:48:27 - PHP Notice:  Undefined variable: lastname in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 4
+2015-01-11 10:48:27 - PHP Notice:  Undefined variable: user_group in /Users/longnt/czshop/public_html/admin/view/template/common/profile.tpl on line 5
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /Users/longnt/czshop/public_html/admin/model/localisation/order_status.php on line 72
+2015-01-11 10:48:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/controller/common/stats.php on line 36
+2015-01-11 10:48:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-11 10:48:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 119
+2015-01-11 10:48:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 205
+2015-01-11 10:48:27 - PHP Warning:  Invalid argument supplied for foreach() in /Users/longnt/czshop/public_html/admin/view/template/catalog/category_form.tpl on line 214
