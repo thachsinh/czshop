@@ -439,6 +439,9 @@ class ControllerSaleCustomer extends Controller {
 
 		$data['add'] = $this->url->link('sale/customer/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('sale/customer/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('sale/customer/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('sale/customer/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		
 
 		$data['customers'] = array();
 
@@ -480,7 +483,7 @@ class ControllerSaleCustomer extends Controller {
 				'name'           => $result['name'],
 				'email'          => $result['email'],
 				'customer_group' => $result['customer_group'],
-				'status'         => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
+				'status'         => $result['status'],
 				'ip'             => $result['ip'],
 				'date_added'     => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'approve'        => $approve,
@@ -1584,6 +1587,36 @@ class ControllerSaleCustomer extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'sale/customer')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('sale/customer');
+		$this->load->model('sale/customer');
+		$customer_id = $this->request->post['customer_id'];
+		if($customer_id > 0) {
+			$this->model_sale_customer->deleteCustomer($customer_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
+	public function ajaxStatus() {
+		if (!$this->user->hasPermission('modify', 'sale/customer')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		
+		$customer_id = (int)$this->request->post['customer_id'];
+		$status = (int)$this->request->post['status'];
+		if($customer_id > 0) {
+			$this->load->model('sale/customer');
+			$this->model_sale_customer->editStatus($customer_id, $status);
+		}
 	}
 
 }

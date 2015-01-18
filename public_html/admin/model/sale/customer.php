@@ -1,18 +1,40 @@
 <?php
 class ModelSaleCustomer extends Model {
-	public function addCustomer($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$data['customer_group_id'] . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') . "', newsletter = '" . (int)$data['newsletter'] . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', status = '" . (int)$data['status'] . "', approved = '" . (int)$data['approved'] . "', safe = '" . (int)$data['safe'] . "', date_added = NOW()");
+	public $table = 'customer';
+	public $fields = array('customer_id', 'customer_group_id', 'store_id', 'firstname', 'lastname', 'email', 'telephone', 'fax', 'password', 'salt', 'cart', 'wishlist', 'newsletter', 'address_id', 'custom_field', 'ip', 'status', 'approved', 'safe', 'token', 'date_added');
+	public $primaryKey = 'customer_id';
+	public $addr_fields = array('address_id', 'customer_id', 'firstname', 'lastname', 'company', 'address_1', 'address_2', 'city', 'postcode', 'country_id', 'zone_id', 'custom_field');
 
-		$customer_id = $this->db->getLastId();
+	public function addCustomer($data) {
+		$tmp = $this->initData($data, TRUE);
+		$tmp['salt'] = $salt = substr(md5(uniqid(rand(), true)), 0, 9);
+		$tmp['password'] = sha1($salt . sha1($salt . sha1($data['password'])));
+		$tmp['custom_field'] = isset($data['custom_field']) ? serialize($data['custom_field']) : '';
+		$this->db->set('date_added', 'NOW()', FALSE);
+		$this->db->insert($this->table, $tmp);
+
+		//$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$data['customer_group_id'] . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') . "', newsletter = '" . (int)$data['newsletter'] . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', status = '" . (int)$data['status'] . "', approved = '" . (int)$data['approved'] . "', safe = '" . (int)$data['safe'] . "', date_added = NOW()");
+
+		//$customer_id = $this->db->getLastId();
+		$customer_id = $this->db->insert_id();
 
 		if (isset($data['address'])) {
 			foreach ($data['address'] as $address) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($address['firstname']) . "', lastname = '" . $this->db->escape($address['lastname']) . "', company = '" . $this->db->escape($address['company']) . "', address_1 = '" . $this->db->escape($address['address_1']) . "', address_2 = '" . $this->db->escape($address['address_2']) . "', city = '" . $this->db->escape($address['city']) . "', postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? serialize($address['custom_field']) : '') . "'");
+				$tmp = $this->initData($address, TRUE, $this->addr_fields);
+				$tmp['custom_field'] = isset($address['custom_field']) ? serialize($address['custom_field']) : '';
+				$this->db->set('customer_id', $customer_id);
+				$this->db->insert('address', $tmp);
+
+				//$this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($address['firstname']) . "', lastname = '" . $this->db->escape($address['lastname']) . "', company = '" . $this->db->escape($address['company']) . "', address_1 = '" . $this->db->escape($address['address_1']) . "', address_2 = '" . $this->db->escape($address['address_2']) . "', city = '" . $this->db->escape($address['city']) . "', postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? serialize($address['custom_field']) : '') . "'");
 
 				if (isset($address['default'])) {
-					$address_id = $this->db->getLastId();
+					//$address_id = $this->db->getLastId();
+					$address_id = $this->db->insert_id();
+					$this->db->where($this->primaryKey, $customer_id);
+					$this->db->set('address_id', $address_id);
+					$this->db->update($this->table);
 
-					$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+					//$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
 				}
 			}
 		}
@@ -23,95 +45,161 @@ class ModelSaleCustomer extends Model {
 			$data['custom_field'] = array();
 		}
 
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$data['customer_group_id'] . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') . "', newsletter = '" . (int)$data['newsletter'] . "', status = '" . (int)$data['status'] . "', approved = '" . (int)$data['approved'] . "', safe = '" . (int)$data['safe'] . "' WHERE customer_id = '" . (int)$customer_id . "'");
+		$tmp = $this->initData($data, TRUE);
+		$tmp['custom_field'] = isset($data['custom_field']) ? serialize($data['custom_field']) : '';
+		if(isset($data['password']) && strlen($data['password'])) {
+			unset($tmp['password']);
+		}
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->update($this->table, $tmp);
+		//$this->db->query("UPDATE " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$data['customer_group_id'] . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') . "', newsletter = '" . (int)$data['newsletter'] . "', status = '" . (int)$data['status'] . "', approved = '" . (int)$data['approved'] . "', safe = '" . (int)$data['safe'] . "' WHERE customer_id = '" . (int)$customer_id . "'");
 
-		if ($data['password']) {
-			$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE customer_id = '" . (int)$customer_id . "'");
+		if (isset($data['password'])) {
+
+			$salt = substr(md5(uniqid(rand(), true)), 0, 9);
+			$this->db->set('salt', $salt);
+			$this->db->set('password', sha1($salt . sha1($salt . sha1($data['password']))));
+			$this->db->where($this->primaryKey, (int)$customer_id);
+			$this->db->update($this->table);
+			//$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE customer_id = '" . (int)$customer_id . "'");
 		}
 
-		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->delete('address');
+
+		//$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
 
 		if (isset($data['address'])) {
 			foreach ($data['address'] as $address) {
 				if (!isset($address['custom_field'])) {
 					$address['custom_field'] = array();
 				}
+				$tmp = $this->initData($address, TRUE, $this->addr_fields);
+				$tmp['custom_field'] = isset($address['custom_field']) ? serialize($address['custom_field']) : '';
+				$this->db->set('customer_id', $customer_id);
+				$this->db->insert('address', $tmp);
 
-				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET address_id = '" . (int)$address['address_id'] . "', customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($address['firstname']) . "', lastname = '" . $this->db->escape($address['lastname']) . "', company = '" . $this->db->escape($address['company']) . "', address_1 = '" . $this->db->escape($address['address_1']) . "', address_2 = '" . $this->db->escape($address['address_2']) . "', city = '" . $this->db->escape($address['city']) . "', postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? serialize($address['custom_field']) : '') . "'");
+				//$this->db->query("INSERT INTO " . DB_PREFIX . "address SET address_id = '" . (int)$address['address_id'] . "', customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($address['firstname']) . "', lastname = '" . $this->db->escape($address['lastname']) . "', company = '" . $this->db->escape($address['company']) . "', address_1 = '" . $this->db->escape($address['address_1']) . "', address_2 = '" . $this->db->escape($address['address_2']) . "', city = '" . $this->db->escape($address['city']) . "', postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? serialize($address['custom_field']) : '') . "'");
 
 				if (isset($address['default'])) {
-					$address_id = $this->db->getLastId();
+					//$address_id = $this->db->getLastId();
 
-					$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+					//$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+					$address_id = $this->db->insert_id();
+					$this->db->where($this->primaryKey, $customer_id);
+					$this->db->set('address_id', $address_id);
+					$this->db->update($this->table);
 				}
 			}
 		}
 	}
 
+	public function editStatus($customer_id, $status) {
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->set('status', (int)$status);
+		$this->db->update($this->table);
+	}
+
 	public function editToken($customer_id, $token) {
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET token = '" . $this->db->escape($token) . "' WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->set('token', $token);
+		$this->db->update($this->table);
+
+		//$this->db->query("UPDATE " . DB_PREFIX . "customer SET token = '" . $this->db->escape($token) . "' WHERE customer_id = '" . (int)$customer_id . "'");
 	}
 
 	public function deleteCustomer($customer_id) {
-		$this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->delete(array($this->table, 'customer_reward', 'customer_transaction', 'customer_ip', 'address'));
+
+		/*$this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
-		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");*/
 	}
 
 	public function getCustomer($customer_id) {
-		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->distinct();
+		$this->db->from($this->table);
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		return $this->db->get()->row_array();
 
-		return $query->row;
+		//$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row;
 	}
 
 	public function getCustomerByEmail($email) {
-		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "customer WHERE LCASE(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$this->db->distinct();
+		$this->db->from($this->table);
+		$this->db->where('email', utf8_strtolower($email));
+		return $this->db->get()->row_array();
 
-		return $query->row;
+		//$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "customer WHERE LCASE(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+
+		//return $query->row;
 	}
 
 	public function getCustomers($data = array()) {
-		$sql = "SELECT *, CONCAT(c.firstname, ' ', c.lastname) AS name, cgd.name AS customer_group FROM " . DB_PREFIX . "customer c LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (c.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+		$this->db->select('*, CONCAT(c.firstname,\'	\',c.lastname) AS name, cgd.name AS customer_group', FALSE);
+		$this->db->from('customer c');
+		$this->db->join('customer_group_description cgd', 'c.customer_group_id = cgd.customer_group_id', 'left');
+		$this->db->where('cgd.language_id', (int)$this->config->get('config_language_id'));
 
-		$implode = array();
+		//$sql = "SELECT *, CONCAT(c.firstname, ' ', c.lastname) AS name, cgd.name AS customer_group FROM " . DB_PREFIX . "customer c LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (c.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+
+		//$implode = array();
 
 		if (!empty($data['filter_name'])) {
-			$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+			//$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+			$this->db->like('c.firstname', $data['filter_name']);
 		}
 
 		if (!empty($data['filter_email'])) {
-			$implode[] = "c.email LIKE '" . $this->db->escape($data['filter_email']) . "%'";
+			//$implode[] = "c.email LIKE '" . $this->db->escape($data['filter_email']) . "%'";
+			$this->db->like('c.email', $data['filter_email']);
 		}
 
 		if (isset($data['filter_newsletter']) && !is_null($data['filter_newsletter'])) {
-			$implode[] = "c.newsletter = '" . (int)$data['filter_newsletter'] . "'";
+			$this->db->where('c.newsletter', (int)$data['filter_newsletter']);
+			//$implode[] = "c.newsletter = '" . (int)$data['filter_newsletter'] . "'";
 		}
 
 		if (!empty($data['filter_customer_group_id'])) {
-			$implode[] = "c.customer_group_id = '" . (int)$data['filter_customer_group_id'] . "'";
+			$this->db->where('c.customer_group_id', (int)$data['filter_customer_group_id']);
+
+			//$implode[] = "c.customer_group_id = '" . (int)$data['filter_customer_group_id'] . "'";
 		}
 
 		if (!empty($data['filter_ip'])) {
-			$implode[] = "c.customer_id IN (SELECT customer_id FROM " . DB_PREFIX . "customer_ip WHERE ip = '" . $this->db->escape($data['filter_ip']) . "')";
+			$this->db->where('c.ip', $data['filter_ip']);
+
+			//$implode[] = "c.customer_id IN (SELECT customer_id FROM " . DB_PREFIX . "customer_ip WHERE ip = '" . $this->db->escape($data['filter_ip']) . "')";
 		}
 
 		if (isset($data['filter_status']) && !is_null($data['filter_status'])) {
-			$implode[] = "c.status = '" . (int)$data['filter_status'] . "'";
+			$this->db->where('c.status', (int)$data['filter_status']);
+
+			//$implode[] = "c.status = '" . (int)$data['filter_status'] . "'";
 		}
 
 		if (isset($data['filter_approved']) && !is_null($data['filter_approved'])) {
-			$implode[] = "c.approved = '" . (int)$data['filter_approved'] . "'";
+			$this->db->where('c.approved', (int)$data['filter_approved']);
+
+			//$implode[] = "c.approved = '" . (int)$data['filter_approved'] . "'";
 		}
 
 		if (!empty($data['filter_date_added'])) {
-			$implode[] = "DATE(c.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
+			$this->db->where('DATE(c.date_added) = DATE(' . $this->db->escape($data['filter_date_added']) . ')', NULL, FALSE);
+
+			//$implode[] = "DATE(c.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}
 
-		if ($implode) {
+		/*if ($implode) {
 			$sql .= " AND " . implode(" AND ", $implode);
-		}
+		}*/
 
 		$sort_data = array(
 			'name',
@@ -123,17 +211,25 @@ class ModelSaleCustomer extends Model {
 			'c.date_added'
 		);
 
-		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
-			$sql .= " ORDER BY " . $data['sort'];
-		} else {
-			$sql .= " ORDER BY name";
+		$order = 'ASC';
+		if (isset($data['order']) && ($data['order'] == 'DESC')) {
+			$order = 'DESC';
 		}
 
+		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
+			//$sql .= " ORDER BY " . $data['sort'];
+			$this->db->order_by($data['sort'], $order);
+		} else {
+			$this->db->order_by('name', $order);
+			//$sql .= " ORDER BY name";
+		}
+
+		/*
 		if (isset($data['order']) && ($data['order'] == 'DESC')) {
 			$sql .= " DESC";
 		} else {
 			$sql .= " ASC";
-		}
+		}*/
 
 		if (isset($data['start']) || isset($data['limit'])) {
 			if ($data['start'] < 0) {
@@ -144,12 +240,15 @@ class ModelSaleCustomer extends Model {
 				$data['limit'] = 20;
 			}
 
-			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+			//$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+			$this->db->limit($data['limit'], $data['start']);
 		}
+		return $this->db->get()->result_array();
 
-		$query = $this->db->query($sql);
 
-		return $query->rows;
+		//$query = $this->db->query($sql);
+
+		//return $query->rows;
 	}
 
 	public function approve($customer_id) {
@@ -190,16 +289,32 @@ class ModelSaleCustomer extends Model {
 	}
 
 	public function getAddress($address_id) {
-		$address_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'");
+		$this->db->select('*');
+		$this->db->from('address');
+		$this->db->where('address_id', (int)$address_id);
+		$address_query = $this->db->get()->row_array();
 
-		if ($address_query->num_rows) {
-			$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country` WHERE country_id = '" . (int)$address_query->row['country_id'] . "'");
+		//$address_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'");
 
-			if ($country_query->num_rows) {
-				$country = $country_query->row['name'];
+		if (!empty($address_query)) {
+			$this->db->select('*');
+			$this->db->from('country');
+			$this->db->where('country_id', (int)$address_query['country_id']);
+			$country_query = $this->db->get()->row_array();
+			//$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country` WHERE country_id = '" . (int)$address_query->row['country_id'] . "'");
+
+			if (!empty($country_query)) {
+
+				/*$country = $country_query->row['name'];
 				$iso_code_2 = $country_query->row['iso_code_2'];
 				$iso_code_3 = $country_query->row['iso_code_3'];
 				$address_format = $country_query->row['address_format'];
+				*/
+
+				$country = $country_query['name'];
+				$iso_code_2 = $country_query['iso_code_2'];
+				$iso_code_3 = $country_query['iso_code_3'];
+				$address_format = $country_query['address_format'];
 			} else {
 				$country = '';
 				$iso_code_2 = '';
@@ -207,16 +322,21 @@ class ModelSaleCustomer extends Model {
 				$address_format = '';
 			}
 
-			$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone` WHERE zone_id = '" . (int)$address_query->row['zone_id'] . "'");
+			$this->db->select('*')->from('zone')->where('zone_id', (int)$address_query['zone_id']);
+			$zone_query = $this->db->get()->row_array();
+			//$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone` WHERE zone_id = '" . (int)$address_query->row['zone_id'] . "'");
 
-			if ($zone_query->num_rows) {
-				$zone = $zone_query->row['name'];
-				$zone_code = $zone_query->row['code'];
+			if (!empty($zone_query)) {
+				$zone = $zone_query['name'];
+				$zone_code = $zone_query['code'];
+				//$zone = $zone_query->row['name'];
+				//$zone_code = $zone_query->row['code'];
 			} else {
 				$zone = '';
 				$zone_code = '';
 			}
 
+			/*
 			return array(
 				'address_id'     => $address_query->row['address_id'],
 				'customer_id'    => $address_query->row['customer_id'],
@@ -237,15 +357,42 @@ class ModelSaleCustomer extends Model {
 				'address_format' => $address_format,
 				'custom_field'   => unserialize($address_query->row['custom_field'])
 			);
+			*/
+
+			return array(
+				'address_id'     => $address_query['address_id'],
+				'customer_id'    => $address_query['customer_id'],
+				'firstname'      => $address_query['firstname'],
+				'lastname'       => $address_query['lastname'],
+				'company'        => $address_query['company'],
+				'address_1'      => $address_query['address_1'],
+				'address_2'      => $address_query['address_2'],
+				'postcode'       => $address_query['postcode'],
+				'city'           => $address_query['city'],
+				'zone_id'        => $address_query['zone_id'],
+				'zone'           => $zone,
+				'zone_code'      => $zone_code,
+				'country_id'     => $address_query['country_id'],
+				'country'        => $country,
+				'iso_code_2'     => $iso_code_2,
+				'iso_code_3'     => $iso_code_3,
+				'address_format' => $address_format,
+				'custom_field'   => unserialize($address_query['custom_field'])
+			);
+	
 		}
 	}
 
 	public function getAddresses($customer_id) {
 		$address_data = array();
 
-		$query = $this->db->query("SELECT address_id FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('address_id');
+		$this->db->from('address');
+		$this->db->where($this->primaryKey, (int)$customer_id);
 
-		foreach ($query->rows as $result) {
+		//$query = $this->db->query("SELECT address_id FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+
+		foreach ($this->db->get()->result_array() as $result) {
 			$address_info = $this->getAddress($result['address_id']);
 
 			if ($address_info) {
@@ -257,8 +404,62 @@ class ModelSaleCustomer extends Model {
 	}
 
 	public function getTotalCustomers($data = array()) {
-		$sql = "SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer";
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from($this->table);
+		//$this->db->where('cgd.language_id', (int)$this->config->get('config_language_id'));
 
+		//$sql = "SELECT *, CONCAT(c.firstname, ' ', c.lastname) AS name, cgd.name AS customer_group FROM " . DB_PREFIX . "customer c LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (c.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+
+		//$implode = array();
+
+		if (!empty($data['filter_name'])) {
+			//$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+			$this->db->like('firstname', $data['filter_name']);
+		}
+
+		if (!empty($data['filter_email'])) {
+			//$implode[] = "c.email LIKE '" . $this->db->escape($data['filter_email']) . "%'";
+			$this->db->like('email', $data['filter_email']);
+		}
+
+		if (isset($data['filter_newsletter']) && !is_null($data['filter_newsletter'])) {
+			$this->db->where('newsletter', (int)$data['filter_newsletter']);
+			//$implode[] = "c.newsletter = '" . (int)$data['filter_newsletter'] . "'";
+		}
+
+		if (!empty($data['filter_customer_group_id'])) {
+			$this->db->where('customer_group_id', (int)$data['filter_customer_group_id']);
+
+			//$implode[] = "c.customer_group_id = '" . (int)$data['filter_customer_group_id'] . "'";
+		}
+
+		if (!empty($data['filter_ip'])) {
+			$this->db->where('ip', $data['filter_ip']);
+
+			//$implode[] = "c.customer_id IN (SELECT customer_id FROM " . DB_PREFIX . "customer_ip WHERE ip = '" . $this->db->escape($data['filter_ip']) . "')";
+		}
+
+		if (isset($data['filter_status']) && !is_null($data['filter_status'])) {
+			$this->db->where('status', (int)$data['filter_status']);
+
+			//$implode[] = "c.status = '" . (int)$data['filter_status'] . "'";
+		}
+
+		if (isset($data['filter_approved']) && !is_null($data['filter_approved'])) {
+			$this->db->where('approved', (int)$data['filter_approved']);
+
+			//$implode[] = "c.approved = '" . (int)$data['filter_approved'] . "'";
+		}
+
+		if (!empty($data['filter_date_added'])) {
+			$this->db->where('DATE(date_added) = DATE(' . $this->db->escape($data['filter_date_added']) . ')', NULL, FALSE);
+
+			//$implode[] = "DATE(c.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
+		}
+
+		//$sql = "SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer";
+
+		/*
 		$implode = array();
 
 		if (!empty($data['filter_name'])) {
@@ -296,44 +497,83 @@ class ModelSaleCustomer extends Model {
 		if ($implode) {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
+		*/
 
-		$query = $this->db->query($sql);
+		//$query = $this->db->query($sql);
 
-		return $query->row['total'];
+		//return $query->row['total'];
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 	}
 
 	public function getTotalCustomersAwaitingApproval() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE status = '0' OR approved = '0'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from($this->table);
+		$this->db->where('status', 0);
+		$this->db->or_where('approved', 0);
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE status = '0' OR approved = '0'");
+
+		//return $query->row['total'];
+		$query = $this->db->get()->result_array();
+		return $query['total'];
 	}
 
 	public function getTotalAddressesByCustomerId($customer_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('address');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalAddressesByCountryId($country_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE country_id = '" . (int)$country_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('address');
+		$this->db->where('country_id', (int)$country_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE country_id = '" . (int)$country_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalAddressesByZoneId($zone_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE zone_id = '" . (int)$zone_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('address');
+		$this->db->where('zone_id', (int)$zone_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE zone_id = '" . (int)$zone_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalCustomersByCustomerGroupId($customer_group_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE customer_group_id = '" . (int)$customer_group_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from($this->table);
+		$this->db->where('customer_group_id', (int)$customer_group_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE customer_group_id = '" . (int)$customer_group_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function addHistory($customer_id, $comment) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "customer_history SET customer_id = '" . (int)$customer_id . "', comment = '" . $this->db->escape(strip_tags($comment)) . "', date_added = NOW()");
+		$this->db->set($this->primaryKey, (int)$customer_id);
+		$this->db->set('comment', strip_tags($comment));
+		$this->db->set('date_added', 'NOW()', FALSE);
+		$this->db->insert('customer_history');
+
+		//$this->db->query("INSERT INTO " . DB_PREFIX . "customer_history SET customer_id = '" . (int)$customer_id . "', comment = '" . $this->db->escape(strip_tags($comment)) . "', date_added = NOW()");
 	}
 
 	public function getHistories($customer_id, $start = 0, $limit = 10) {
@@ -344,23 +584,43 @@ class ModelSaleCustomer extends Model {
 		if ($limit < 1) {
 			$limit = 10;
 		}
+		$this->db->select('comment, date_added');
+		$this->db->from('customer_history');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->order_by('date_added', 'DESC');
+		$this->db->limit($limit, $start);
 
-		$query = $this->db->query("SELECT comment, date_added FROM " . DB_PREFIX . "customer_history WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
 
-		return $query->rows;
+		//$query = $this->db->query("SELECT comment, date_added FROM " . DB_PREFIX . "customer_history WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
+
+		//return $query->rows;
+		return $this->db->get()->result_array();
 	}
 
 	public function getTotalHistories($customer_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_history WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_history');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_history WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function addTransaction($customer_id, $description = '', $amount = '', $order_id = 0) {
 		$customer_info = $this->getCustomer($customer_id);
 
 		if ($customer_info) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_transaction SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($description) . "', amount = '" . (float)$amount . "', date_added = NOW()");
+			$this->db->set($this->primaryKey, (int)$customer_id);
+			$this->db->set('order_id', (int)$order_id);
+			$this->db->set('description', $description);
+			$this->db->set('amount', (float)$amount);
+			$this->db->set('date_added', 'NOW()', FALSE);
+			$this->db->insert('customer_transaction');
+
+			//$this->db->query("INSERT INTO " . DB_PREFIX . "customer_transaction SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($description) . "', amount = '" . (float)$amount . "', date_added = NOW()");
 
 			$this->load->language('mail/customer');
 
@@ -388,7 +648,10 @@ class ModelSaleCustomer extends Model {
 	}
 
 	public function deleteTransaction($order_id) {
-		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE order_id = '" . (int)$order_id . "'");
+		$this->db->where('order_id', (int)$order_id);
+		$this->db->delete('customer_transaction');
+
+		//$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE order_id = '" . (int)$order_id . "'");
 	}
 
 	public function getTransactions($customer_id, $start = 0, $limit = 10) {
@@ -400,34 +663,66 @@ class ModelSaleCustomer extends Model {
 			$limit = 10;
 		}
 
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
+		$this->db->select('*');
+		$this->db->from('customer_transaction');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->order_by('date_added', 'DESC');
+		$this->db->limit($limit, $start);
 
-		return $query->rows;
+		//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
+
+		//return $query->rows;
+		return $this->db->get()->result_array();
 	}
 
 	public function getTotalTransactions($customer_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total  FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_transaction');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+
+		//$query = $this->db->query("SELECT COUNT(*) AS total  FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTransactionTotal($customer_id) {
-		$query = $this->db->query("SELECT SUM(amount) AS total FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('SUM(amount) AS `total`');
+		$this->db->from('customer_transaction');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT SUM(amount) AS total FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalTransactionsByOrderId($order_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_transaction WHERE order_id = '" . (int)$order_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_transaction');
+		$this->db->where('order_id', (int)$order_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_transaction WHERE order_id = '" . (int)$order_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function addReward($customer_id, $description = '', $points = '', $order_id = 0) {
 		$customer_info = $this->getCustomer($customer_id);
 
 		if ($customer_info) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_reward SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', points = '" . (int)$points . "', description = '" . $this->db->escape($description) . "', date_added = NOW()");
+			$this->db->set($this->primaryKey, (int)$customer_id);
+			$this->db->set('order_id', (int)$order_id);
+			$this->db->set('points', (int)$points);
+			$this->db->set('description', $description);
+			$this->db->set('date_added', 'NOW()', FALSE);
+			$this->db->insert('customer_reward');
+			//$this->db->query("INSERT INTO " . DB_PREFIX . "customer_reward SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', points = '" . (int)$points . "', description = '" . $this->db->escape($description) . "', date_added = NOW()");
 
 			$this->load->language('mail/customer');
 
@@ -455,72 +750,136 @@ class ModelSaleCustomer extends Model {
 	}
 
 	public function deleteReward($order_id) {
-		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_reward WHERE order_id = '" . (int)$order_id . "' AND points > 0");
+		$this->db->where('order_id', (int)$order_id);
+		$this->db->where('points >', 0);
+		$this->db->delete('customer_reward');
+
+		//$this->db->query("DELETE FROM " . DB_PREFIX . "customer_reward WHERE order_id = '" . (int)$order_id . "' AND points > 0");
 	}
 
 	public function getRewards($customer_id, $start = 0, $limit = 10) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
+		$this->db->select('*');
+		$this->db->from('customer_reward');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$this->db->order_by('date_added', 'DESC');
+		$this->db->limit((int)$limit, (int)$start);
+		return $this->db->get()->result_array();
 
-		return $query->rows;
+		//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
+
+		//return $query->rows;
 	}
 
 	public function getTotalRewards($customer_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_reward');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
+
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
 
 		return $query->row['total'];
 	}
 
 	public function getRewardTotal($customer_id) {
-		$query = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('SUM(points) AS `total`');
+		$this->db->from('customer_reward');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalCustomerRewardsByOrderId($order_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_reward WHERE order_id = '" . (int)$order_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_reward');
+		$this->db->where('order_id', (int)$order_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_reward WHERE order_id = '" . (int)$order_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getIps($customer_id) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
+		return $this->db->select('*')->from('customer_ip')->where($this->primaryKey, (int)$customer_id)->get()->row_array();
 
-		return $query->rows;
+		//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->rows;
 	}
 
 	public function getTotalIps($customer_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_ip');
+		$this->db->where($this->primaryKey, (int)$customer_id);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalCustomersByIp($ip) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_ip WHERE ip = '" . $this->db->escape($ip) . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_ip');
+		$this->db->where('ip', $ip);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_ip WHERE ip = '" . $this->db->escape($ip) . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function addBanIp($ip) {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_ban_ip` SET `ip` = '" . $this->db->escape($ip) . "'");
+		$this->db->set('ip', $ip);
+		$this->db->insert('customer_ban_ip');
+
+		//$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_ban_ip` SET `ip` = '" . $this->db->escape($ip) . "'");
 	}
 
 	public function removeBanIp($ip) {
-		$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_ban_ip` WHERE `ip` = '" . $this->db->escape($ip) . "'");
+		$this->db->where('ip', $ip);
+		$this->db->delete('customer_ban_ip');
+
+		//$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_ban_ip` WHERE `ip` = '" . $this->db->escape($ip) . "'");
 	}
 
 	public function getTotalBanIpsByIp($ip) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "customer_ban_ip` WHERE `ip` = '" . $this->db->escape($ip) . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_ban_ip');
+		$this->db->where('ip', $ip);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "customer_ban_ip` WHERE `ip` = '" . $this->db->escape($ip) . "'");
+
+		//return $query->row['total'];
 	}
 	
 	public function getTotalLoginAttempts($email) {
-		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_login` WHERE `email` = '" . $this->db->escape($email) . "'");
+		$this->db->select('COUNT(*) AS `total`');
+		$this->db->from('customer_login');
+		$this->db->where('email', $email);
+		$query = $this->db->get()->row_array();
+		return $query['total'];
 
-		return $query->row;
+		//$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_login` WHERE `email` = '" . $this->db->escape($email) . "'");
+
+		//return $query->row;
 	}	
 
 	public function deleteLoginAttempts($email) {
-		$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE `email` = '" . $this->db->escape($email) . "'");
+		$this->db->where('email', $email);
+		$this->db->delete('customer_login');
+
+		//$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE `email` = '" . $this->db->escape($email) . "'");
 	}		
 }

@@ -157,6 +157,8 @@ class ControllerSaleCustomField extends Controller {
 
 		$data['add'] = $this->url->link('sale/custom_field/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('sale/custom_field/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('sale/custom_field/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('sale/custom_field/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['custom_fields'] = array();
 
@@ -537,5 +539,36 @@ class ControllerSaleCustomField extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'sale/custom_field')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('sale/custom_field');
+		//var_dump($this->request->post);
+		$custom_field_id = $this->request->post['custom_field_id'];
+		if($custom_field_id > 0) {
+			$this->load->model('sale/custom_field');
+			$this->model_sale_custom_field->deleteCustomField($custom_field_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
+	public function ajaxStatus() {
+		if (!$this->user->hasPermission('modify', 'sale/custom_field')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		
+		$custom_field_id = (int)$this->request->post['custom_field_id'];
+		$status = (int)$this->request->post['status'];
+		if($custom_field_id > 0) {
+			$this->load->model('sale/custom_field');
+			$this->model_sale_custom_field->editStatus($custom_field_id, $status);
+		}
 	}
 }

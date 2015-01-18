@@ -157,6 +157,9 @@ class ControllerCatalogInformation extends Controller {
 		
 		$data['add'] = $this->url->link('catalog/information/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('catalog/information/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('catalog/information/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('catalog/information/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		
 
 		$data['informations'] = array();
 
@@ -176,6 +179,7 @@ class ControllerCatalogInformation extends Controller {
 				'information_id' => $result['information_id'],
 				'title'          => $result['title'],
 				'sort_order'     => $result['sort_order'],
+				'status'		 => $result['status'],
 				'edit'           => $this->url->link('catalog/information/edit', 'token=' . $this->session->data['token'] . '&information_id=' . $result['information_id'] . $url, 'SSL')
 			);
 		}
@@ -189,6 +193,7 @@ class ControllerCatalogInformation extends Controller {
 		$data['column_title'] = $this->language->get('column_title');
 		$data['column_sort_order'] = $this->language->get('column_sort_order');
 		$data['column_action'] = $this->language->get('column_action');
+		$data['column_status'] = $this->language->get('column_status');
 
 		$data['button_add'] = $this->language->get('button_add');
 		$data['button_edit'] = $this->language->get('button_edit');
@@ -228,6 +233,7 @@ class ControllerCatalogInformation extends Controller {
 
 		$data['sort_title'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'] . '&sort=id.title' . $url, 'SSL');
 		$data['sort_sort_order'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'] . '&sort=i.sort_order' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'] . '&sort=i.status' . $url, 'SSL');
 
 		$url = '';
 
@@ -506,5 +512,41 @@ class ControllerCatalogInformation extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'catalog/information')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('catalog/information');
+		//var_dump($this->request->post);
+		$information_id = $this->request->post['information_id'];
+		$this->load->model('setting/store');
+		$store_total = $this->model_setting_store->getTotalStoresByInformationId($information_id);
+		//echo $store_total;
+		if($information_id > 0 && $store_total == 0) {
+			$this->load->model('catalog/information');
+			$this->model_catalog_information->deleteInformation($information_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		} else {
+			$this->error['warning'] = sprintf($this->language->get('error_store'), $store_total);
+		}
+	}
+
+	public function ajaxStatus() {
+		if (!$this->user->hasPermission('modify', 'catalog/information')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$information_id = (int)$this->request->post['information_id'];
+		$status = (int)$this->request->post['status'];
+		if($information_id > 0) {
+			$this->load->model('catalog/information');
+			$this->model_catalog_information->editStatus($information_id, $status);
+		}
 	}
 }

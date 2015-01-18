@@ -1,5 +1,9 @@
 <?php
 class ModelSettingStore extends Model {
+	public $table = 'store';
+	public $primaryKey = 'store_id';
+	public $fields = array();
+
 	public function addStore($data) {
 		$this->event->trigger('pre.admin.store.add', $data);
 
@@ -43,18 +47,26 @@ class ModelSettingStore extends Model {
 	}
 
 	public function getStore($store_id) {
-		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "store WHERE store_id = '" . (int)$store_id . "'");
+		$this->db->distinct();
+		$this->db->from($this->table);
+		$this->db->where($this->primaryKey, (int)$store_id);
+		return $this->db->get()->row_array();
+		//$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "store WHERE store_id = '" . (int)$store_id . "'");
 
-		return $query->row;
+		//return $query->row;
 	}
 
 	public function getStores($data = array()) {
 		$store_data = $this->cache->get('store');
 
 		if (!$store_data) {
-			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "store ORDER BY url");
+			$this->db->select('*');
+			$this->db->from($this->table);
+			$this->db->order_by('url');
+			//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "store ORDER BY url");
 
-			$store_data = $query->rows;
+			//$store_data = $query->rows;
+			$store_data = $this->db->get()->result_array();
 
 			$this->cache->set('store', $store_data);
 		}

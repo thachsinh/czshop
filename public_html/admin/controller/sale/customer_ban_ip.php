@@ -110,6 +110,24 @@ class ControllerSaleCustomerBanIp extends Controller {
 		$this->getList();
 	}
 
+	public function ajaxdelete() {
+		if (!$this->user->hasPermission('modify', 'sale/customer_ban_ip')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit();
+		}
+
+		$this->load->language('sale/customer_ban_ip');
+
+		$this->load->model('sale/customer_ban_ip');
+
+		$customer_ban_ip_id = $this->request->post['customer_ban_ip_id'];
+
+		if($customer_ban_ip_id > 0) {
+			$this->model_sale_customer_ban_ip->deleteCustomerBanIp($customer_ban_ip_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
 	protected function getList() {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
@@ -157,6 +175,7 @@ class ControllerSaleCustomerBanIp extends Controller {
 
 		$data['add'] = $this->url->link('sale/customer_ban_ip/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('sale/customer_ban_ip/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('sale/customer_ban_ip/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['customer_ban_ips'] = array();
 

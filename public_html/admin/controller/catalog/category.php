@@ -175,6 +175,8 @@ class ControllerCatalogCategory extends Controller {
 		
 		$data['add'] = $this->url->link('catalog/category/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('catalog/category/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('catalog/category/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('catalog/category/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['repair'] = $this->url->link('catalog/category/repair', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['categories'] = array();
@@ -195,6 +197,7 @@ class ControllerCatalogCategory extends Controller {
 				'category_id' => $result['category_id'],
 				'name'        => $result['name'],
 				'sort_order'  => $result['sort_order'],
+				'status'	  => $result['status'],
 				'edit'        => $this->url->link('catalog/category/edit', 'token=' . $this->session->data['token'] . '&category_id=' . $result['category_id'] . $url, 'SSL'),
 				'delete'      => $this->url->link('catalog/category/delete', 'token=' . $this->session->data['token'] . '&category_id=' . $result['category_id'] . $url, 'SSL')
 			);
@@ -209,6 +212,7 @@ class ControllerCatalogCategory extends Controller {
 		$data['column_name'] = $this->language->get('column_name');
 		$data['column_sort_order'] = $this->language->get('column_sort_order');
 		$data['column_action'] = $this->language->get('column_action');
+		$data['column_status'] = $this->language->get('column_status');
 
 		$data['button_add'] = $this->language->get('button_add');
 		$data['button_edit'] = $this->language->get('button_edit');
@@ -248,6 +252,7 @@ class ControllerCatalogCategory extends Controller {
 		}
 
 		$data['sort_name'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'] . '&sort=name' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'] . '&sort=status' . $url, 'SSL');
 		$data['sort_sort_order'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'] . '&sort=sort_order' . $url, 'SSL');
 
 		$url = '';
@@ -609,5 +614,35 @@ class ControllerCatalogCategory extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'catalog/category')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		$this->load->language('catalog/category');
+		//var_dump($this->request->post);
+		$category_id = $this->request->post['category_id'];
+		if($category_id > 0) {
+			$this->load->model('catalog/category');
+			$this->model_catalog_category->deleteCategory($category_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
+	public function ajaxStatus() {
+		if (!$this->user->hasPermission('modify', 'catalog/category')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		
+		$category_id = (int)$this->request->post['category_id'];
+		$status = (int)$this->request->post['status'];
+		if($category_id > 0) {
+			$this->load->model('catalog/category');
+			$this->model_catalog_category->editStatus($category_id, $status);
+		}
 	}
 }

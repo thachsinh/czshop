@@ -1,7 +1,6 @@
 <?php
 // Version
 define('VERSION', '2.0.1.1');
-
 function show_error(){};
 function log_message(){};
 	
@@ -55,7 +54,12 @@ $registry->set('url', $url);
 // Log
 $log = new Log($config->get('config_error_filename'));
 $registry->set('log', $log);
-
+/*$db->where("1=1", NULL, FALSE);
+$q = $db->select('*')->from('category');
+var_dump($q->get());
+var_dump($db->last_query());
+exit;
+*/
 function error_handler($errno, $errstr, $errfile, $errline) {
 	global $log, $config;
 

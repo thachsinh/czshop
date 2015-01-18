@@ -53,7 +53,12 @@
                     <input type="checkbox" name="selected[]" value="<?php echo $user_group['user_group_id']; ?>" />
                     <?php } ?></td>
                   <td class="text-left"><?php echo $user_group['name']; ?></td>
-                  <td class="text-right"><a href="<?php echo $user_group['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  <td class="text-right">
+                    <div class="btn-group">
+                      <a href="<?php echo $user_group['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                      <a data-cid="<?php echo $user_group['user_group_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                    </div>
+                  </td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -73,4 +78,29 @@
     </div>
   </div>
 </div>
+<script>
+$('a.btn-danger').click(function(){
+  var cid = $(this).data('cid');
+  bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+    if(result == true) {
+      $.post('<?php echo urldecode($ajax_delete); ?>', 
+        {'user_group_id': cid},
+        function(data){
+          location.reload();
+          //alert(data);
+        }
+      );
+    }
+  }); 
+});
+
+$('button.btn-danger').click(function(){
+  var cid = $(this).data('cid');
+  bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+    if(result == true) {
+      $('#form-user-group').submit();
+    }
+  }); 
+});
+</script>
 <?php echo $footer; ?> 

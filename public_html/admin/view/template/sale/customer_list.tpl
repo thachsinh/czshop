@@ -3,7 +3,7 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
+        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
       </div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -128,11 +128,6 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_customer_group; ?>"><?php echo $column_customer_group; ?></a>
                     <?php } ?></td>
-                  <td class="text-left"><?php if ($sort == 'c.status') { ?>
-                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
-                    <?php } else { ?>
-                    <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
-                    <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'c.ip') { ?>
                     <a href="<?php echo $sort_ip; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_ip; ?></a>
                     <?php } else { ?>
@@ -143,6 +138,12 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                     <?php } ?></td>
+                  <td class="text-left"><?php if ($sort == 'c.status') { ?>
+                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+                    <?php } else { ?>
+                    <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
+                    <?php } ?>
+                  </td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -158,29 +159,37 @@
                   <td class="text-left"><?php echo $customer['name']; ?></td>
                   <td class="text-left"><?php echo $customer['email']; ?></td>
                   <td class="text-left"><?php echo $customer['customer_group']; ?></td>
-                  <td class="text-left"><?php echo $customer['status']; ?></td>
                   <td class="text-left"><?php echo $customer['ip']; ?></td>
                   <td class="text-left"><?php echo $customer['date_added']; ?></td>
-                  <td class="text-right"><?php if ($customer['approve']) { ?>
-                    <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
-                    <?php } else { ?>
-                    <button type="button" class="btn btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
-                    <?php } ?>
-                    <div class="btn-group" data-toggle="tooltip" title="<?php echo $button_login; ?>">
-                      <button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><i class="fa fa-lock"></i></button>
-                      <ul class="dropdown-menu pull-right">
-                        <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&store_id=0" target="_blank"><?php echo $text_default; ?></a></li>
-                        <?php foreach ($stores as $store) { ?>
-                        <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&store_id=<?php echo $store['store_id']; ?>" target="_blank"><?php echo $store['name']; ?></a></li>
-                        <?php } ?>
-                      </ul>
+                  <td class="text-left">
+                    <input type="checkbox" <?php echo ((isset($customer['status']) && ($customer['status'] == 1)) ? 'checked': ''); ?> data-toggle="toggle" data-size="small" data-cid="<?php echo $customer['customer_id']; ?>" class="btn-status">
+                  </td>
+                  <td class="text-right">
+                    <div class="btn-group">
+                    <?php if ($customer['approve']) { ?>
+                      <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
+                      <?php } else { ?>
+                      <button type="button" class="btn btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
+                      <?php } ?>
+                      <?php if ($customer['unlock']) { ?>
+                      <a href="<?php echo $customer['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
+                      </div>
+                      <?php } else { ?>
+                      <button type="button" class="btn btn-warning" disabled><i class="fa fa-unlock"></i></button>
+                      <?php } ?>
+                      <div class="btn-group" data-toggle="tooltip" title="<?php echo $button_login; ?>">
+                        <button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><i class="fa fa-lock"></i></button>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&store_id=0" target="_blank"><?php echo $text_default; ?></a></li>
+                          <?php foreach ($stores as $store) { ?>
+                          <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&store_id=<?php echo $store['store_id']; ?>" target="_blank"><?php echo $store['name']; ?></a></li>
+                          <?php } ?>
+                        </ul>
+                      </div>
+                      <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                      <a data-cid="<?php echo $customer['customer_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                     </div>
-                    <?php if ($customer['unlock']) { ?>
-                    <a href="<?php echo $customer['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
-                    <?php } else { ?>
-                    <button type="button" class="btn btn-warning" disabled><i class="fa fa-unlock"></i></button>
-                    <?php } ?>
-                    <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  </td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -199,6 +208,46 @@
       </div>
     </div>
   </div>
+<script>
+$('a.btn-danger').click(function(){
+  var cid = $(this).data('cid');
+  bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+    if(result == true) {
+      $.post('<?php echo urldecode($ajax_delete); ?>', 
+        {'customer_id': cid},
+        function(data){
+          location.reload();
+          //alert(data);
+        }
+      );
+    }
+  }); 
+});
+
+$('button.btn-danger').click(function(){
+  var cid = $(this).data('cid');
+  bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+    if(result == true) {
+      $('#form-customer').submit();
+    }
+  }); 
+});
+
+$('input.btn-status').change(function(){
+  var cid = $(this).data('cid');
+  var status = $(this).prop('checked');
+  if(status == false) {
+    status = 0;
+  } else {
+    status = 1;
+  }
+
+  $.post('<?php echo $ajax_status; ?>', 
+    {'customer_id': cid, 'status': status},
+    function(){
+    });
+})
+</script>
   <script type="text/javascript"><!--
 $('#button-filter').on('click', function() {
 	url = 'index.php?route=sale/customer&token=<?php echo $token; ?>';

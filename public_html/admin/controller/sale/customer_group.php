@@ -157,6 +157,7 @@ class ControllerSaleCustomerGroup extends Controller {
 
 		$data['add'] = $this->url->link('sale/customer_group/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('sale/customer_group/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('sale/customer_group/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['customer_groups'] = array();
 
@@ -402,5 +403,38 @@ class ControllerSaleCustomerGroup extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'sale/customer_group')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$customer_group_id = $this->request->post['customer_group_id'];
+
+		$this->load->model('setting/store');
+		$this->load->model('sale/customer');
+
+		$store_total = $this->model_setting_store->getTotalStoresByCustomerGroupId($customer_group_id);
+		if ($store_total) {
+			$this->error['warning'] = sprintf($this->language->get('error_store'), $store_total);
+			exit;
+		}
+
+		$customer_total = $this->model_sale_customer->getTotalCustomersByCustomerGroupId($customer_group_id);
+		if ($customer_total) {
+			$this->error['warning'] = sprintf($this->language->get('error_customer'), $customer_total);
+			exit;
+		}
+
+		$this->load->language('sale/customer_group');
+		$this->load->model('sale/customer_group');
+
+		if($customer_group_id > 0) {
+			$this->model_sale_customer_group->deleteCustomerGroup($customer_group_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
 	}
 }

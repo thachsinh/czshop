@@ -175,7 +175,8 @@ class ControllerUserUser extends Controller {
 			$data['users'][] = array(
 				'user_id'    => $result['user_id'],
 				'username'   => $result['username'],
-				'status'     => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
+				//'status'     => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
+				'status'	 => $result['status'],
 				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'edit'       => $this->url->link('user/user/edit', 'token=' . $this->session->data['token'] . '&user_id=' . $result['user_id'] . $url, 'SSL')
 			);
@@ -231,6 +232,9 @@ class ControllerUserUser extends Controller {
 		$data['sort_username'] = $this->url->link('user/user', 'token=' . $this->session->data['token'] . '&sort=username' . $url, 'SSL');
 		$data['sort_status'] = $this->url->link('user/user', 'token=' . $this->session->data['token'] . '&sort=status' . $url, 'SSL');
 		$data['sort_date_added'] = $this->url->link('user/user', 'token=' . $this->session->data['token'] . '&sort=date_added' . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('user/user/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('user/user/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		
 
 		$url = '';
 
@@ -501,5 +505,35 @@ class ControllerUserUser extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'user/user')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		$this->load->language('user/user');
+		//var_dump($this->request->post);
+		$user_id = $this->request->post['user_id'];
+		if($user_id > 0) {
+			$this->load->model('user/user');
+			$this->model_user_user->deleteUser($user_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
+	public function ajaxStatus() {
+		if (!$this->user->hasPermission('modify', 'user/user')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		
+		$user_id = (int)$this->request->post['user_id'];
+		$status = (int)$this->request->post['status'];
+		if($user_id > 0) {
+			$this->load->model('user/user');
+			$this->model_user_user->editUser($user_id, array('status' => $status));
+		}
 	}
 }

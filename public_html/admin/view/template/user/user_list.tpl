@@ -3,7 +3,7 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-user').submit() : false;"><i class="fa fa-trash-o"></i></button>
+        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
       </div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -40,16 +40,17 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_username; ?>"><?php echo $column_username; ?></a>
                     <?php } ?></td>
-                  <td class="text-left"><?php if ($sort == 'status') { ?>
-                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
-                    <?php } else { ?>
-                    <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
-                    <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'date_added') { ?>
                     <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                     <?php } ?></td>
+                  <td class="text-right"><?php if ($sort == 'status') { ?>
+                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+                    <?php } else { ?>
+                    <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
+                    <?php } ?>
+                  </td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -63,9 +64,16 @@
                     <input type="checkbox" name="selected[]" value="<?php echo $user['user_id']; ?>" />
                     <?php } ?></td>
                   <td class="text-left"><?php echo $user['username']; ?></td>
-                  <td class="text-left"><?php echo $user['status']; ?></td>
                   <td class="text-left"><?php echo $user['date_added']; ?></td>
-                  <td class="text-right"><a href="<?php echo $user['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  <td class="text-right">
+                    <input type="checkbox" <?php echo ((isset($user['status']) && ($user['status'] == 1)) ? 'checked': ''); ?> data-toggle="toggle" data-size="small" data-cid="<?php echo $user['user_id']; ?>" class="btn-status">
+                  </td>
+                  <td class="text-right">
+                    <div class="btn-group">
+                      <a href="<?php echo $user['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                      <a data-cid="<?php echo $user['user_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                    </div>
+                  </td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -85,4 +93,44 @@
     </div>
   </div>
 </div>
+<script>
+$('a.btn-danger').click(function(){
+  var cid = $(this).data('cid');
+  bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+    if(result == true) {
+      $.post('<?php echo urldecode($ajax_delete); ?>', 
+        {'user_id': cid},
+        function(data){
+          location.reload();
+          //alert(data);
+        }
+      );
+    }
+  }); 
+});
+
+$('button.btn-danger').click(function(){
+  var cid = $(this).data('cid');
+  bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+    if(result == true) {
+      $('#form-user').submit();
+    }
+  }); 
+});
+
+$('input.btn-status').change(function(){
+  var cid = $(this).data('cid');
+  var status = $(this).prop('checked');
+  if(status == false) {
+    status = 0;
+  } else {
+    status = 1;
+  }
+
+  $.post('<?php echo $ajax_status; ?>', 
+    {'user_id': cid, 'status': status},
+    function(){
+    });
+})
+</script>
 <?php echo $footer; ?> 

@@ -25,3 +25,4 @@ define('DB_USERNAME', 'long');
 define('DB_PASSWORD', 'long');
 define('DB_DATABASE', 'shopdb');
 define('DB_PREFIX', 'td_');
+

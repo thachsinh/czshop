@@ -225,6 +225,7 @@ class ControllerUserUserPermission extends Controller {
 		}
 
 		$data['sort_name'] = $this->url->link('user/user_permission', 'token=' . $this->session->data['token'] . '&sort=name' . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('user/user_permission/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$url = '';
 
@@ -406,5 +407,29 @@ class ControllerUserUserPermission extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'user/user_permission')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+		}
+
+		//$this->load->language('user/permission');
+		$this->load->language('user/user_group');
+
+		//var_dump($this->request->post);
+		$user_group_id = $this->request->post['user_group_id'];
+		if($user_group_id > 0) {
+			$this->load->model('user/user');
+			$user_total = $this->model_user_user->getTotalUsersByGroupId($user_group_id);
+			if($user_total == 0) {
+				$this->load->model('user/user_group');
+				$this->model_user_user_group->deleteUserGroup($user_group_id);
+				$this->session->data['success'] = $this->language->get('text_success');
+			} else {
+				$this->error['warning'] = sprintf($this->language->get('error_user'), $user_total);
+			}
+			//echo $category_id;
+		}
 	}
 }
