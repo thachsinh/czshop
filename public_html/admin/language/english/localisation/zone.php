@@ -13,6 +13,7 @@ $_['column_name']            = 'Zone Name';
 $_['column_code']            = 'Zone Code';
 $_['column_country']         = 'Country';
 $_['column_action']          = 'Action';
+$_['column_status']          = 'Status';
 
 // Entry
 $_['entry_status']           = 'Zone Status';

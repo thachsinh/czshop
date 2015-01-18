@@ -4,9 +4,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'long';
-$db['default']['password'] = 'long';
-$db['default']['database'] = 'shopdb';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '111111';
+$db['default']['database'] = 'tamdaexpress.eu';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'td_';
 $db['default']['pconnect'] = TRUE;

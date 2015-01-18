@@ -1,9 +1,10 @@
 <?php
+
 // Version
 define('VERSION', '2.0.1.1');
 function show_error(){};
 function log_message(){};
-	
+
 // Configuration
 if (is_file('config.php')) {
 	require_once('config.php');
@@ -27,6 +28,7 @@ $registry->set('config', $config);
 
 // Database
 //$db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+//echo '<pre>'; print_r($db); die;
 //$registry->set('db', $db);
 $db = DB();
 //var_dump($connectDB);
@@ -97,8 +99,8 @@ function error_handler($errno, $errstr, $errfile, $errline) {
 	return true;
 }
 
-// Error Handler
-set_error_handler('error_handler');
+// Error Handler, SUN commented, should be allowed
+//set_error_handler('error_handler');
 
 // Request
 $request = new Request();

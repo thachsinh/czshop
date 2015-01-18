@@ -1,31 +1,28 @@
 <?php
 class ControllerLocalisationLanguage extends Controller {
+
 	private $error = array();
 
 	public function index() {
+
 		$this->load->language('localisation/language');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/language');
 
 		$this->getList();
 	}
 
 	public function add() {
+
 		$this->load->language('localisation/language');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/language');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_localisation_language->addLanguage($this->request->post);
-
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
-
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -45,19 +42,16 @@ class ControllerLocalisationLanguage extends Controller {
 	}
 
 	public function edit() {
+
 		$this->load->language('localisation/language');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/language');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_localisation_language->editLanguage($this->request->get['language_id'], $this->request->post);
-
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
-
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -77,10 +71,9 @@ class ControllerLocalisationLanguage extends Controller {
 	}
 
 	public function delete() {
+
 		$this->load->language('localisation/language');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/language');
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
@@ -110,7 +103,55 @@ class ControllerLocalisationLanguage extends Controller {
 		$this->getList();
 	}
 
+	/**
+	 * This method to delete a Language record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/language')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/language');
+		$language_id = $this->request->post['language_id'];
+		if($language_id > 0) {
+			$this->load->model('localisation/language');
+			$this->model_localisation_language->deleteLanguage($language_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The Language record has been deleted.', 'error': 0}");
+	}
+
+	/**
+	 * This method to change a Language status by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxStatus() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/language')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$language_id = (int) $this->request->post['language_id'];
+		$status = (int) $this->request->post['status'];
+		if($language_id > 0) {
+			$this->load->model('localisation/language');
+			$this->model_localisation_language->editStatus($language_id, $status);
+		}
+
+		die("{'msg': 'The Language status has been changed.', 'error': 0}");
+	}
+
 	protected function getList() {
+
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -157,6 +198,8 @@ class ControllerLocalisationLanguage extends Controller {
 
 		$data['add'] = $this->url->link('localisation/language/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/language/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/language/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('localisation/language/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['languages'] = array();
 
@@ -177,6 +220,7 @@ class ControllerLocalisationLanguage extends Controller {
 				'name'        => $result['name'] . (($result['code'] == $this->config->get('config_language')) ? $this->language->get('text_default') : null),
 				'code'        => $result['code'],
 				'sort_order'  => $result['sort_order'],
+				'status' 	  => $result['status'],
 				'edit'        => $this->url->link('localisation/language/edit', 'token=' . $this->session->data['token'] . '&language_id=' . $result['language_id'] . $url, 'SSL')
 			);
 		}
@@ -191,6 +235,7 @@ class ControllerLocalisationLanguage extends Controller {
 		$data['column_code'] = $this->language->get('column_code');
 		$data['column_sort_order'] = $this->language->get('column_sort_order');
 		$data['column_action'] = $this->language->get('column_action');
+		$data['column_status'] = $this->language->get('column_status');
 
 		$data['button_add'] = $this->language->get('button_add');
 		$data['button_edit'] = $this->language->get('button_edit');
@@ -231,6 +276,7 @@ class ControllerLocalisationLanguage extends Controller {
 		$data['sort_name'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'] . '&sort=name' . $url, 'SSL');
 		$data['sort_code'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'] . '&sort=code' . $url, 'SSL');
 		$data['sort_sort_order'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'] . '&sort=sort_order' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'] . '&sort=status' . $url, 'SSL');
 
 		$url = '';
 
@@ -253,7 +299,8 @@ class ControllerLocalisationLanguage extends Controller {
 		$data['results'] = sprintf($this->language->get('text_pagination'), ($language_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($language_total - $this->config->get('config_limit_admin'))) ? $language_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $language_total, ceil($language_total / $this->config->get('config_limit_admin')));
 
 		$data['sort'] = $sort;
-		$data['order'] = $order;		$data['header'] = $this->load->controller('common/header');
+		$data['order'] = $order;
+		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 

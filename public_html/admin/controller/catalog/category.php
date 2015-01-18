@@ -633,6 +633,7 @@ class ControllerCatalogCategory extends Controller {
 	}
 
 	public function ajaxStatus() {
+
 		if (!$this->user->hasPermission('modify', 'catalog/category')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 			exit;

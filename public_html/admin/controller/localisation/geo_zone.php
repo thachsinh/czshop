@@ -110,6 +110,30 @@ class ControllerLocalisationGeoZone extends Controller {
 		$this->getList();
 	}
 
+	/**
+	 * This method to delete a geo_zone record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/language')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/geo_zone');
+		$geo_zone_id = $this->request->post['geo_zone_id'];
+		if($geo_zone_id > 0) {
+			$this->load->model('localisation/geo_zone');
+			$this->model_localisation_geo_zone->deleteGeoZone($geo_zone_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The geo_zone record has been deleted.', 'error': 0}");
+	}
+
 	protected function getList() {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];

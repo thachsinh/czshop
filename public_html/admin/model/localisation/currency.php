@@ -18,13 +18,20 @@ class ModelLocalisationCurrency extends Model {
 	}
 
 	public function editCurrency($currency_id, $data) {
+
 		$data = $this->initData($data);
 		$this->db->where($this->primaryKey, (int)$currency_id);
 		$this->db->set('date_modified', 'NOW()', FALSE);
 		$this->db->update($this->table, $data);
-		//$this->db->query("UPDATE " . DB_PREFIX . "currency SET title = '" . $this->db->escape($data['title']) . "', code = '" . $this->db->escape($data['code']) . "', symbol_left = '" . $this->db->escape($data['symbol_left']) . "', symbol_right = '" . $this->db->escape($data['symbol_right']) . "', decimal_place = '" . $this->db->escape($data['decimal_place']) . "', value = '" . $this->db->escape($data['value']) . "', status = '" . (int)$data['status'] . "', date_modified = NOW() WHERE currency_id = '" . (int)$currency_id . "'");
 
 		$this->cache->delete('currency');
+	}
+
+	public function editStatus($language_id, $status) {
+
+		$this->db->set('status', (int) $status);
+		$this->db->where($this->primaryKey, (int) $language_id);
+		$this->db->update($this->table);
 	}
 
 	public function deleteCurrency($currency_id) {
@@ -57,17 +64,17 @@ class ModelLocalisationCurrency extends Model {
 	}
 
 	public function getCurrencies($data = array()) {
+
 		if ($data) {
 			$this->db->select('*');
 			$this->db->from($this->table);
-			
-			//$sql = "SELECT * FROM " . DB_PREFIX . "currency";
 
 			$sort_data = array(
 				'title',
 				'code',
 				'value',
-				'date_modified'
+				'date_modified',
+				'status'
 			);
 			
 			$order = 'ASC';
@@ -80,12 +87,6 @@ class ModelLocalisationCurrency extends Model {
 			} else {
 				$this->db->order_by('title', $order);
 			}
-
-			/*if (isset($data['order']) && ($data['order'] == 'DESC')) {
-				$sql .= " DESC";
-			} else {
-				$sql .= " ASC";
-			}*/
 
 			if (isset($data['start']) || isset($data['limit'])) {
 				if ($data['start'] < 0) {

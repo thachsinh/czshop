@@ -355,6 +355,7 @@ class ModelCatalogCategory extends Model {
 	}
 
 	public function getCategories($data = array()) {
+
 		$this->db->select('cp.category_id AS category_id, c1.status AS status, GROUP_CONCAT(cd1.name ORDER BY cp.level SEPARATOR \'&nbsp;&nbsp;&gt;&nbsp;&nbsp;\') AS name, c1.parent_id, c1.sort_order');
 		$this->db->from('category_path cp');
 		$this->db->join('category c1', 'cp.category_id = c1.category_id', 'left');
@@ -404,6 +405,7 @@ class ModelCatalogCategory extends Model {
 	}
 
 	public function getCategoryDescriptions($category_id) {
+
 		$category_description_data = array();
 		
 		$this->db->select('*');

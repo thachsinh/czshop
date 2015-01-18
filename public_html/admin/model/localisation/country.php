@@ -21,6 +21,13 @@ class ModelLocalisationCountry extends Model {
 		$this->cache->delete('country');
 	}
 
+	public function editStatus($country_id, $status) {
+
+		$this->db->set('status', (int) $status);
+		$this->db->where($this->primaryKey, (int) $country_id);
+		$this->db->update($this->table);
+	}
+
 	public function deleteCountry($country_id) {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "country WHERE country_id = '" . (int)$country_id . "'");
 		$this->db->where($this->primaryKey, (int)$country_id);
@@ -38,16 +45,16 @@ class ModelLocalisationCountry extends Model {
 	}
 
 	public function getCountries($data = array()) {
+
 		if ($data) {
 			$this->db->select('*');
 			$this->db->from($this->table);
-			
-			//$sql = "SELECT * FROM " . DB_PREFIX . "country";
 
 			$sort_data = array(
 				'name',
 				'iso_code_2',
-				'iso_code_3'
+				'iso_code_3',
+				'status'
 			);
 			
 			$order = 'ASC';

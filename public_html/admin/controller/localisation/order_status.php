@@ -45,19 +45,17 @@ class ControllerLocalisationOrderStatus extends Controller {
 	}
 
 	public function edit() {
+
 		$this->load->language('localisation/order_status');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/order_status');
 
+
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+
 			$this->model_localisation_order_status->editOrderStatus($this->request->get['order_status_id'], $this->request->post);
-
 			$this->session->data['success'] = $this->language->get('text_success');
-
-			$url = '';
-
+						$url = '';
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -77,6 +75,7 @@ class ControllerLocalisationOrderStatus extends Controller {
 	}
 
 	public function delete() {
+
 		$this->load->language('localisation/order_status');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -108,6 +107,30 @@ class ControllerLocalisationOrderStatus extends Controller {
 		}
 
 		$this->getList();
+	}
+
+	/**
+	 * This method to delete a stock status record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/order_status')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/order_status');
+		$order_status_id = $this->request->post['order_status_id'];
+		if($order_status_id > 0) {
+			$this->load->model('localisation/order_status');
+			$this->model_localisation_order_status->deleteOrderStatus($order_status_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The order status record has been deleted.', 'error': 0}");
 	}
 
 	protected function getList() {
@@ -157,6 +180,7 @@ class ControllerLocalisationOrderStatus extends Controller {
 
 		$data['add'] = $this->url->link('localisation/order_status/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/order_status/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/order_status/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['order_statuses'] = array();
 

@@ -3,7 +3,7 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-stock-status').submit() : false;"><i class="fa fa-trash-o"></i></button>
+        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
       </div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -52,8 +52,13 @@
                     <?php } else { ?>
                     <input type="checkbox" name="selected[]" value="<?php echo $stock_status['stock_status_id']; ?>" />
                     <?php } ?></td>
-                  <td class="text-left"><?php echo $stock_status['name']; ?></td>
-                  <td class="text-right"><a href="<?php echo $stock_status['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  <td class="text-left"><a href="<?php echo $stock_status['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>"><?php echo $stock_status['name']; ?></a></td>
+                  <td class="text-right">
+                      <div class="btn-group">
+                        <a href="<?php echo $stock_status['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        <a data-cid="<?php echo $stock_status['stock_status_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                      </div>
+                  </td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -74,3 +79,29 @@
   </div>
 </div>
 <?php echo $footer; ?>
+
+<script type="text/javascript">
+  $('a.btn-danger').click(function(){
+    var cid = $(this).data('cid');
+    bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+      if(result == true) {
+        $.post('<?php echo urldecode($ajax_delete); ?>',
+                {'stock_status_id': cid},
+                function(data) {
+                  location.reload();
+                }
+        );
+      }
+    });
+  });
+
+  $('button.btn-danger').click(function(){
+    var cid = $(this).data('cid');
+    bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+      if(result == true) {
+        $('#form-stock-status').submit();
+      }
+    });
+  });
+
+ </script>

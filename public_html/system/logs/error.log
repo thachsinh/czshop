@@ -9773,3 +9773,383 @@
 2015-01-18 2:49:07 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
 2015-01-18 2:49:07 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
 2015-01-18 2:49:07 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /Users/longnt/czshop/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/activity.php on line 6
+2015-01-18 4:27:35 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 235
+2015-01-18 4:27:35 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:27:35 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/activity.php on line 6
+2015-01-18 4:27:35 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-18 4:27:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 235
+2015-01-18 4:27:35 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-18 4:27:36 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 104
+2015-01-18 4:27:36 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 104
+2015-01-18 4:27:36 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 65
+2015-01-18 4:27:36 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 65
+2015-01-18 4:27:36 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 20
+2015-01-18 4:27:36 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/map.php on line 23
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/activity.php on line 6
+2015-01-18 4:32:41 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 235
+2015-01-18 4:32:41 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:32:41 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/activity.php on line 6
+2015-01-18 4:32:41 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-18 4:32:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 235
+2015-01-18 4:32:41 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:32:52 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:04 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/user/api.php on line 57
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:27 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/view/template/setting/setting.tpl on line 663
+2015-01-18 4:33:27 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/view/template/setting/setting.tpl on line 1004
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:33:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:34:17 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:35:29 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:35 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/activity.php on line 6
+2015-01-18 4:36:40 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 235
+2015-01-18 4:36:40 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:36:40 - PHP Notice:  Trying to get property of non-object in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/sale.php on line 13
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/activity.php on line 6
+2015-01-18 4:36:40 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/activity.php on line 18
+2015-01-18 4:36:40 - PHP Notice:  Undefined property: CI_DB_mysql_result::$rows in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 235
+2015-01-18 4:36:40 - PHP Warning:  Invalid argument supplied for foreach() in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/controller/dashboard/recent.php on line 33
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:36:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:24 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:37:26 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:28 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:38:51 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:39:38 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:45:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:39 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/setting/store.php on line 80
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 4:46:53 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:21:55 - PHP Notice:  Undefined variable: query in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/localisation/order_status.php on line 128
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:31 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:41 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:43 - PHP Notice:  Undefined variable: query in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/localisation/order_status.php on line 128
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:45 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:22:49 - PHP Notice:  Undefined variable: query in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/localisation/order_status.php on line 128
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/return.php on line 146
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/report/customer.php on line 314
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/catalog/product.php on line 633
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/marketing/affiliate.php on line 187
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315
+2015-01-18 10:23:43 - PHP Notice:  Undefined property: CI_DB_mysql_result::$row in /home/lazhcm10228/www/tamdaexpress.dev/public_html/admin/model/sale/order.php on line 315

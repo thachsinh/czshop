@@ -2,8 +2,8 @@
 <div id="content">
   <div class="page-header">
     <div class="container-fluid">
-      <div class="pull-right"><a href="<?php echo $refresh; ?>" data-toggle="tooltip" title="<?php echo $button_currency; ?>" class="btn btn-warning"><i class="fa fa fa-refresh"></i></a> <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+      <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger""><i class="fa fa-trash-o"></i></button>
       </div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -29,32 +29,28 @@
         <h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $text_list; ?></h3>
       </div>
       <div class="panel-body">
-        <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-currency">
+        <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-language">
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
-                  <td class="text-left"><?php if ($sort == 'title') { ?>
-                    <a href="<?php echo $sort_title; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_title; ?></a>
+                  <td class="text-left"><?php if ($sort == 'name') { ?>
+                    <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
                     <?php } else { ?>
-                    <a href="<?php echo $sort_title; ?>"><?php echo $column_title; ?></a>
+                    <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
                   <td class="text-left"><?php if ($sort == 'code') { ?>
                     <a href="<?php echo $sort_code; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_code; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_code; ?>"><?php echo $column_code; ?></a>
                     <?php } ?></td>
-                  <td class="text-right"><?php if ($sort == 'value') { ?>
-                    <a href="<?php echo $sort_value; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_value; ?></a>
+                  <td class="text-right"><?php if ($sort == 'sort_order') { ?>
+                    <a href="<?php echo $sort_sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_sort_order; ?></a>
                     <?php } else { ?>
-                    <a href="<?php echo $sort_value; ?>"><?php echo $column_value; ?></a>
-                    <?php } ?></td>
-                  <td class="text-left"><?php if ($sort == 'date_modified') { ?>
-                    <a href="<?php echo $sort_date_modified; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_modified; ?></a>
-                    <?php } else { ?>
-                    <a href="<?php echo $sort_date_modified; ?>"><?php echo $column_date_modified; ?></a>
-                    <?php } ?></td>
+                    <a href="<?php echo $sort_sort_order; ?>"><?php echo $column_sort_order; ?></a>
+                    <?php } ?>
+                  </td>
                   <td class="text-right"><?php if ($sort == 'status') { ?>
                     <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
@@ -65,32 +61,31 @@
                 </tr>
               </thead>
               <tbody>
-                <?php if ($currencies) { ?>
-                <?php foreach ($currencies as $currency) { ?>
+                <?php if ($languages) { ?>
+                <?php foreach ($languages as $language) { ?>
                 <tr>
-                  <td class="text-center"><?php if (in_array($currency['currency_id'], $selected)) { ?>
-                    <input type="checkbox" name="selected[]" value="<?php echo $currency['currency_id']; ?>" checked="checked" />
+                  <td class="text-center"><?php if (in_array($language['language_id'], $selected)) { ?>
+                    <input type="checkbox" name="selected[]" value="<?php echo $language['language_id']; ?>" checked="checked" />
                     <?php } else { ?>
-                    <input type="checkbox" name="selected[]" value="<?php echo $currency['currency_id']; ?>" />
+                    <input type="checkbox" name="selected[]" value="<?php echo $language['language_id']; ?>" />
                     <?php } ?></td>
-                  <td class="text-left"><a href="<?php echo $currency['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>"><?php echo $currency['title']; ?></a></td>
-                  <td class="text-left"><?php echo $currency['code']; ?></td>
-                  <td class="text-right"><?php echo $currency['value']; ?></td>
-                  <td class="text-left"><?php echo $currency['date_modified']; ?></td>
+                  <td class="text-left"><a href="<?php echo $language['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>"><?php echo $language['name']; ?></a></td>
+                  <td class="text-left"><?php echo $language['code']; ?></td>
+                  <td class="text-right"><?php echo $language['sort_order']; ?></td>
                   <td class="text-right">
-                    <input type="checkbox" <?php echo ((isset($currency['status']) && ($currency['status'] == 1)) ? 'checked': ''); ?> data-toggle="toggle" data-size="small" data-cid="<?php echo $currency['currency_id']; ?>" class="btn-status" />
+                    <input type="checkbox" <?php echo ((isset($language['status']) && ($language['status'] == 1)) ? 'checked': ''); ?> data-toggle="toggle" data-size="small" data-cid="<?php echo $language['language_id']; ?>" class="btn-status" />
                   </td>
                   <td class="text-right">
                     <div class="btn-group">
-                      <a href="<?php echo $currency['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                      <a data-cid="<?php echo $currency['currency_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                      <a href="<?php echo $language['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                      <a data-cid="<?php echo $language['language_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                     </div>
                   </td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
                 <tr>
-                  <td class="text-center" colspan="6"><?php echo $text_no_results; ?></td>
+                  <td class="text-center" colspan="5"><?php echo $text_no_results; ?></td>
                 </tr>
                 <?php } ?>
               </tbody>
@@ -113,10 +108,10 @@
     bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
       if(result == true) {
         $.post('<?php echo urldecode($ajax_delete); ?>',
-                {'currency_id': cid},
-                function(data) {
-                  location.reload();
-                }
+          {'language_id': cid},
+          function(data) {
+            location.reload();
+          }
         );
       }
     });
@@ -126,7 +121,7 @@
     var cid = $(this).data('cid');
     bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
       if(result == true) {
-        $('#form-currency').submit();
+        $('#form-language').submit();
       }
     });
   });
@@ -142,6 +137,6 @@
     }
 
     $.post('<?php echo $ajax_status; ?>',
-            {'currency_id': cid, 'status': status}, function(){} );
+        {'language_id': cid, 'status': status}, function(){} );
   })
 </script>

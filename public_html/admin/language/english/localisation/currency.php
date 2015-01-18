@@ -14,6 +14,7 @@ $_['column_code']          = 'Code';
 $_['column_value']         = 'Value';
 $_['column_date_modified'] = 'Last Updated';
 $_['column_action']        = 'Action';
+$_['column_status']        = 'Status';
 
 // Entry
 $_['entry_title']          = 'Currency Title';

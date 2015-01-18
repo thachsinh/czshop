@@ -110,7 +110,55 @@ class ControllerLocalisationCountry extends Controller {
 		$this->getList();
 	}
 
+	/**
+	 * This method to delete a country record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/country')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/country');
+		$country_id = $this->request->post['country_id'];
+		if($country_id > 0) {
+			$this->load->model('localisation/country');
+			$this->model_localisation_country->deleteCountry($country_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The country record has been deleted.', 'error': 0}");
+	}
+
+	/**
+	 * This method to change a country status by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxStatus() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/country')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$country_id = (int) $this->request->post['country_id'];
+		$status = (int) $this->request->post['status'];
+		if($country_id > 0) {
+			$this->load->model('localisation/country');
+			$this->model_localisation_country->editStatus($country_id, $status);
+		}
+
+		die("{'msg': 'The country status has been changed.', 'error': 0}");
+	}
+
 	protected function getList() {
+
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -157,6 +205,8 @@ class ControllerLocalisationCountry extends Controller {
 		
 		$data['add'] = $this->url->link('localisation/country/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/country/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/country/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('localisation/country/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['countries'] = array();
 
@@ -177,6 +227,7 @@ class ControllerLocalisationCountry extends Controller {
 				'name'       => $result['name'] . (($result['country_id'] == $this->config->get('config_country_id')) ? $this->language->get('text_default') : null),
 				'iso_code_2' => $result['iso_code_2'],
 				'iso_code_3' => $result['iso_code_3'],
+				'status' 	 => $result['status'],
 				'edit'       => $this->url->link('localisation/country/edit', 'token=' . $this->session->data['token'] . '&country_id=' . $result['country_id'] . $url, 'SSL')
 			);
 		}
@@ -191,6 +242,7 @@ class ControllerLocalisationCountry extends Controller {
 		$data['column_iso_code_2'] = $this->language->get('column_iso_code_2');
 		$data['column_iso_code_3'] = $this->language->get('column_iso_code_3');
 		$data['column_action'] = $this->language->get('column_action');
+		$data['column_status'] = $this->language->get('column_status');
 
 		$data['button_add'] = $this->language->get('button_add');
 		$data['button_edit'] = $this->language->get('button_edit');
@@ -231,6 +283,7 @@ class ControllerLocalisationCountry extends Controller {
 		$data['sort_name'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'] . '&sort=name' . $url, 'SSL');
 		$data['sort_iso_code_2'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'] . '&sort=iso_code_2' . $url, 'SSL');
 		$data['sort_iso_code_3'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'] . '&sort=iso_code_3' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'] . '&sort=status' . $url, 'SSL');
 
 		$url = '';
 
