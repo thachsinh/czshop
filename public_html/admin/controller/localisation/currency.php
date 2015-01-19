@@ -3,29 +3,25 @@ class ControllerLocalisationCurrency extends Controller {
 	private $error = array();
 
 	public function index() {
+
 		$this->load->language('localisation/currency');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/currency');
 
 		$this->getList();
 	}
 
 	public function add() {
+
 		$this->load->language('localisation/currency');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/currency');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_localisation_currency->addCurrency($this->request->post);
-
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
-
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -45,10 +41,9 @@ class ControllerLocalisationCurrency extends Controller {
 	}
 
 	public function edit() {
+
 		$this->load->language('localisation/currency');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/currency');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
@@ -77,10 +72,9 @@ class ControllerLocalisationCurrency extends Controller {
 	}
 
 	public function delete() {
+
 		$this->load->language('localisation/currency');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('localisation/currency');
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
@@ -108,6 +102,53 @@ class ControllerLocalisationCurrency extends Controller {
 		}
 
 		$this->getList();
+	}
+
+	/**
+	 * This method to delete a currency record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/currency')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/currency');
+		$currency_id = $this->request->post['currency_id'];
+		if($currency_id > 0) {
+			$this->load->model('localisation/currency');
+			$this->model_localisation_currency->deleteCurrency($currency_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The currency record has been deleted.', 'error': 0}");
+	}
+
+	/**
+	 * This method to change a Language status by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxStatus() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/currency')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$currency_id = (int) $this->request->post['currency_id'];
+		$status = (int) $this->request->post['status'];
+		if($currency_id > 0) {
+			$this->load->model('localisation/currency');
+			$this->model_localisation_currency->editStatus($currency_id, $status);
+		}
+
+		die("{'msg': 'The currency status has been changed.', 'error': 0}");
 	}
 	
 	public function refresh() {
@@ -143,6 +184,7 @@ class ControllerLocalisationCurrency extends Controller {
 	}
 	
 	protected function getList() {
+
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -190,6 +232,8 @@ class ControllerLocalisationCurrency extends Controller {
 		$data['add'] = $this->url->link('localisation/currency/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/currency/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['refresh'] = $this->url->link('localisation/currency/refresh', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/currency/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('localisation/currency/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['currencies'] = array();
 
@@ -211,6 +255,7 @@ class ControllerLocalisationCurrency extends Controller {
 				'code'          => $result['code'],
 				'value'         => $result['value'],
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+				'status'		=> $result['status'],
 				'edit'          => $this->url->link('localisation/currency/edit', 'token=' . $this->session->data['token'] . '&currency_id=' . $result['currency_id'] . $url, 'SSL')
 			);
 		}
@@ -226,6 +271,7 @@ class ControllerLocalisationCurrency extends Controller {
 		$data['column_value'] = $this->language->get('column_value');
 		$data['column_date_modified'] = $this->language->get('column_date_modified');
 		$data['column_action'] = $this->language->get('column_action');
+		$data['column_status'] = $this->language->get('column_status');
 
 		$data['button_add'] = $this->language->get('button_add');
 		$data['button_edit'] = $this->language->get('button_edit');
@@ -268,6 +314,7 @@ class ControllerLocalisationCurrency extends Controller {
 		$data['sort_code'] = $this->url->link('localisation/currency', 'token=' . $this->session->data['token'] . '&sort=code' . $url, 'SSL');
 		$data['sort_value'] = $this->url->link('localisation/currency', 'token=' . $this->session->data['token'] . '&sort=value' . $url, 'SSL');
 		$data['sort_date_modified'] = $this->url->link('localisation/currency', 'token=' . $this->session->data['token'] . '&sort=date_modified' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('localisation/currency', 'token=' . $this->session->data['token'] . '&sort=status' . $url, 'SSL');
 
 		$url = '';
 

@@ -110,7 +110,55 @@ class ControllerLocalisationZone extends Controller {
 		$this->getList();
 	}
 
+	/**
+	 * This method to delete a zone record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/zone')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/zone');
+		$zone_id = $this->request->post['zone_id'];
+		if($zone_id > 0) {
+			$this->load->model('localisation/zone');
+			$this->model_localisation_zone->deleteZone($zone_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The zone record has been deleted.', 'error': 0}");
+	}
+
+	/**
+	 * This method to change a zone status by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxStatus() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/zone')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$zone_id = (int) $this->request->post['zone_id'];
+		$status = (int) $this->request->post['status'];
+		if($zone_id > 0) {
+			$this->load->model('localisation/zone');
+			$this->model_localisation_zone->editStatus($zone_id, $status);
+		}
+
+		die("{'msg': 'The zone status has been changed.', 'error': 0}");
+	}
+
 	protected function getList() {
+
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -157,6 +205,8 @@ class ControllerLocalisationZone extends Controller {
 
 		$data['add'] = $this->url->link('localisation/zone/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/zone/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/zone/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('localisation/zone/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['zones'] = array();
 
@@ -177,6 +227,7 @@ class ControllerLocalisationZone extends Controller {
 				'country' => $result['country'],
 				'name'    => $result['name'] . (($result['zone_id'] == $this->config->get('config_zone_id')) ? $this->language->get('text_default') : null),
 				'code'    => $result['code'],
+				'status'  => $result['status'],
 				'edit'    => $this->url->link('localisation/zone/edit', 'token=' . $this->session->data['token'] . '&zone_id=' . $result['zone_id'] . $url, 'SSL')
 			);
 		}
@@ -191,6 +242,7 @@ class ControllerLocalisationZone extends Controller {
 		$data['column_name'] = $this->language->get('column_name');
 		$data['column_code'] = $this->language->get('column_code');
 		$data['column_action'] = $this->language->get('column_action');
+		$data['column_status'] = $this->language->get('column_status');
 
 		$data['button_add'] = $this->language->get('button_add');
 		$data['button_edit'] = $this->language->get('button_edit');
@@ -231,6 +283,7 @@ class ControllerLocalisationZone extends Controller {
 		$data['sort_country'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'] . '&sort=c.name' . $url, 'SSL');
 		$data['sort_name'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'] . '&sort=z.name' . $url, 'SSL');
 		$data['sort_code'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'] . '&sort=z.code' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'] . '&sort=z.status' . $url, 'SSL');
 
 		$url = '';
 

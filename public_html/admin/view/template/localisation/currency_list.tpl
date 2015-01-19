@@ -3,7 +3,7 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right"><a href="<?php echo $refresh; ?>" data-toggle="tooltip" title="<?php echo $button_currency; ?>" class="btn btn-warning"><i class="fa fa fa-refresh"></i></a> <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-currency').submit() : false;"><i class="fa fa-trash-o"></i></button>
+        <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
       </div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -55,6 +55,12 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_date_modified; ?>"><?php echo $column_date_modified; ?></a>
                     <?php } ?></td>
+                  <td class="text-right"><?php if ($sort == 'status') { ?>
+                    <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+                    <?php } else { ?>
+                    <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
+                    <?php } ?>
+                  </td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -67,11 +73,19 @@
                     <?php } else { ?>
                     <input type="checkbox" name="selected[]" value="<?php echo $currency['currency_id']; ?>" />
                     <?php } ?></td>
-                  <td class="text-left"><?php echo $currency['title']; ?></td>
+                  <td class="text-left"><a href="<?php echo $currency['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>"><?php echo $currency['title']; ?></a></td>
                   <td class="text-left"><?php echo $currency['code']; ?></td>
                   <td class="text-right"><?php echo $currency['value']; ?></td>
                   <td class="text-left"><?php echo $currency['date_modified']; ?></td>
-                  <td class="text-right"><a href="<?php echo $currency['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  <td class="text-right">
+                    <input type="checkbox" <?php echo ((isset($currency['status']) && ($currency['status'] == 1)) ? 'checked': ''); ?> data-toggle="toggle" data-size="small" data-cid="<?php echo $currency['currency_id']; ?>" class="btn-status" />
+                  </td>
+                  <td class="text-right">
+                    <div class="btn-group">
+                      <a href="<?php echo $currency['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                      <a data-cid="<?php echo $currency['currency_id']; ?>" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                    </div>
+                  </td>
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -91,4 +105,43 @@
     </div>
   </div>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>
+
+<script type="text/javascript">
+  $('a.btn-danger').click(function(){
+    var cid = $(this).data('cid');
+    bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+      if(result == true) {
+        $.post('<?php echo urldecode($ajax_delete); ?>',
+                {'currency_id': cid},
+                function(data) {
+                  location.reload();
+                }
+        );
+      }
+    });
+  });
+
+  $('button.btn-danger').click(function(){
+    var cid = $(this).data('cid');
+    bootbox.confirm("<?php echo $text_confirm; ?>", function(result) {
+      if(result == true) {
+        $('#form-currency').submit();
+      }
+    });
+  });
+
+  $('input.btn-status').change(function() {
+    var cid = $(this).data('cid');
+    var status = $(this).prop('checked');
+    if (status == false) {
+      status = 0;
+    }
+    else {
+      status = 1;
+    }
+
+    $.post('<?php echo $ajax_status; ?>',
+            {'currency_id': cid, 'status': status}, function(){} );
+  })
+</script>

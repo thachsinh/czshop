@@ -27,6 +27,7 @@ class ModelLocalisationOrderStatus extends Model {
 	}
 
 	public function editOrderStatus($order_status_id, $data) {
+
 		$this->db->where($this->primaryKey, (int)$order_status_id);
 		$this->db->delete($this->table);
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
@@ -124,7 +125,7 @@ class ModelLocalisationOrderStatus extends Model {
 
 		//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
 
-		foreach ($query->result_array() as $result) {
+		foreach ($this->db->get()->result_array() as $result) {
 			$order_status_data[$result['language_id']] = array('name' => $result['name']);
 		}
 

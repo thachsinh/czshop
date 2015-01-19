@@ -110,7 +110,32 @@ class ControllerLocalisationStockStatus extends Controller {
 		$this->getList();
 	}
 
+	/**
+	 * This method to delete a stock status record by ajax
+	 *
+	 * @author SUN
+	 * @return mixed
+	 */
+	public function ajaxDelete() {
+
+		if (!$this->user->hasPermission('modify', 'localisation/stock_status')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('localisation/stock_status');
+		$stock_status_id = $this->request->post['stock_status_id'];
+		if($stock_status_id > 0) {
+			$this->load->model('localisation/stock_status');
+			$this->model_localisation_stock_status->deleteStockStatus($stock_status_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		die("{'msg': 'The stock status record has been deleted.', 'error': 0}");
+	}
+
 	protected function getList() {
+
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -157,6 +182,7 @@ class ControllerLocalisationStockStatus extends Controller {
 
 		$data['add'] = $this->url->link('localisation/stock_status/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/stock_status/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/stock_status/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['stock_statuses'] = array();
 

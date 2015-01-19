@@ -1,10 +1,12 @@
 <?php
 class ModelLocalisationLanguage extends Model {
+
 	public $table = 'language';
 	public $primaryKey = 'language_id';
-	public $fields = array('language_id', 'name', 'code', 'locale', 'image', 'directory', 'sort_order', 'status');
+	public $fields = array('language_id', 'name', 'code', 'locale', 'image', 'directory', 'column', 'sort_order', 'status');
 
 	public function addLanguage($data) {
+
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "language SET name = '" . ($data['name']) . "', code = '" . ($data['code']) . "', locale = '" . ($data['locale']) . "', directory = '" . ($data['directory']) . "', image = '" . ($data['image']) . "', sort_order = '" . ($data['sort_order']) . "', status = '" . (int)$data['status'] . "'");
@@ -367,13 +369,18 @@ class ModelLocalisationLanguage extends Model {
 	}
 
 	public function editLanguage($language_id, $data) {
+
 		$data = $this->initData($data);
 		$this->db->where($this->primaryKey, (int)$language_id);
 		$this->db->update($this->table, $data);
-
-		//$this->db->query("UPDATE " . DB_PREFIX . "language SET name = '" . ($data['name']) . "', code = '" . ($data['code']) . "', locale = '" . ($data['locale']) . "', directory = '" . ($data['directory']) . "', image = '" . ($data['image']) . "', sort_order = '" . ($data['sort_order']) . "', status = '" . (int)$data['status'] . "' WHERE language_id = '" . (int)$language_id . "'");
-
 		$this->cache->delete('language');
+	}
+
+	public function editStatus($language_id, $status) {
+
+		$this->db->set('status', (int) $status);
+		$this->db->where($this->primaryKey, (int) $language_id);
+		$this->db->update($this->table);
 	}
 
 	public function deleteLanguage($language_id) {
@@ -471,16 +478,16 @@ class ModelLocalisationLanguage extends Model {
 	}
 
 	public function getLanguages($data = array()) {
+
 		if ($data) {
 			$this->db->select('*');
 			$this->db->from($this->table);
 
-			//$sql = "SELECT * FROM " . DB_PREFIX . "language";
-
 			$sort_data = array(
 				'name',
 				'code',
-				'sort_order'
+				'sort_order',
+				'status'
 			);
 
 			$order = 'ASC';
@@ -520,7 +527,8 @@ class ModelLocalisationLanguage extends Model {
 
 			//return $query->rows;
 			return $this->db->get()->result_array();
-		} else {
+		}
+		else {
 			$language_data = $this->cache->get('language');
 
 			if (!$language_data) {

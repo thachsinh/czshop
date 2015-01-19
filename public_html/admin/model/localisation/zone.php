@@ -23,6 +23,15 @@ class ModelLocalisationZone extends Model {
 		$this->cache->delete('zone');
 	}
 
+	public function editStatus($zone_id, $status) {
+
+		$this->db->set('status', (int) $status);
+		$this->db->where($this->primaryKey, (int) $zone_id);
+		$this->db->update($this->table);
+
+		$this->cache->delete('zone');
+	}
+
 	public function deleteZone($zone_id) {
 		$this->db->where($this->primaryKey, (int)$zone_id);
 		$this->db->delete($this->table);
@@ -43,7 +52,8 @@ class ModelLocalisationZone extends Model {
 	}
 
 	public function getZones($data = array()) {
-		$this->db->select('*, z.name, c.name AS country');
+
+		$this->db->select('z.*, c.name AS country');
 		$this->db->from($this->table . ' z');
 		$this->db->join('country c', 'z.country_id = c.country_id', 'left');
 
@@ -52,7 +62,8 @@ class ModelLocalisationZone extends Model {
 		$sort_data = array(
 			'c.name',
 			'z.name',
-			'z.code'
+			'z.code',
+			'z.status'
 		);
 
 		$order = 'ASC';
@@ -85,10 +96,7 @@ class ModelLocalisationZone extends Model {
 			$this->db->limit($data['limit'], $data['start']);
 			//$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
 		}
-
-		//$query = $this->db->query($sql);
-
-		//return $query->rows;
+		//echo '<pre>'; print_r($this->db->get()->result_array()); die;
 
 		return $this->db->get()->result_array();
 	}
