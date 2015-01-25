@@ -1,4 +1,3 @@
 /nbproject/private/
-/public_html/admin/config.php
-/public_html/system/config/
-/public_html/system/startup.php
+public_html/admin/config.php
+public_html/system/config/database.php
