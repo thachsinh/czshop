@@ -317,13 +317,14 @@ class ControllerLogicticsDriver extends Controller {
 		$data['text_form'] = !isset($this->request->get['driver_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
 		$data['text_enabled'] = $this->language->get('text_enabled');
 		$data['text_disabled'] = $this->language->get('text_disabled');
-		$data['text_yes'] = $this->language->get('text_yes');
-		$data['text_no'] = $this->language->get('text_no');
+		$data['text_male'] = $this->language->get('text_male');
+		$data['text_female'] = $this->language->get('text_female');
 
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_birthday'] = $this->language->get('entry_birthday');
 		$data['entry_gender'] = $this->language->get('entry_gender');
 		$data['entry_address'] = $this->language->get('entry_address');
+		$data['entry_note'] = $this->language->get('entry_note');
 		$data['entry_driving_status'] = $this->language->get('entry_driving_status');
 		$data['entry_licence_valid_from'] = $this->language->get('entry_licence_valid_from');
 		$data['entry_licence_valid_to'] = $this->language->get('entry_licence_valid_to');

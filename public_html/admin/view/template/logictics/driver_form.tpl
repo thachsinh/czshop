@@ -24,7 +24,7 @@
         <h3 class="panel-title"><i class="fa fa-pencil"></i> <?php echo $text_form; ?></h3>
       </div>
       <div class="panel-body">
-        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-country" class="form-horizontal">
+        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-driver" class="form-horizontal">
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_name; ?></label>
             <div class="col-sm-10">
@@ -53,19 +53,19 @@
               <label class="radio-inline">
                 <?php if ($gender) { ?>
                 <input type="radio" name="gender" value="1" checked="checked"/>
-                <?php echo $text_yes; ?>
+                <?php echo $text_male; ?>
                 <?php } else { ?>
                 <input type="radio" name="gender" value="1" checked="checked"/>
-                <?php echo $text_yes; ?>
+                <?php echo $text_male; ?>
                 <?php } ?>
               </label>
               <label class="radio-inline">
                 <?php if (!$gender) { ?>
                 <input type="radio" name="gender" value="0"/>
-                <?php echo $text_no; ?>
+                <?php echo $text_female; ?>
                 <?php } else { ?>
                 <input type="radio" name="gender" value="0"/>
-                <?php echo $text_no; ?>
+                <?php echo $text_female; ?>
                 <?php } ?>
               </label>
             </div>
@@ -73,7 +73,13 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-address"><?php echo $entry_address; ?></label>
             <div class="col-sm-10">
-              <input type="text" name="address" value="<?php echo $address; ?>" placeholder="<?php echo $entry_address; ?>" id="input-address" class="form-control" />
+              <textarea name="address" rows="5" placeholder="<?php echo $entry_address; ?>" id="input-address" class="form-control"><?php echo $address; ?></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-note"><?php echo $entry_note; ?></label>
+            <div class="col-sm-10">
+              <textarea name="note" rows="5" placeholder="<?php echo $entry_note; ?>" id="input-address" class="form-control"><?php echo $note; ?></textarea>
             </div>
           </div>
           <div class="form-group">

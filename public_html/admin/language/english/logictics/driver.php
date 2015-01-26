@@ -7,6 +7,8 @@ $_['text_success']            = 'Success: You have modified driver!';
 $_['text_list']               = 'Driver List';
 $_['text_add']                = 'Add Driver';
 $_['text_edit']               = 'Edit Driver';
+$_['text_male']               = 'Male';
+$_['text_female']             = 'Female';
 
 // Column
 $_['column_name']             = 'Driver Name';
@@ -24,7 +26,7 @@ $_['entry_driving_status'] 				 = 'Driving status';
 $_['entry_licence_valid_from'] 		 = 'Licence valid from';
 $_['entry_licence_valid_to'] 			 = 'Licence valid to';
 $_['entry_driving_licence_number'] = 'Driving licence number';
-$_['entry_note'] 									 = 'note';
+$_['entry_note'] 									 = 'Note';
 $_['entry_status']            		 = 'Status';
 $_['entry_group_licence']					 = 'Licence Details';
 
