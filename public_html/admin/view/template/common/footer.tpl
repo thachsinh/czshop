@@ -1,2 +1,2 @@
-<footer id="footer"><?php echo $text_footer; ?><br /><?php echo $text_version; ?></footer></div>
+<footer id="footer">TamDaExpress Cart v1.0</footer></div>
 </body></html>

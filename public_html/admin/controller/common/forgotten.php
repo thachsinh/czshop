@@ -37,7 +37,7 @@ class ControllerCommonForgotten extends Controller {
 			$mail->setSender($this->config->get('config_name'));
 			$mail->setSubject($subject);
 			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
-			$mail->send();
+			//$mail->send();
 
 			$this->session->data['success'] = $this->language->get('text_success');
 

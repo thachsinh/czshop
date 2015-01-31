@@ -38,12 +38,13 @@
 </head>
 <body>
 <div id="container">
-<header id="header" class="navbar navbar-static-top">
+<header id="header" class="navbar navbar-fixed-top">
   <div class="navbar-header">
+    <a href="<?php echo $home; ?>" class="navbar-brand"></a>
     <?php if ($logged) { ?>
-    <a type="button" id="button-menu" class="pull-left"><i class="fa fa-indent fa-lg"></i></a>
+    <?php echo $menu; ?>
     <?php } ?>
-    <a href="<?php echo $home; ?>" class="navbar-brand"><img src="view/image/logo.png" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" /></a></div>
+  </div>
   <?php if ($logged) { ?>
   <ul class="nav pull-right">
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="label label-danger pull-left"><?php echo $alerts; ?></span> <i class="fa fa-bell fa-lg"></i></a>
@@ -63,19 +64,6 @@
         <li class="divider"></li>
         <li class="dropdown-header"><?php echo $text_affiliate; ?></li>
         <li><a href="<?php echo $affiliate_approval; ?>"><span class="label label-danger pull-right"><?php echo $affiliate_total; ?></span><?php echo $text_approval; ?></a></li>
-      </ul>
-    </li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring fa-lg"></i></a>
-      <ul class="dropdown-menu dropdown-menu-right">
-        <li class="dropdown-header"><?php echo $text_store; ?> <i class="fa fa-shopping-cart"></i></li>
-        <?php foreach ($stores as $store) { ?>
-        <li><a href="<?php echo $store['href']; ?>" target="_blank"><?php echo $store['name']; ?></a></li>
-        <?php } ?>
-        <li class="divider"></li>
-        <li class="dropdown-header"><?php echo $text_help; ?> <i class="fa fa-life-ring"></i></li>
-        <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
-        <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
-        <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
       </ul>
     </li>
     <li><a href="<?php echo $logout; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $text_logout; ?></span> <i class="fa fa-sign-out fa-lg"></i></a></li>
