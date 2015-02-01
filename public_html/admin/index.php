@@ -2,8 +2,6 @@
 
 // Version
 define('VERSION', '2.0.1.1');
-function show_error(){};
-function log_message(){};
 
 // Configuration
 if (is_file('config.php')) {

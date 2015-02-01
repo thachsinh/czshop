@@ -1,4 +1,7 @@
 <?php
+// Error Reporting
+error_reporting(0);
+
 // HTTP
 define('HTTP_SERVER', 'http://localhost/tamdaexpress.dev/public_html/');
 
