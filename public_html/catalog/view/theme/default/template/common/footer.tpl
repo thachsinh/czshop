@@ -1,4 +1,70 @@
+<!-- Footer -->
 <footer>
+  <div class="container">
+    <section class="contact">
+      <ul>
+        <li class="phone"><strong><span>840&nbsp;730&nbsp;740</span></strong> <span>(Po - Pá&nbsp;10 - 23, So - Ne&nbsp;8.30 - 23)<span>
+        </li>
+        <li class="mail"><a href="mailto:zakaznici@rohlik.cz">zakaznici@rohlik.cz</a> <span>Na e-mail se snažíme odpovídat okamžitě</span>
+        </li>
+      </ul>
+    </section>
+    <div class="cols">
+      <section class="custommers">
+        <h5>Pro zákazníky</h5>
+        <ul>
+          <li><a title="Garance spokojenosti" href="/stranka/garance">Garance spokojenosti</a></li>
+          <li><a title="Doprava a mapa dovozu" href="/stranka/doprava">Doprava a mapa dovozu</a></li>
+          <li><a title="Doprava na první objednávku zdarma" href="/promo/prvni-objednavka">Doprava na první
+              objednávku zdarma</a></li>
+          <li><a title="Nakoupíme za Vás" href="/stranka/nakupni-seznam">Nakoupíme za Vás</a></li>
+        </ul>
+      </section>
+      <section class="about">
+        <h5>O nás</h5>
+        <ul>
+          <li><a title="Kontakt" href="/stranka/kontakt">Kontakt</a></li>
+          <li><a title="Podmínky užití" href="/stranka/podminky-uziti">Podmínky užití</a></li>
+        </ul>
+      </section>
+
+      <p>Alkohol a cigarety prodáváme pouze osobám starším 18 let. Při převzetí zboží bude ověřen váš věk.</p>
+
+    </div>
+    <section class="fb">
+      <div class="fb-like-box" data-href="https://www.facebook.com/damerohlik" data-colorscheme="light"
+           data-width="292" data-height="180" data-show-faces="true" data-stream="false" data-header="false"
+           data-show-border="false"></div>
+    </section>
+  </div>
+</footer><!-- End Footer -->
+<div class="tooltip"></div>
+<div id="fb-root"></div>
+<!--[if (gte ie 6)&(lte ie 8)]>
+<script src="/js/selectivizr.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="/static/js/main.js"></script>
+<script>var dataLayer = [{
+    "title": "Online supermarket Rohlik.cz",
+    "pageType": ":Front:Homepage:default",
+    "category": null,
+    "minOrder": null,
+    "addressStreet": "Jihlavská 823/78",
+    "addressCity": "Praha",
+    "visitorType": "new_customer",
+    "ordersTotal": "2",
+    "userId": 605653,
+    "userEmail": "viet.prg@gmail.com",
+    "userCreateDate": "2014-11-30 16:52",
+    "userStatus": "bronze",
+    "firstVisit": false,
+    "breadcrumbs": []
+  }];</script>
+</body>
+</html>
+
+<!--<footer>
   <div class="container">
     <div class="row">
       <?php if ($informations) { ?>
@@ -43,11 +109,4 @@
   </div>
 </footer>
 
-<!--
-OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
-Please donate via PayPal to donate@opencart.com
-//--> 
-
-<!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
-
-</body></html>
+</body></html>-->
