@@ -1,0 +1,21 @@
+div.about input {
+    width: 425px !important;
+}
+
+div.row input {
+    width: 425px !important;
+}
+
+div.row input, div.row textarea {
+    width: 433px;
+    border: 1px solid #b2b2b2;
+    background: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0 10px;
+    height: 38px;
+    line-height: 36px;
+}
