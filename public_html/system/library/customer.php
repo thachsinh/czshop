@@ -10,14 +10,26 @@ class Customer {
 	private $customer_group_id;
 	private $address_id;
 
-	public function __construct($registry) {
+	public function __construct($registry)
+	{
 		$this->config = $registry->get('config');
 		$this->db = $registry->get('db');
 		$this->request = $registry->get('request');
 		$this->session = $registry->get('session');
 
 		if (isset($this->session->data['customer_id'])) {
-			$customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND status = '1'");
+			$customer = $this->db->select('*')
+				->from('customer')
+				->where('customer_id =' . (int)$this->session->data['customer_id'])
+				->where('status = 1');
+			$customer_query = (object) array(
+				'row' => $this->db->get()->row_array(),
+				'num_rows' => ($customer) ? 1 : 0
+			);
+
+			// @todo: should be removed
+			//$customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '"
+			//	. (int)$this->session->data['customer_id'] . "' AND status = '1'");
 
 			if ($customer_query->num_rows) {
 				$this->customer_id = $customer_query->row['customer_id'];
@@ -30,12 +42,17 @@ class Customer {
 				$this->customer_group_id = $customer_query->row['customer_group_id'];
 				$this->address_id = $customer_query->row['address_id'];
 
-				$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = '" . $this->db->escape(isset($this->session->data['cart']) ? serialize($this->session->data['cart']) : '') . "', wishlist = '" . $this->db->escape(isset($this->session->data['wishlist']) ? serialize($this->session->data['wishlist']) : '') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+				$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = " .
+					$this->db->escape(isset($this->session->data['cart']) ? serialize($this->session->data['cart']) : '') .
+					", wishlist = " . $this->db->escape(isset($this->session->data['wishlist']) ? serialize($this->session->data['wishlist']) : '') .
+					", ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) . " WHERE customer_id = " . (int)$this->customer_id);
 
-				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" .
+					(int)$this->session->data['customer_id'] . "' AND ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) );
 
 				if (!$query->num_rows) {
-					$this->db->query("INSERT INTO " . DB_PREFIX . "customer_ip SET customer_id = '" . (int)$this->session->data['customer_id'] . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', date_added = NOW()");
+					$this->db->query("INSERT INTO " . DB_PREFIX . "customer_ip SET customer_id = '" . (int)$this->session->data['customer_id'] .
+						"', ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) . ", date_added = NOW()");
 				}
 			} else {
 				$this->logout();
@@ -43,11 +60,25 @@ class Customer {
 		}
 	}
 
-	public function login($email, $password, $override = false) {
+	public function login($email, $password, $override = false)
+	{
 		if ($override) {
-			$customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "' AND status = '1'");
+			$customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = " .
+				$this->db->escape(utf8_strtolower($email)) . " AND status = '1'");
 		} else {
-			$customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "' AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('" . $this->db->escape($password) . "'))))) OR password = '" . $this->db->escape(md5($password)) . "') AND status = '1' AND approved = '1'");
+			$this->db->select('*')
+				->from('customer')
+				->where('LOWER(email) = ' . $this->db->escape(utf8_strtolower($email)))
+				->where('(password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1(' .
+					$this->db->escape($password) . '))))) OR password = ' . $this->db->escape(md5($password)) . ')')
+				->where('status = 1')
+				->where('approved = 1');
+			$customer = $this->db->get()->row_array();
+			$customer_query = (object) array(
+				'cart' => null,
+				'num_rows' => ($customer) ? 1 : 0,
+				'row' => $customer
+			);
 		}
 
 		if ($customer_query->num_rows) {
@@ -89,7 +120,9 @@ class Customer {
 			$this->customer_group_id = $customer_query->row['customer_group_id'];
 			$this->address_id = $customer_query->row['address_id'];
 
-			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = " .
+				$this->db->escape($this->request->server['REMOTE_ADDR']) .
+				" WHERE customer_id = '" . (int) $this->customer_id . "'");
 
 			return true;
 		} else {

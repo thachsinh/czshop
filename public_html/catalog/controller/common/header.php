@@ -1,6 +1,9 @@
 <?php
-class ControllerCommonHeader extends Controller {
-	public function index() {
+class ControllerCommonHeader extends Controller
+{
+
+	public function index()
+	{
 		$data['title'] = $this->document->getTitle();
 
 		if ($this->request->server['HTTPS']) {
@@ -35,9 +38,13 @@ class ControllerCommonHeader extends Controller {
 		$this->load->language('common/header');
 
 		$data['text_home'] = $this->language->get('text_home');
-		$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+		$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist'])
+			? count($this->session->data['wishlist']) : 0));
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
-		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
+		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'),
+			$this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
+		$data['firstname'] = $this->customer->getFirstName();
+		$data['text_address_book'] = $this->language->get('text_address_book');
 
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');

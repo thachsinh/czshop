@@ -1,55 +1,59 @@
 <?php echo $header; ?>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <?php if ($success) { ?>
-  <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></div>
-  <?php } ?>
-  <?php if ($error_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
-  <?php } ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
+    <!--<ul class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+            <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+        <?php } ?>
+    </ul>-->
+
+    <div class="loginRequired">
+        <?php if ($success || $error_warning): ?>
+        <div id="snippet--flashMessages">
+            <div class="flashes">
+                <div class="flash">
+                    <?php if ($success) { ?>
+                    <p class="success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></p>
+                    <?php } ?>
+                    <?php if ($error_warning) { ?>
+                    <p class="error"><?php echo $error_warning; ?></p>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <div class="left">
             <h2><?php echo $text_new_customer; ?></h2>
-            <p><strong><?php echo $text_register; ?></strong></p>
+            <p><?php echo $text_register; ?></p>
             <p><?php echo $text_register_account; ?></p>
-            <a href="<?php echo $register; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+            <a class="registration openRegisterPopup" href="<?php echo $register; ?>"><?php echo $button_continue; ?></a>
         </div>
-        <div class="col-sm-6">
-          <div class="well">
-            <h2><?php echo $text_returning_customer; ?></h2>
-            <p><strong><?php echo $text_i_am_returning_customer; ?></strong></p>
-            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
-                <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password"><?php echo $entry_password; ?></label>
-                <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
-                <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a></div>
-              <input type="submit" value="<?php echo $button_login; ?>" class="btn btn-primary" />
-              <?php if ($redirect) { ?>
-              <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
-              <?php } ?>
+
+        <div class="right">
+            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" novalidate="" id="frm-loginForm" data-name="loginForm">
+                <a href="javascript:;" class="fb" rel="nofollow">
+                    <?php echo $text_returning_customer; ?>
+                </a>
+
+                <p class="or"><?php echo $text_i_am_returning_customer; ?></p>
+
+                <label for="frm-loginForm-email">
+                    <input type="email" name="email" placeholder="<?php echo $entry_email; ?>" value="<?php echo $email; ?>"
+                           title="Your e-mail" id="frm-loginForm-email" required="" class="txt user" /></label>
+                <label for="frm-loginForm-password">
+                    <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>"
+                           title="Password" id="frm-loginForm-password" required=""
+                           class="txt password"></label>
+                <p class="login-btn">
+                    <a href="javascript:;" class="openLostPasswordPopup" rel="forgottenPassword-opener"><?php echo $text_forgotten; ?></a>
+                    <button type="submit"><?php echo $button_login; ?></button>
+                </p>
+                <?php if ($redirect) { ?>
+                <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+                <?php } ?>
+                <div><input type="hidden" name="do" value="loginForm-submit"></div>
             </form>
-          </div>
         </div>
-      </div>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    </div>
 </div>
 <?php echo $footer; ?>

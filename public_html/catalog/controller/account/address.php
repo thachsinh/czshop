@@ -1,32 +1,30 @@
 <?php
-class ControllerAccountAddress extends Controller {
+class ControllerAccountAddress extends Controller
+{
 	private $error = array();
 
-	public function index() {
+	public function index()
+	{
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
-
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
 
 		$this->load->language('account/address');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$this->load->model('account/address');
 
 		$this->getList();
 	}
 
-	public function add() {
+	public function add()
+	{
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
-
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
 
 		$this->load->language('account/address');
-
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
@@ -37,29 +35,26 @@ class ControllerAccountAddress extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_account_address->addAddress($this->request->post);
-
 			$this->session->data['success'] = $this->language->get('text_add');
 
 			// Add to activity log
 			$this->load->model('account/activity');
-
 			$activity_data = array(
 				'customer_id' => $this->customer->getId(),
 				'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
 			);
 
 			$this->model_account_activity->addActivity('address_add', $activity_data);
-
 			$this->response->redirect($this->url->link('account/address', '', 'SSL'));
 		}
 
 		$this->getForm();
 	}
 
-	public function edit() {
+	public function edit()
+	{
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/address', '', 'SSL');
-
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
 
@@ -260,7 +255,8 @@ class ControllerAccountAddress extends Controller {
 		}
 	}
 
-	protected function getForm() {
+	protected function getForm()
+	{
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -470,7 +466,9 @@ class ControllerAccountAddress extends Controller {
 		}
 
 		$data['back'] = $this->url->link('account/address', '', 'SSL');
+		$data['button_dont_change'] = $this->language->get('button_dont_change');
 
+		$data['account_menu'] = $this->load->controller('account/menu');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');

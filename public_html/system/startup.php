@@ -1,4 +1,7 @@
 <?php
+// Error Reporting
+error_reporting(E_ALL);
+error_reporting(0);
 
 // Check Version
 if (version_compare(phpversion(), '5.3.0', '<') == true) {

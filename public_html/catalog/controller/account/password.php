@@ -59,6 +59,7 @@ class ControllerAccountPassword extends Controller {
 
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_back'] = $this->language->get('button_back');
+		$data['button_dont_change'] = $this->language->get('button_dont_change');
 
 		if (isset($this->error['password'])) {
 			$data['error_password'] = $this->error['password'];
@@ -88,6 +89,7 @@ class ControllerAccountPassword extends Controller {
 
 		$data['back'] = $this->url->link('account/account', '', 'SSL');
 
+		$data['account_menu'] = $this->load->controller('account/menu');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');

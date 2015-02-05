@@ -1,16 +1,15 @@
 <?php
-class ControllerAccountAccount extends Controller {
-	public function index() {
+class ControllerAccountAccount extends Controller
+{
+	public function index()
+	{
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/account', '', 'SSL');
-
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
 
 		$this->load->language('account/account');
-
 		$this->document->setTitle($this->language->get('heading_title'));
-
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -25,14 +24,12 @@ class ControllerAccountAccount extends Controller {
 
 		if (isset($this->session->data['success'])) {
 			$data['success'] = $this->session->data['success'];
-
 			unset($this->session->data['success']);
 		} else {
 			$data['success'] = '';
 		}
 
 		$data['heading_title'] = $this->language->get('heading_title');
-
 		$data['text_my_account'] = $this->language->get('text_my_account');
 		$data['text_my_orders'] = $this->language->get('text_my_orders');
 		$data['text_my_newsletter'] = $this->language->get('text_my_newsletter');
@@ -59,12 +56,23 @@ class ControllerAccountAccount extends Controller {
 		$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
 		$data['recurring'] = $this->url->link('account/recurring', '', 'SSL');
 
+		$this->load->language('account/edit');
+		$data['entry_firstname'] = $this->language->get('entry_firstname');
+		$data['entry_lastname'] = $this->language->get('entry_lastname');
+		$data['entry_email'] = $this->language->get('entry_email');
+		$data['entry_telephone'] = $this->language->get('entry_telephone');
+		$data['entry_fax'] = $this->language->get('entry_fax');
+
+		$this->load->model('account/customer');
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+
 		if ($this->config->get('reward_status')) {
 			$data['reward'] = $this->url->link('account/reward', '', 'SSL');
 		} else {
 			$data['reward'] = '';
 		}
 
+		$data['account_menu'] = $this->load->controller('account/menu');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -79,16 +87,14 @@ class ControllerAccountAccount extends Controller {
 		}
 	}
 
-	public function country() {
+	public function country()
+	{
 		$json = array();
-
 		$this->load->model('localisation/country');
-
 		$country_info = $this->model_localisation_country->getCountry($this->request->get['country_id']);
 
 		if ($country_info) {
 			$this->load->model('localisation/zone');
-
 			$json = array(
 				'country_id'        => $country_info['country_id'],
 				'name'              => $country_info['name'],

@@ -10,7 +10,7 @@ $_['decimal_point']         = '.';
 $_['thousand_point']        = ',';
 
 // Text
-$_['text_home']             = '<i class="fa fa-home"></i>';
+$_['text_home']             = '<i class="fa fa-home">TamdaExpress</i>';
 $_['text_yes']              = 'Yes';
 $_['text_no']               = 'No';
 $_['text_none']             = ' --- None --- ';
@@ -20,6 +20,7 @@ $_['text_pagination']       = 'Showing %d to %d of %d (%d Pages)';
 $_['text_loading']          = 'Loading...';
 
 // Buttons
+$_['button_dont_change']    = '«I do not want to change anything';
 $_['button_address_add']    = 'Add Address';
 $_['button_back']           = 'Back';
 $_['button_continue']       = 'Continue';

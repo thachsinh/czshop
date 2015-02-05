@@ -1,8 +1,5 @@
 <?php
 
-function show_error(){};
-function log_message(){};
-
 function &DB($params = '', $active_record_override = NULL)
 {
 	// Load the DB config file if a DSN string wasn't passed

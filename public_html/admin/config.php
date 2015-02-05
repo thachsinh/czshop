@@ -1,6 +1,6 @@
 <?php
 // Error Reporting
-error_reporting(0);
+error_reporting(E_ALL);
 
 // HTTP
 define('HTTP_SERVER', 'http://localhost/tamdaexpress.dev/public_html/admin/');
