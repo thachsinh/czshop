@@ -2,7 +2,8 @@
 class ControllerAccountRegister extends Controller {
 	private $error = array();
 
-	public function index() {
+	public function index()
+	{
 		if ($this->customer->isLogged()) {
 			$this->response->redirect($this->url->link('account/account', '', 'SSL'));
 		}
@@ -18,6 +19,7 @@ class ControllerAccountRegister extends Controller {
 		$this->load->model('account/customer');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
 			$this->model_account_customer->addCustomer($this->request->post);
 			
 			// Clear any previous login attempts for unregistered accounts.
@@ -348,6 +350,7 @@ class ControllerAccountRegister extends Controller {
 	}
 
 	public function validate() {
+
 		if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {
 			$this->error['firstname'] = $this->language->get('error_firstname');
 		}

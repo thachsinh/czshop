@@ -26,7 +26,7 @@
             <h2><?php echo $text_new_customer; ?></h2>
             <p><?php echo $text_register; ?></p>
             <p><?php echo $text_register_account; ?></p>
-            <a class="registration openRegisterPopup" href="<?php echo $register; ?>"><?php echo $button_continue; ?></a>
+            <a class="xregistration xopenRegisterPopup" href="<?php echo $register; ?>"><?php echo $button_continue; ?></a>
         </div>
 
         <div class="right">

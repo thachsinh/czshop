@@ -485,7 +485,7 @@
                                 </div>
                             </div>
                         </fieldset>
-                        <fieldset>
+                        <!--<fieldset>
                             <legend><?php echo $text_newsletter; ?></legend>
                             <div class="row form-group">
                                 <label class="col-sm-2 control-label"><?php echo $entry_newsletter; ?></label>
@@ -508,6 +508,7 @@
                                 </div>
                             </div>
                         </fieldset>
+                        -->
                         <?php if ($text_agree) { ?>
                             <div class="buttons">
                                 <div class="pull-right"><?php echo $text_agree; ?>
