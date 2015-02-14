@@ -1,0 +1,8 @@
+/nbproject/private/
+public_html/admin/config.php
+public_html/system/config/database.php
+public_html/config.php
+public_html/system/cache/*
+public_html/system/logs/*
+public_html/.idea/*
+.gitignore

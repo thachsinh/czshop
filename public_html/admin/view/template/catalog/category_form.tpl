@@ -28,7 +28,6 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
             <li><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
-            <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active in" id="tab-general">
@@ -89,50 +88,6 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="<?php echo $help_filter; ?>"><?php echo $entry_filter; ?></span></label>
-                <div class="col-sm-10">
-                  <input type="text" name="filter" value="" placeholder="<?php echo $entry_filter; ?>" id="input-filter" class="form-control" />
-                  <div id="category-filter" class="well well-sm" style="height: 150px; overflow: auto;">
-                    <?php foreach ($category_filters as $category_filter) { ?>
-                    <div id="category-filter<?php echo $category_filter['filter_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $category_filter['name']; ?>
-                      <input type="hidden" name="category_filter[]" value="<?php echo $category_filter['filter_id']; ?>" />
-                    </div>
-                    <?php } ?>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
-                <div class="col-sm-10">
-                  <div class="well well-sm" style="height: 150px; overflow: auto;">
-                    <div class="checkbox">
-                      <label>
-                        <?php if (in_array(0, $category_store)) { ?>
-                        <input type="checkbox" name="category_store[]" value="0" checked="checked" />
-                        <?php echo $text_default; ?>
-                        <?php } else { ?>
-                        <input type="checkbox" name="category_store[]" value="0" />
-                        <?php echo $text_default; ?>
-                        <?php } ?>
-                      </label>
-                    </div>
-                    <?php foreach ($stores as $store) { ?>
-                    <div class="checkbox">
-                      <label>
-                        <?php if (in_array($store['store_id'], $category_store)) { ?>
-                        <input type="checkbox" name="category_store[]" value="<?php echo $store['store_id']; ?>" checked="checked" />
-                        <?php echo $store['name']; ?>
-                        <?php } else { ?>
-                        <input type="checkbox" name="category_store[]" value="<?php echo $store['store_id']; ?>" />
-                        <?php echo $store['name']; ?>
-                        <?php } ?>
-                      </label>
-                    </div>
-                    <?php } ?>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_keyword; ?>"><?php echo $entry_keyword; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="<?php echo $entry_keyword; ?>" id="input-keyword" class="form-control" />
@@ -188,48 +143,6 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane" id="tab-design">
-              <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <td class="text-left"><?php echo $entry_store; ?></td>
-                      <td class="text-left"><?php echo $entry_layout; ?></td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-left"><?php echo $text_default; ?></td>
-                      <td class="text-left"><select name="category_layout[0]" class="form-control">
-                          <option value=""></option>
-                          <?php foreach ($layouts as $layout) { ?>
-                          <?php if (isset($category_layout[0]) && $category_layout[0] == $layout['layout_id']) { ?>
-                          <option value="<?php echo $layout['layout_id']; ?>" selected="selected"><?php echo $layout['name']; ?></option>
-                          <?php } else { ?>
-                          <option value="<?php echo $layout['layout_id']; ?>"><?php echo $layout['name']; ?></option>
-                          <?php } ?>
-                          <?php } ?>
-                        </select></td>
-                    </tr>
-                    <?php foreach ($stores as $store) { ?>
-                    <tr>
-                      <td class="text-left"><?php echo $store['name']; ?></td>
-                      <td class="text-left"><select name="category_layout[<?php echo $store['store_id']; ?>]" class="form-control">
-                          <option value=""></option>
-                          <?php foreach ($layouts as $layout) { ?>
-                          <?php if (isset($category_layout[$store['store_id']]) && $category_layout[$store['store_id']] == $layout['layout_id']) { ?>
-                          <option value="<?php echo $layout['layout_id']; ?>" selected="selected"><?php echo $layout['name']; ?></option>
-                          <?php } else { ?>
-                          <option value="<?php echo $layout['layout_id']; ?>"><?php echo $layout['name']; ?></option>
-                          <?php } ?>
-                          <?php } ?>
-                        </select></td>
-                    </tr>
-                    <?php } ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
           </div>
         </form>
       </div>
@@ -268,36 +181,7 @@ $('input[name=\'path\']').autocomplete({
 		$('input[name=\'parent_id\']').val(item['value']);
 	}
 });
-//--></script> 
-  <script type="text/javascript"><!--
-$('input[name=\'filter\']').autocomplete({
-	'source': function(request, response) {
-		$.ajax({
-			url: 'index.php?route=catalog/filter/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
-			dataType: 'json',
-			success: function(json) {
-				response($.map(json, function(item) {
-					return {
-						label: item['name'],
-						value: item['filter_id']
-					}
-				}));
-			}
-		});
-	},
-	'select': function(item) {
-		$('input[name=\'filter\']').val('');
-
-		$('#category-filter' + item['value']).remove();
-
-		$('#category-filter').append('<div id="category-filter' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="category_filter[]" value="' + item['value'] + '" /></div>');
-	}
-});
-
-$('#category-filter').delegate('.fa-minus-circle', 'click', function() {
-	$(this).parent().remove();
-});
-//--></script> 
+//--></script>
   <script type="text/javascript"><!--
 $('#language a:first').tab('show');
 //--></script></div>
