@@ -47,10 +47,13 @@ class Customer {
 					", wishlist = " . $this->db->escape(isset($this->session->data['wishlist']) ? serialize($this->session->data['wishlist']) : '') .
 					", ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) . " WHERE customer_id = " . (int)$this->customer_id);
 
-				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" .
-					(int)$this->session->data['customer_id'] . "' AND ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) );
-
-				if (!$query->num_rows) {
+				$query = $this->db->select('*')
+					->from('customer_ip')
+					->where('customer_id = ', (int)$this->session->data['customer_id'])
+					->where('ip = ', $this->db->escape($this->request->server['REMOTE_ADDR']))
+					->get()
+					->row_array();
+				if (!$query) {
 					$this->db->query("INSERT INTO " . DB_PREFIX . "customer_ip SET customer_id = '" . (int)$this->session->data['customer_id'] .
 						"', ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) . ", date_added = NOW()");
 				}
@@ -131,7 +134,10 @@ class Customer {
 	}
 
 	public function logout() {
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = '" . $this->db->escape(isset($this->session->data['cart']) ? serialize($this->session->data['cart']) : '') . "', wishlist = '" . $this->db->escape(isset($this->session->data['wishlist']) ? serialize($this->session->data['wishlist']) : '') . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = '" .
+			$this->db->escape(isset($this->session->data['cart']) ? serialize($this->session->data['cart']) : '') . "',
+			wishlist = '" . $this->db->escape(isset($this->session->data['wishlist']) ? serialize($this->session->data['wishlist']) : '') . "'
+			WHERE customer_id = '" . (int)$this->customer_id . "'");
 
 		unset($this->session->data['customer_id']);
 
@@ -186,15 +192,22 @@ class Customer {
 		return $this->address_id;
 	}
 
-	public function getBalance() {
-		$query = $this->db->query("SELECT SUM(amount) AS total FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$this->customer_id . "'");
-
-		return $query->row['total'];
+	/**
+	 * @modified SUN
+	 * @return mixed
+	 */
+	public function getBalance()
+	{
+		$query = $this->db->query("SELECT SUM(amount) AS total FROM " . DB_PREFIX . "customer_transaction
+				WHERE customer_id = '" . (int)$this->customer_id . "'")
+			->row_array();
+		return $query['total'];
 	}
 
-	public function getRewardPoints() {
-		$query = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$this->customer_id . "'");
+	public function getRewardPoints()
+	{
+		$row = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$this->customer_id . "'");
 
-		return $query->row['total'];
+		return $row['total'];
 	}
 }

@@ -1,20 +1,32 @@
 <?php
-class ModelLocalisationLanguage extends Model {
-	public function getLanguage($language_id) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language WHERE language_id = '" . (int)$language_id . "'");
 
-		return $query->row;
+/**
+ * @modified SUN
+ * Class ModelLocalisationLanguage
+ */
+class ModelLocalisationLanguage extends Model {
+
+	/**
+	 * @param $language_id
+	 * @return mixed
+	 */
+	public function getLanguage($language_id)
+	{
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language WHERE language_id = '" . (int)$language_id . "'");
+		return $query->row_array();
 	}
 
-	public function getLanguages() {
+	/**
+	 * @return array
+	 */
+	public function getLanguages()
+	{
 		$language_data = $this->cache->get('language');
 
 		if (!$language_data) {
 			$language_data = array();
-
 			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language ORDER BY sort_order, name");
-
-			foreach ($query->rows as $result) {
+			foreach ($query->result_array() as $result) {
 				$language_data[$result['code']] = array(
 					'language_id' => $result['language_id'],
 					'name'        => $result['name'],
@@ -26,7 +38,6 @@ class ModelLocalisationLanguage extends Model {
 					'status'      => $result['status']
 				);
 			}
-
 			$this->cache->set('language', $language_data);
 		}
 

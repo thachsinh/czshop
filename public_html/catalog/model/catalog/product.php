@@ -485,10 +485,9 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
 		}
+		$query = $this->db->query($sql)->row_array();
 
-		$query = $this->db->query($sql);
-
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getProfiles($product_id) {

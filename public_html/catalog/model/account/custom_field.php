@@ -1,11 +1,32 @@
 <?php
-class ModelAccountCustomField extends Model {
-	public function getCustomField($custom_field_id) {
-		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "custom_field` cf LEFT JOIN `" . DB_PREFIX . "custom_field_description` cfd ON (cf.custom_field_id = cfd.custom_field_id) WHERE cf.status = '1' AND cf.custom_field_id = '" . (int)$custom_field_id . "' AND cfd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
-		return $query->row;
+/**
+ * @modified SUN
+ * Class ModelAccountCustomField
+ */
+class ModelAccountCustomField extends Model {
+	/**
+	 * @param $custom_field_id
+	 * @return mixed
+	 */
+	public function getCustomField($custom_field_id)
+	{
+		$row = $this->select('*')
+			->from('custom_field cf')
+			->join('custom_field_description cfd', 'cfd.custom_field_id = cf.custom_field_id', 'left')
+			->where('cf.status = 1')
+			->where('cf.custom_field_id = ', (int) $custom_field_id)
+			->where('cfd.language_id = ', (int) $this->config->get('config_language_id'))
+			->get()
+			->row_array();
+
+		return $row;
 	}
 
+	/**
+	 * @param int $customer_group_id
+	 * @return array
+	 */
 	public function getCustomFields($customer_group_id = 0)
 	{
 		$custom_field_data = array();
@@ -38,7 +59,7 @@ class ModelAccountCustomField extends Model {
 			if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio' || $custom_field['type'] == 'checkbox') {
 				$custom_field_values = $this->db->select('*')
 					->from('custom_field_value cfv')
-					->left('custom_field_value_description cfvd', 'cfv.custom_field_value_id = cfvd.custom_field_value_id', 'left')
+					->join('custom_field_value_description cfvd', 'cfv.custom_field_value_id = cfvd.custom_field_value_id', 'left')
 					->where('cfv.custom_field_id = ' . (int) $custom_field['custom_field_id'])
 					->where('cfvd.language_id = ' . (int) $this->config->get('config_language_id'))
 					->order_by('cfv.sort_order')

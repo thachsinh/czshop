@@ -1,5 +1,6 @@
 <?php
-class ControllerAccountRegister extends Controller {
+class ControllerAccountRegister extends Controller
+{
 	private $error = array();
 
 	public function index()
@@ -9,7 +10,6 @@ class ControllerAccountRegister extends Controller {
 		}
 
 		$this->load->language('account/register');
-
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
@@ -18,27 +18,24 @@ class ControllerAccountRegister extends Controller {
 
 		$this->load->model('account/customer');
 
+		$data['success'] = $data['error_warning'] = '';
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 
 			$this->model_account_customer->addCustomer($this->request->post);
-			
 			// Clear any previous login attempts for unregistered accounts.
 			$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);
-			
 			$this->customer->login($this->request->post['email'], $this->request->post['password']);
 
 			unset($this->session->data['guest']);
 
 			// Add to activity log
 			$this->load->model('account/activity');
-
 			$activity_data = array(
 				'customer_id' => $this->customer->getId(),
 				'name'        => $this->request->post['firstname'] . ' ' . $this->request->post['lastname']
 			);
 
 			$this->model_account_activity->addActivity('register', $activity_data);
-
 			$this->response->redirect($this->url->link('account/success'));
 		}
 
@@ -335,6 +332,7 @@ class ControllerAccountRegister extends Controller {
 			$data['agree'] = false;
 		}
 
+		$data['account_menu'] = '';
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -343,10 +341,12 @@ class ControllerAccountRegister extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/register.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/register.tpl', $data));
+			$template = $this->config->get('config_template');
 		} else {
-			$this->response->setOutput($this->load->view('default/template/account/register.tpl', $data));
+			$template = 'default';
 		}
+		$data['content'] = $this->load->view($template . '/template/account/register.tpl', $data);
+		$this->response->setOutput($this->load->view($template . '/template/account/layout.tpl', $data));
 	}
 
 	public function validate() {

@@ -14,7 +14,25 @@ class ControllerAccountAddress extends Controller
 		$this->document->setTitle($this->language->get('heading_title'));
 		$this->load->model('account/address');
 
-		$this->getList();
+		$data = array();
+		$this->getList($data);
+		$data['add'] = $this->url->link('account/address/add', '', 'SSL');
+		$data['back'] = $this->url->link('account/account', '', 'SSL');
+
+		$data['account_menu'] = $this->load->controller('account/menu');
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['column_right'] = $this->load->controller('common/column_right');
+		$data['content_top'] = $this->load->controller('common/content_top');
+		$data['content_bottom'] = $this->load->controller('common/content_bottom');
+		$data['footer'] = $this->load->controller('common/footer');
+		$data['header'] = $this->load->controller('common/header');
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/address_list.tpl')) {
+			$data['content'] = $this->load->view($this->config->get('config_template') . '/template/account/address_list.tpl', $data);
+		} else {
+			$data['content'] = $this->load->view('default/template/account/address_list.tpl', $data);
+		}
+		$this->response->setOutput($this->load->view('default/template/account/layout.tpl', $data));
 	}
 
 	public function add()
@@ -153,7 +171,7 @@ class ControllerAccountAddress extends Controller
 		$this->getList();
 	}
 
-	protected function getList() {
+	protected function getList(&$data) {
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
@@ -236,22 +254,6 @@ class ControllerAccountAddress extends Controller
 				'update'     => $this->url->link('account/address/edit', 'address_id=' . $result['address_id'], 'SSL'),
 				'delete'     => $this->url->link('account/address/delete', 'address_id=' . $result['address_id'], 'SSL')
 			);
-		}
-
-		$data['add'] = $this->url->link('account/address/add', '', 'SSL');
-		$data['back'] = $this->url->link('account/account', '', 'SSL');
-
-		$data['column_left'] = $this->load->controller('common/column_left');
-		$data['column_right'] = $this->load->controller('common/column_right');
-		$data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
-		$data['footer'] = $this->load->controller('common/footer');
-		$data['header'] = $this->load->controller('common/header');
-
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/address_list.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/address_list.tpl', $data));
-		} else {
-			$this->response->setOutput($this->load->view('default/template/account/address_list.tpl', $data));
 		}
 	}
 
@@ -477,10 +479,11 @@ class ControllerAccountAddress extends Controller
 		$data['header'] = $this->load->controller('common/header');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/address_form.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/address_form.tpl', $data));
+			$data['content'] = $this->load->view($this->config->get('config_template') . '/template/account/address_form.tpl', $data);
 		} else {
-			$this->response->setOutput($this->load->view('default/template/account/address_form.tpl', $data));
+			$data['content'] = $this->load->view('default/template/account/address_form.tpl', $data);
 		}
+		$this->response->setOutput($this->load->view('default/template/account/layout.tpl', $data));
 	}
 
 	protected function validateForm() {
