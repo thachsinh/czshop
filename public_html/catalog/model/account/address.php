@@ -34,7 +34,15 @@ class ModelAccountAddress extends Model
 	{
 		$this->event->trigger('pre.customer.edit.address', $data);
 
-		$this->db->query("UPDATE " . DB_PREFIX . "address SET firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', company = '" . $this->db->escape($data['company']) . "', address_1 = '" . $this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) . "', postcode = '" . $this->db->escape($data['postcode']) . "', city = '" . $this->db->escape($data['city']) . "', zone_id = '" . (int)$data['zone_id'] . "', country_id = '" . (int)$data['country_id'] . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') . "' WHERE address_id  = '" . (int)$address_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "address SET firstname = '" .
+			$this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) .
+			"', company = '" . $this->db->escape($data['company']) . "', address_1 = '" .
+			$this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) .
+			"', postcode = '" . $this->db->escape($data['postcode']) . "', city = '" .
+			$this->db->escape($data['city']) . "', zone_id = '" . (int)$data['zone_id'] .
+			"', country_id = '" . (int)$data['country_id'] . "', custom_field = '" .
+			$this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') .
+			"' WHERE address_id  = '" . (int)$address_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
 
 		if (!empty($data['default'])) {
 			$this->db->set('address_id', (int) $address_id)
@@ -48,22 +56,28 @@ class ModelAccountAddress extends Model
 	public function deleteAddress($address_id)
 	{
 		$this->event->trigger('pre.customer.delete.address', $address_id);
-		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'
+			AND customer_id = '" . (int)$this->customer->getId() . "'");
 		$this->event->trigger('post.customer.delete.address', $address_id);
 	}
 
 	public function getAddress($address_id)
 	{
-		$address_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+		$address_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "address
+			WHERE address_id = '" . (int)$address_id . "'
+			AND customer_id = '" . (int)$this->customer->getId() . "'")
+			->row_array();
 
-		if ($address_query->num_rows) {
-			$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country` WHERE country_id = '" . (int)$address_query->row['country_id'] . "'");
+		if ($address_query) {
+			$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country`
+				WHERE country_id = '" . (int)$address_query['country_id'] . "'")
+				->row_array();
 
-			if ($country_query->num_rows) {
-				$country = $country_query->row['name'];
-				$iso_code_2 = $country_query->row['iso_code_2'];
-				$iso_code_3 = $country_query->row['iso_code_3'];
-				$address_format = $country_query->row['address_format'];
+			if ($country_query) {
+				$country = $country_query['name'];
+				$iso_code_2 = $country_query['iso_code_2'];
+				$iso_code_3 = $country_query['iso_code_3'];
+				$address_format = $country_query['address_format'];
 			} else {
 				$country = '';
 				$iso_code_2 = '';
@@ -71,34 +85,36 @@ class ModelAccountAddress extends Model
 				$address_format = '';
 			}
 
-			$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone` WHERE zone_id = '" . (int)$address_query->row['zone_id'] . "'");
+			$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone`
+				WHERE zone_id = '" . (int)$address_query['zone_id'] . "'")
+				->row_array();
 
-			if ($zone_query->num_rows) {
-				$zone = $zone_query->row['name'];
-				$zone_code = $zone_query->row['code'];
+			if ($zone_query) {
+				$zone = $zone_query['name'];
+				$zone_code = $zone_query['code'];
 			} else {
 				$zone = '';
 				$zone_code = '';
 			}
 
 			$address_data = array(
-				'address_id'     => $address_query->row['address_id'],
-				'firstname'      => $address_query->row['firstname'],
-				'lastname'       => $address_query->row['lastname'],
-				'company'        => $address_query->row['company'],
-				'address_1'      => $address_query->row['address_1'],
-				'address_2'      => $address_query->row['address_2'],
-				'postcode'       => $address_query->row['postcode'],
-				'city'           => $address_query->row['city'],
-				'zone_id'        => $address_query->row['zone_id'],
+				'address_id'     => $address_query['address_id'],
+				'firstname'      => $address_query['firstname'],
+				'lastname'       => $address_query['lastname'],
+				'company'        => $address_query['company'],
+				'address_1'      => $address_query['address_1'],
+				'address_2'      => $address_query['address_2'],
+				'postcode'       => $address_query['postcode'],
+				'city'           => $address_query['city'],
+				'zone_id'        => $address_query['zone_id'],
 				'zone'           => $zone,
 				'zone_code'      => $zone_code,
-				'country_id'     => $address_query->row['country_id'],
+				'country_id'     => $address_query['country_id'],
 				'country'        => $country,
 				'iso_code_2'     => $iso_code_2,
 				'iso_code_3'     => $iso_code_3,
 				'address_format' => $address_format,
-				'custom_field'   => unserialize($address_query->row['custom_field'])
+				'custom_field'   => unserialize($address_query['custom_field'])
 			);
 
 			return $address_data;

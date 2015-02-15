@@ -29,31 +29,43 @@ $config = new Config();
 $registry->set('config', $config);
 
 // Database
-//$db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $db = DB();
 $registry->set('db', $db);
 
 // Store, edited by SUN
 if (isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTPS'] == '1'))) {
-	$query = "SELECT * FROM " . DB_PREFIX . "store WHERE REPLACE(`ssl`, 'www.', '') = "
-		. $db->escape('https://' . str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/');
-	$store_query = $db->query($query);
+	$store_query = $db->select('*')
+		->from('store')
+		->where(
+			'REPLACE(`ssl`, "www.", "") = ',
+			$db->escape('https://' . str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/')
+		)
+		->get()
+		->row_array();
 } else {
-	$query = "SELECT * FROM " . DB_PREFIX . "store WHERE REPLACE(`url`, 'www.', '') = " . $db->escape('http://'
-			. str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/');
-	$store_query = $db->query($query);
+	$store_query = $db->select('*')
+		->from('store')
+		->where(
+			'REPLACE(`url`, "www.", "") = ',
+			$db->escape('http://'	. str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/')
+		)
+		->get()
+		->row_array();
 }
-if ($store_query->num_rows()) {
-	$config->set('config_store_id', $store_query->row['store_id']);
+if ($store_query) {
+	$config->set('config_store_id', $store_query['store_id']);
 } else {
 	$config->set('config_store_id', 0);
 }
 
-// Settings
-$query = $db->query("SELECT * FROM `" . DB_PREFIX . "setting` WHERE store_id = '0' OR store_id = '"
-	. (int)$config->get('config_store_id') . "' ORDER BY store_id ASC");
-
-foreach ($query->row_array() as $result) {
+// Settings, edited by SUN
+$settings = $db->select('*')
+	->from('setting')
+	->where('store_id = 0 OR store_id = '. (int)$config->get('config_store_id'))
+	->order_by('store_id')
+	->get()
+	->result_array();
+foreach ($settings as $result) {
 	if (!$result['serialized']) {
 		$config->set($result['key'], $result['value']);
 	} else {
@@ -61,7 +73,7 @@ foreach ($query->row_array() as $result) {
 	}
 }
 
-if (!$store_query->num_rows()) {
+if (!$store_query) {
 	$config->set('config_url', HTTP_SERVER);
 	$config->set('config_ssl', HTTPS_SERVER);
 }
@@ -132,17 +144,18 @@ $registry->set('cache', $cache);
 $session = new Session();
 $registry->set('session', $session);
 
-// Language Detection
+// Language Detection, edited by SUN
 $languages = array();
-
-$query = $db->query("SELECT * FROM `" . DB_PREFIX . "language` WHERE status = '1'");
-
-foreach ($query->rows as $result) {
+$rows = $db->select('*')
+	->from('language')
+	->where('status = 1')
+	->get()
+	->result_array();
+foreach ($rows as $result) {
 	$languages[$result['code']] = $result;
 }
 
 $detect = '';
-
 if (isset($request->server['HTTP_ACCEPT_LANGUAGE']) && $request->server['HTTP_ACCEPT_LANGUAGE']) {
 	$browser_languages = explode(',', $request->server['HTTP_ACCEPT_LANGUAGE']);
 
@@ -207,7 +220,6 @@ if ($customer->isLogged()) {
 // Tracking Code
 if (isset($request->get['tracking'])) {
 	setcookie('tracking', $request->get['tracking'], time() + 3600 * 24 * 1000, '/');
-
 	$db->query("UPDATE `" . DB_PREFIX . "marketing` SET clicks = (clicks + 1) WHERE code = '" . $db->escape($request->get['tracking']) . "'");
 }
 
@@ -238,10 +250,8 @@ $registry->set('openbay', new Openbay($registry));
 // Event
 $event = new Event($registry);
 $registry->set('event', $event);
-
-$query = $db->query("SELECT * FROM " . DB_PREFIX . "event");
-
-foreach ($query->rows as $result) {
+$query = $db->select('*')->from('event')->get()->result_array();
+foreach ($query as $result) {
 	$event->register($result['trigger'], $result['action']);
 }
 

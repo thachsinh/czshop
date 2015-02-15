@@ -1,6 +1,15 @@
 <?php
+
+/**
+ * @modified SUN
+ * Class ModelAccountCustomerGroup
+ */
 class ModelAccountCustomerGroup extends Model
 {
+	/**
+	 * @param $customer_group_id
+	 * @return mixed
+	 */
 	public function getCustomerGroup($customer_group_id)
 	{
 		$row = $this->db->select('*')
@@ -14,9 +23,19 @@ class ModelAccountCustomerGroup extends Model
 		return $row;
 	}
 
-	public function getCustomerGroups() {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_group cg LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (cg.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY cg.sort_order ASC, cgd.name ASC");
+	/**
+	 * @return mixed
+	 */
+	public function getCustomerGroups()
+	{
+		$rows = $this->db->select('*')
+			->from('customer_group cg')
+			->join('customer_group_description cgd', 'cg.customer_group_id = cgd.customer_group_id', 'left')
+			->where('cgd.language_id = ', (int) $this->config->get('config_language_id'))
+			->order_by('cg.sort_order ASC, cgd.name ASC')
+			->get()
+			->result_array();
 
-		return $query->rows;
+		return $rows;
 	}
 }

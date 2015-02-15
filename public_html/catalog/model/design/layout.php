@@ -1,23 +1,44 @@
 <?php
 class ModelDesignLayout extends Model {
-	public function getLayout($route) {
-		// the query has been edited by SUN
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout_route WHERE " .
-			$this->db->escape($route) . " LIKE route AND store_id = '" . (int)$this->config->get('config_store_id') .
-			"' ORDER BY route DESC LIMIT 1");
 
-		if ($query->num_rows) {
-			return $query->row['layout_id'];
+	/**
+	 * @edited SUN
+	 * @param $route
+	 * @return int
+	 */
+	public function getLayout($route)
+	{
+		$row = $this->db->select('*')
+			->from('layout_route')
+			->where('route LIKE ', $this->db->escape($route))
+			->where('store_id = ', (int)$this->config->get('config_store_id'))
+			->order_by('route DESC')
+			->get()
+			->row_array();
+
+		if ($row) {
+			return $row['layout_id'];
 		} else {
 			return 0;
 		}
 	}
-	
-	public function getLayoutModules($layout_id, $position) {
-		// the query has been edited by SUN
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout_module WHERE layout_id = '" . (int)$layout_id .
-			"' AND position = " . $this->db->escape($position) . " ORDER BY sort_order");
+
+	/**
+	 * @edited SUN
+	 * @param $layout_id
+	 * @param $position
+	 * @return mixed
+	 */
+	public function getLayoutModules($layout_id, $position)
+	{
+		$rows = $this->db->select('*')
+			->from('layout_module')
+			->where('layout_id = ', (int) $layout_id)
+			->where('position = ', $this->db->escape($position))
+			->order_by('sort_order')
+			->get()
+			->result_array();
 		
-		return $query->rows;
+		return $rows;
 	}
 }
