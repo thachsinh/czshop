@@ -2,7 +2,7 @@
 class ModelLocalisationOrderStatus extends Model {
 	public $table = 'order_status';
 	public $primaryKey = 'order_status_id';
-	public $fields = array();
+	public $fields = array('order_status_id', 'language_id', 'name');
 
 	public function addOrderStatus($data) {
 		foreach ($data['order_status'] as $language_id => $value) {

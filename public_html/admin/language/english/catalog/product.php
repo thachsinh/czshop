@@ -63,8 +63,8 @@ $_['entry_customer_group']   = 'Customer Group';
 $_['entry_date_start']       = 'Date Start';
 $_['entry_date_end']         = 'Date End';
 $_['entry_priority']         = 'Priority';
-$_['entry_attribute']        = 'Attribute';
-$_['entry_attribute_group']  = 'Attribute Group';
+//$_['entry_attribute']        = 'Attribute';
+//$_['entry_attribute_group']  = 'Attribute Group';
 $_['entry_text']             = 'Text';
 $_['entry_option']           = 'Option';
 $_['entry_option_value']     = 'Option Value';
@@ -72,13 +72,14 @@ $_['entry_required']         = 'Required';
 $_['entry_status']           = 'Status';
 $_['entry_sort_order']       = 'Sort Order';
 $_['entry_category']         = 'Categories';
-$_['entry_filter']           = 'Filters';
+$_['entry_custom_fields']    = 'Custom Fields';
 $_['entry_download']         = 'Downloads';
 $_['entry_related']          = 'Related Products';
 $_['entry_tag']          	 = 'Product Tags';
 $_['entry_reward']           = 'Reward Points';
 $_['entry_layout']           = 'Layout Override';
 $_['entry_recurring']        = 'Recurring Profile';
+$_['entry_custom_fields']    = 'Custom Fields';
 
 // Help
 $_['help_keyword']           = 'Do not use spaces, instead replace spaces with - and make sure the keyword is globally unique.';

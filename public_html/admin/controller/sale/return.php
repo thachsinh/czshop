@@ -845,7 +845,7 @@ class ControllerSaleReturn extends Controller {
 		$this->load->model('localisation/return_action');
 
 		$data['return_actions'] = $this->model_localisation_return_action->getReturnActions();
-
+		//print_r($data['return_actions']);
 		if (isset($this->request->post['comment'])) {
 			$data['comment'] = $this->request->post['comment'];
 		} elseif (!empty($return_info)) {
@@ -865,7 +865,7 @@ class ControllerSaleReturn extends Controller {
 		$this->load->model('localisation/return_status');
 
 		$data['return_statuses'] = $this->model_localisation_return_status->getReturnStatuses();
-
+		print_r($data['return_statuses']);
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');

@@ -2,7 +2,7 @@
 class ModelLocalisationWeightClass extends Model {
 	public $table = 'weight_class';
 	public $primaryKey = 'weight_class_id';
-	public $fields = array();
+	public $fields = array('weight_class_id', 'value');
 
 	public function addWeightClass($data) {
 		$this->db->set('value', (float)$data['value']);

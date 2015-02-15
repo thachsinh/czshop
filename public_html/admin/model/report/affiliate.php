@@ -53,9 +53,9 @@ class ModelReportAffiliate extends Model {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getProducts($data = array()) {
@@ -91,7 +91,8 @@ class ModelReportAffiliate extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		//return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalProducts($data = array()) {
@@ -111,9 +112,9 @@ class ModelReportAffiliate extends Model {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getAffiliateActivities($data = array()) {
@@ -157,7 +158,7 @@ class ModelReportAffiliate extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalAffiliateActivities($data = array()) {
@@ -185,8 +186,8 @@ class ModelReportAffiliate extends Model {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 }
