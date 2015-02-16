@@ -1,10 +1,10 @@
 <?php
 class ModelMarketingAffiliate extends Model {
-	public $table = '';
-	public $primaryKey = '';
-	public $fields =  array();
-	public $activity_table = '';
-	public $transaction_table = '';
+	public $table = 'affiliate';
+	public $primaryKey = 'affiliate_id';
+	public $fields =  array('affiliate', 'firstname', 'lastname', 'email', 'telephone', 'fax', 'password', 'salt', 'company', 'website', 'address_1', 'address_2', 'city', 'postcode', 'country_id', 'zone_id', 'code', 'commission', 'tax', 'payment', 'cheque', 'paypal', 'bank_name', 'bank_branch_number', 'bank_swift_code', 'bank_account_name', 'bank_account_number', 'ip','status', 'approved', 'date_added');
+	public $activity_table = 'affiliate_activity';
+	public $transaction_table = 'affiliate_transaction';
 
 	public function addAffiliate($data) {
 		$this->event->trigger('pre.admin.affiliate.add', $data);
@@ -221,7 +221,7 @@ class ModelMarketingAffiliate extends Model {
 
 	public function getTotalAffiliates($data = array()) {
 		$this->db->select('COUNT(*) AS total');
-		$this->db->from($this->table);
+		$this->db->from($this->table . ' a');
 
 		//$sql = "SELECT COUNT(*) AS total FROM " . DB_PREFIX . "affiliate";
 

@@ -20,7 +20,7 @@ class ModelCatalogProduct extends Model {
 
 	public function addProduct($data) {
 		$this->event->trigger('pre.admin.product.add', $data);
-
+		if(isset($data['product_id'])) unset($data['product_id']);
 		$tmp = $this->initData($data, TRUE);
 		$tmp['price'] = (float)$data['price'];
 		$tmp['weight'] = (float)$data['weight'];
@@ -459,7 +459,7 @@ class ModelCatalogProduct extends Model {
 
 	public function copyProduct($product_id) {
 
-		$this->db->select('DISTINCT *');
+		$this->db->distinct('*');
 		$this->db->from($this->table . ' p');
 		$this->db->join($this->desc_table . ' pd', 'p.product_id = pd.product_id', 'left');
 		$this->db->where('pd.language_id', (int)$this->config->get('config_language_id'));
@@ -478,19 +478,19 @@ class ModelCatalogProduct extends Model {
 			$data['keyword'] = '';
 			$data['status'] = '0';
 
-			$data = array_merge($data, array('product_attribute' => $this->getProductAttributes($product_id)));
+			//$data = array_merge($data, array('product_attribute' => $this->getProductAttributes($product_id)));
 			$data = array_merge($data, array('product_description' => $this->getProductDescriptions($product_id)));
 			$data = array_merge($data, array('product_discount' => $this->getProductDiscounts($product_id)));
-			$data = array_merge($data, array('product_filter' => $this->getProductFilters($product_id)));
+			//$data = array_merge($data, array('product_filter' => $this->getProductFilters($product_id)));
 			$data = array_merge($data, array('product_image' => $this->getProductImages($product_id)));
 			$data = array_merge($data, array('product_option' => $this->getProductOptions($product_id)));
 			$data = array_merge($data, array('product_related' => $this->getProductRelated($product_id)));
 			$data = array_merge($data, array('product_reward' => $this->getProductRewards($product_id)));
 			$data = array_merge($data, array('product_special' => $this->getProductSpecials($product_id)));
-			$data = array_merge($data, array('product_category' => $this->getProductCategories($product_id)));
+			//$data = array_merge($data, array('product_category' => $this->getProductCategories($product_id)));
 			$data = array_merge($data, array('product_download' => $this->getProductDownloads($product_id)));
-			$data = array_merge($data, array('product_layout' => $this->getProductLayouts($product_id)));
-			$data = array_merge($data, array('product_store' => $this->getProductStores($product_id)));
+			//$data = array_merge($data, array('product_layout' => $this->getProductLayouts($product_id)));
+			//$data = array_merge($data, array('product_store' => $this->getProductStores($product_id)));
 			$data = array_merge($data, array('product_recurrings' => $this->getRecurrings($product_id)));
 
 			$this->addProduct($data);

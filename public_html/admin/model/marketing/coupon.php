@@ -1,11 +1,11 @@
 <?php
 class ModelMarketingCoupon extends Model {
-	public $table = '';
-	public $primaryKey = '';
-	public $fields = array();
-	public $product_table = '';
-	public $category_table = '';
-	public $history_table = '';
+	public $table = 'coupon';
+	public $primaryKey = 'coupon_id';
+	public $fields = array('coupon_id', 'name', 'code', 'type', 'discount', 'shipping', 'total', 'date_start', 'date_end', 'user_total', 'uses_customer', 'status', 'date_added');
+	public $product_table = 'coupon_product';
+	public $category_table = 'coupon_category';
+	public $history_table = 'coupon_history';
 
 	public function addCoupon($data) {
 		$this->event->trigger('pre.admin.coupon.add', $data);
