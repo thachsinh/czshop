@@ -322,6 +322,8 @@ class ControllerCatalogProduct extends Controller {
 		$data['add'] = $this->url->link('catalog/product/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['copy'] = $this->url->link('catalog/product/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('catalog/product/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('catalog/product/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_status'] = $this->url->linkajax('catalog/product/ajaxstatus', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['products'] = array();
 
@@ -370,7 +372,7 @@ class ControllerCatalogProduct extends Controller {
 				'price'      => $result['price'],
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
-				'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+				'status'     => $result['status'],
 				'edit'       => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, 'SSL')
 			);
 		}
@@ -1468,5 +1470,36 @@ class ControllerCatalogProduct extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'catalog/product')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		$this->load->language('catalog/product');
+		//var_dump($this->request->post);
+		$product_id = $this->request->post['product_id'];
+		if($product_id > 0) {
+			$this->load->model('catalog/product');
+			$this->model_catalog_product->deleteProduct($product_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
+	public function ajaxStatus() {
+
+		if (!$this->user->hasPermission('modify', 'catalog/product')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$product_id = (int)$this->request->post['product_id'];
+		$status = (int)$this->request->post['status'];
+		if($product_id > 0) {
+			$this->load->model('catalog/product');
+			$this->model_catalog_product->editStatus($product_id, $status);
+		}
 	}
 }

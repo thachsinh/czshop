@@ -21,5 +21,6 @@ class ControllerCommonHome extends Controller {
 		} else {
 			$this->response->setOutput($this->load->view('default/template/common/home.tpl', $data));
 		}
+
 	}
 }

@@ -5,6 +5,7 @@
  * Class ModelLocalisationLanguage
  */
 class ModelLocalisationLanguage extends Model {
+	public $table = 'language';
 
 	/**
 	 * @param $language_id
@@ -12,8 +13,13 @@ class ModelLocalisationLanguage extends Model {
 	 */
 	public function getLanguage($language_id)
 	{
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language WHERE language_id = '" . (int)$language_id . "'");
-		return $query->row_array();
+		$this->db->select('*')
+			->from($this->table)
+			->where('language_id', (int)$language_id);
+		return $this->db->get()->row_array();
+
+		//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language WHERE language_id = '" . (int)$language_id . "'");
+		//return $query->row_array();
 	}
 
 	/**
@@ -25,8 +31,14 @@ class ModelLocalisationLanguage extends Model {
 
 		if (!$language_data) {
 			$language_data = array();
-			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language ORDER BY sort_order, name");
-			foreach ($query->result_array() as $result) {
+			$this->db->select('*')
+				->from($this->table)
+				->order_by('sort_order', 'ASC')
+				->order_by('name', 'ASC');
+
+
+			//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language ORDER BY sort_order, name");
+			foreach ($this->db->get()->result_array() as $result) {
 				$language_data[$result['code']] = array(
 					'language_id' => $result['language_id'],
 					'name'        => $result['name'],

@@ -6,23 +6,30 @@ class ModelCatalogManufacturer extends Model {
 	
 	public function addManufacturer($data) {
 		$this->event->trigger('pre.admin.manufacturer.add', $data);
+		$tmp = $this->initData($data, TRUE);
+		$this->db->insert($this->table, $tmp);
 
-		$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', sort_order = '" . (int)$data['sort_order'] . "'");
 
-		$manufacturer_id = $this->db->getLastId();
+		//$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', sort_order = '" . (int)$data['sort_order'] . "'");
 
-		if (isset($data['image'])) {
+		$manufacturer_id = $this->db->insert_id();
+
+		/*if (isset($data['image'])) {
+			$this->db
 			$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET image = '" . $this->db->escape($data['image']) . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
-		}
+		}*/
 
-		if (isset($data['manufacturer_store'])) {
+		/*if (isset($data['manufacturer_store'])) {
 			foreach ($data['manufacturer_store'] as $store_id) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer_to_store SET manufacturer_id = '" . (int)$manufacturer_id . "', store_id = '" . (int)$store_id . "'");
 			}
-		}
+		}*/
 
 		if (isset($data['keyword'])) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+			$this->db->set('query', 'manufacturer_id=' . (int)$manufacturer_id);
+			$this->db->set('keyword', $data['keyword']);
+			$this->db->insert('url_alias');
+			//$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		}
 
 		$this->cache->delete('manufacturer');
@@ -35,9 +42,13 @@ class ModelCatalogManufacturer extends Model {
 	public function editManufacturer($manufacturer_id, $data) {
 		$this->event->trigger('pre.admin.manufacturer.edit', $data);
 
-		$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+		$tmp = $this->initData($data, TRUE);
+		$this->db->where($this->primaryKey, (int)$manufacturer_id);
+		$this->db->update($this->table, $tmp);
 
-		if (isset($data['image'])) {
+		//$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+
+		/*if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET image = '" . $this->db->escape($data['image']) . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
 		}
 
@@ -47,12 +58,18 @@ class ModelCatalogManufacturer extends Model {
 			foreach ($data['manufacturer_store'] as $store_id) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer_to_store SET manufacturer_id = '" . (int)$manufacturer_id . "', store_id = '" . (int)$store_id . "'");
 			}
-		}
+		}*/
 
-		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'manufacturer_id=" . (int)$manufacturer_id . "'");
+		$this->db->where('query', 'manufacturer_id=' . (int)$manufacturer_id);
+		$this->db->delete('url_alias');
+
+		//$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'manufacturer_id=" . (int)$manufacturer_id . "'");
 
 		if ($data['keyword']) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+			$this->db->set('query', 'manufacturer_id=' . (int)$manufacturer_id);
+			$this->db->set('keyword', $data['keyword']);
+			$this->db->insert('url_alias');
+			//$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		}
 
 		$this->cache->delete('manufacturer');
@@ -67,7 +84,9 @@ class ModelCatalogManufacturer extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "manufacturer_to_store WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'manufacturer_id=" . (int)$manufacturer_id . "'");*/
 		$this->db->where($this->primaryKey, (int)$manufacturer_id);
-		$this->db->delete(array($this->table, 'manufacturer_to_store', 'url_alias'));
+		$this->db->delete(array($this->table));
+		$this->db->where('query', 'manufacturer_id=' . (int)$manufacturer_id);
+		$this->db->delete('url_alias');
 
 		$this->cache->delete('manufacturer');
 

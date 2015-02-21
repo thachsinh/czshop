@@ -86,7 +86,8 @@ class ModelMarketingAffiliate extends Model {
 	}
 
 	public function getAffiliates($data = array()) {
-		$this->db->select('*, CONCAT(a.firstname, \' \', a.lastname) AS name, (SUM(at.amount)', FALSE);
+		$this->db->select('*, CONCAT(a.firstname, \' \', a.lastname) AS name', FALSE);
+		//$this->db->from($this->transaction_table . ' at');
 		$this->db->from($this->table . ' a');
 		//$sql = "SELECT *, CONCAT(a.firstname, ' ', a.lastname) AS name, (SELECT SUM(at.amount) FROM " . DB_PREFIX . "affiliate_transaction at WHERE at.affiliate_id = a.affiliate_id GROUP BY at.affiliate_id) AS balance FROM " . DB_PREFIX . "affiliate a";
 
@@ -122,7 +123,7 @@ class ModelMarketingAffiliate extends Model {
 		}
 
 		if (!empty($data['filter_date_added'])) {
-			$this->db->where('DATE(a.date_added) = DATE(\'' . $this->db->escape($data['filter_date_added']) . '\')', NULL, FALSE);
+			$this->db->where('DATE(a.date_added) = DATE(' . $this->db->escape($data['filter_date_added']) . ')', NULL, FALSE);
 
 			//$implode[] = "DATE(a.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}
@@ -149,12 +150,6 @@ class ModelMarketingAffiliate extends Model {
 			$this->db->order_by('name', $order);
 
 			//$sql .= " ORDER BY name";
-		}
-
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC";
-		} else {
-			$sql .= " ASC";
 		}
 
 		if (isset($data['start']) || isset($data['limit'])) {
@@ -255,7 +250,7 @@ class ModelMarketingAffiliate extends Model {
 		}
 
 		if (!empty($data['filter_date_added'])) {
-			$this->db->where('DATE(a.date_added) = DATE(\'' . $this->db->escape($data['filter_date_added']) . '\')', NULL, FALSE);
+			$this->db->where('DATE(a.date_added) = DATE(' . $this->db->escape($data['filter_date_added']) . ')', NULL, FALSE);
 
 			//$implode[] = "DATE(a.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Class ModelAccountAddress
  * @author	SUN
@@ -34,7 +33,13 @@ class ModelAccountAddress extends Model
 	{
 		$this->event->trigger('pre.customer.edit.address', $data);
 
-		$this->db->query("UPDATE " . DB_PREFIX . "address SET firstname = '" .
+		$tmp = $this->initData($data, true);
+		$this->db->where('address_id', (int)$address_id);
+		$this->db->where('customer_id', (int)$this->customer->getId());
+		$tmp['custom_field'] = (isset($data['custom_field']) ? serialize($data['custom_field']) : '');
+		$this->db->update($this->table, $tmp);
+
+		/*$this->db->query("UPDATE " . DB_PREFIX . "address SET firstname = '" .
 			$this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) .
 			"', company = '" . $this->db->escape($data['company']) . "', address_1 = '" .
 			$this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) .
@@ -42,7 +47,7 @@ class ModelAccountAddress extends Model
 			$this->db->escape($data['city']) . "', zone_id = '" . (int)$data['zone_id'] .
 			"', country_id = '" . (int)$data['country_id'] . "', custom_field = '" .
 			$this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') .
-			"' WHERE address_id  = '" . (int)$address_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+			"' WHERE address_id  = '" . (int)$address_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");*/
 
 		if (!empty($data['default'])) {
 			$this->db->set('address_id', (int) $address_id)
@@ -56,22 +61,33 @@ class ModelAccountAddress extends Model
 	public function deleteAddress($address_id)
 	{
 		$this->event->trigger('pre.customer.delete.address', $address_id);
-		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'
-			AND customer_id = '" . (int)$this->customer->getId() . "'");
+		$this->db->where('address_id', (int)$address_id);
+		$this->db->where('customer_id', (int)$this->customer->getId());
+		$this->db->delete($this->table);
+
+		/*$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'
+			AND customer_id = '" . (int)$this->customer->getId() . "'");*/
 		$this->event->trigger('post.customer.delete.address', $address_id);
 	}
 
 	public function getAddress($address_id)
 	{
-		$address_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "address
+		$this->db->where('address_id', (int)$address_id);
+		$this->db->where('customer_id', (int)$this->customer->getId());
+		$this->db->distinct('*');
+		$this->db->from($this->table);
+		$address_query = $this->db->get()->row_array();
+
+		/*$address_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "address
 			WHERE address_id = '" . (int)$address_id . "'
 			AND customer_id = '" . (int)$this->customer->getId() . "'")
-			->row_array();
+			->row_array();*/
 
 		if ($address_query) {
-			$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country`
+			$country_query = $this->db->select('*')->from('country')->where('country_id', (int)$address_query['country_id'])->row_array();
+			/*$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country`
 				WHERE country_id = '" . (int)$address_query['country_id'] . "'")
-				->row_array();
+				->row_array();*/
 
 			if ($country_query) {
 				$country = $country_query['name'];
@@ -85,9 +101,11 @@ class ModelAccountAddress extends Model
 				$address_format = '';
 			}
 
-			$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone`
+			$zone_query = $this->db->select('*')->from('zone')->where('zone_id', (int)$address_query['zone_id'])->row_array();
+
+			/*$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone`
 				WHERE zone_id = '" . (int)$address_query['zone_id'] . "'")
-				->row_array();
+				->row_array();*/
 
 			if ($zone_query) {
 				$zone = $zone_query['name'];

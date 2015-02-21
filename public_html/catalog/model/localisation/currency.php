@@ -5,6 +5,7 @@
  * Class ModelLocalisationCurrency
  */
 class ModelLocalisationCurrency extends Model {
+	public $table = 'currency';
 
 	/**
 	 * @param $currency
@@ -12,8 +13,14 @@ class ModelLocalisationCurrency extends Model {
 	 */
 	public function getCurrencyByCode($currency)
 	{
+		$this->db->distinct('*')
+			->from($this->table)
+			->where('code', $currency);
+
+		return $this->db->get()->row_array();
+		/*
 		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "currency WHERE code = '" . $this->db->escape($currency) . "'");
-		return $query->row_array();
+		return $query->row_array();*/
 	}
 
 	/**
@@ -26,9 +33,13 @@ class ModelLocalisationCurrency extends Model {
 		if (!$currency_data) {
 			$currency_data = array();
 
-			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency ORDER BY title ASC");
+			$this->db->select('*')
+				->from($this->table)
+				->order_by('title', 'ASC');
 
-			foreach ($query->result_array() as $result) {
+			//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency ORDER BY title ASC");
+
+			foreach ($this->db->get()->result_array() as $result) {
 				$currency_data[$result['code']] = array(
 					'currency_id'   => $result['currency_id'],
 					'title'         => $result['title'],

@@ -1004,4 +1004,10 @@ class ModelCatalogProduct extends Model {
 
 		return $query->row['total'];
 	}*/
+
+	public function editStatus($product_id, $status) {
+		$this->db->set('status', (int)$status);
+		$this->db->where($this->primaryKey, (int)$product_id);
+		$this->db->update($this->table);
+	}
 }

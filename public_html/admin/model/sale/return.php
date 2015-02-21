@@ -3,7 +3,7 @@ class ModelSaleReturn extends Model {
 	public $table = 'return';
 	public $history_table = 'return_history';
 	public $primaryKey = 'return_id';
-	public $fields = array('return_id', 'order_id', 'product_id', 'customer_id', 'fisrtname', 'lastname', 'email', 'telephone', 'product', 'model', 'quantity', 'opened', 'return_reason_id', 'return_action_id', 'return_status_id', 'comment', 'date_ordered', 'date_added', 'date_modified');
+	public $fields = array('return_id', 'order_id', 'product_id', 'customer_id', 'firstname', 'lastname', 'email', 'telephone', 'product', 'model', 'quantity', 'opened', 'return_reason_id', 'return_action_id', 'return_status_id', 'comment', 'date_ordered', 'date_added', 'date_modified');
 	public $history_fields = array('return_history_id', 'return_id', 'return_status_id', 'notify', 'comment', 'date_added');
 
 	public function addReturn($data) {
@@ -26,7 +26,7 @@ class ModelSaleReturn extends Model {
 
 	public function deleteReturn($return_id) {
 		$this->db->where($this->primaryKey, (int)$return_id);
-		$this->db->delete($this->table, $this->history_table);
+		$this->db->delete(array($this->table, $this->history_table));
 
 		//$this->db->query("DELETE FROM `" . DB_PREFIX . "return` WHERE return_id = '" . (int)$return_id . "'");
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "return_history WHERE return_id = '" . (int)$return_id . "'");

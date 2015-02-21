@@ -17,13 +17,13 @@ class ModelReportProduct extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalProductsViewed() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "product WHERE viewed > 0");
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "product WHERE viewed > 0")->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function reset() {
@@ -40,11 +40,11 @@ class ModelReportProduct extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		$sql .= " GROUP BY op.model ORDER BY total DESC";
@@ -63,7 +63,7 @@ class ModelReportProduct extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalPurchased($data) {
@@ -76,15 +76,15 @@ class ModelReportProduct extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 }

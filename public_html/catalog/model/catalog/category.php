@@ -1,10 +1,11 @@
 <?php
-
 /**
  * @modified SUN
  * Class ModelCatalogCategory
  */
 class ModelCatalogCategory extends Model {
+	public $table = 'category';
+	public $desc_table = 'category_description';
 
 	/**
 	 * @param $category_id
@@ -12,13 +13,22 @@ class ModelCatalogCategory extends Model {
 	 */
 	public function getCategory($category_id)
 	{
-		$query = $this->db->query("SELECT DISTNCT * FROM " . DB_PREFIX . "category c
+		$this->db->distinct('*')
+			->from($this->table . ' c')
+			->join($this->desc_table . ' cd', 'c.category_id = cd.category_id', 'left')
+			->where('c.category_id', (int)$category_id)
+			->where('cd.language_id', (int)$this->config->get('config_language_id'))
+			->where('c.status', 1);
+
+		return $this->db->get()->row_array();
+
+		/*$query = $this->db->query("SELECT DISTNCT * FROM " . DB_PREFIX . "category c
 			LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id)
 			LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id)
 			WHERE c.category_id = '" . (int)$category_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'
 			AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND c.status = '1'");
 
-		return $query->row_array();
+		return $query->row_array();*/
 	}
 
 	/**
@@ -27,14 +37,26 @@ class ModelCatalogCategory extends Model {
 	 */
 	public function getCategories($parent_id = 0)
 	{
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category c
+		$this->db->select('*')
+			->from($this->table . ' c')
+			->join($this->desc_table . ' cd', 'c.category_id = cd.category_id', 'left')
+			->where('cd.language_id', (int)$this->config->get('config_language_id'))
+			->where('c.status', 1)
+			->where('c.parent_id', (int)$parent_id)
+			->order_by('c.sort_order', 'ASC')
+			->order_by('cd.name', 'ASC');
+
+		return $this->db->get()->result_array();
+
+
+		/*$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category c
 			LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id)
 			LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id)
 			WHERE c.parent_id = '" . (int)$parent_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "'
 			AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "'  AND c.status = '1'
 			ORDER BY c.sort_order, LCASE(cd.name)");
 
-		return $query->result_array();
+		return $query->result_array();*/
 	}
 
 	/**
@@ -116,7 +138,16 @@ class ModelCatalogCategory extends Model {
 	 */
 	public function getTotalCategoriesByCategoryId($parent_id = 0)
 	{
-		$query = $this->db->query("SELECT COUNT(*) AS total
+		$this->db->select('COUNT(*) AS total')
+			->from($this->table)
+			->where('parent_id', (int)$parent_id)
+			->where('status', 1);
+
+		$data = $this->db->get()->row_array();
+		return $data['total'];
+
+
+		/*$query = $this->db->query("SELECT COUNT(*) AS total
 			FROM " . DB_PREFIX . "category c
 			LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id)
 			WHERE c.parent_id = '" . (int)$parent_id . "'
@@ -124,6 +155,6 @@ class ModelCatalogCategory extends Model {
 			AND c.status = '1'"
 		)->row_array();
 
-		return $query['total'];
+		return $query['total'];*/
 	}
 }

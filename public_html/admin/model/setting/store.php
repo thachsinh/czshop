@@ -75,9 +75,14 @@ class ModelSettingStore extends Model {
 	}
 
 	public function getTotalStores() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "store");
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from($this->table);
+		$data = $this->db->get()->row_array();
+		return $data['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "store");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalStoresByLayoutId($layout_id) {

@@ -85,7 +85,7 @@ class ModelMarketingMarketing extends Model {
 		}
 
 		if (!empty($data['filter_date_added'])) {
-			$this->db->where('DATE(m.date_added) = DATE(\'' . $this->db->escape($data['filter_date_added']) . '\')', NULL, FALSE);
+			$this->db->where('DATE(m.date_added) = DATE(' . $this->db->escape($data['filter_date_added']) . ')', NULL, FALSE);
 
 			//$implode[] = "DATE(date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}
@@ -150,7 +150,7 @@ class ModelMarketingMarketing extends Model {
 		}
 
 		if (!empty($data['filter_date_added'])) {
-			$this->db->where('DATE(date_added) = DATE(\'' . $this->db->escape($data['filter_date_added']) . '\')', NULL, FALSE);
+			$this->db->where('DATE(date_added) = DATE(' . $this->db->escape($data['filter_date_added']) . ')', NULL, FALSE);
 
 			//$implode[] = "DATE(date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}

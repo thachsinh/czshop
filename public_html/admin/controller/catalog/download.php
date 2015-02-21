@@ -157,6 +157,7 @@ class ControllerCatalogDownload extends Controller {
 		
 		$data['add'] = $this->url->link('catalog/download/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('catalog/download/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('catalog/download/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['downloads'] = array();
 
@@ -423,6 +424,29 @@ class ControllerCatalogDownload extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'catalog/download')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$download_id = $this->request->post['download_id'];
+		$this->load->model('catalog/product');
+
+		$product_total = $this->model_catalog_product->getTotalProductsByDownloadId($download_id);
+
+		if ($product_total) {
+			$this->error['warning'] = sprintf($this->language->get('error_product'), $product_total);
+			exit;
+		}
+
+		if($download_id > 0) {
+			$this->load->model('catalog/download');
+			$this->model_catalog_download->deleteDownload($download_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
 	}
 
 	public function upload() {

@@ -4,8 +4,7 @@ class ModelAccountCustomer extends Model
 
 	protected $table = 'address';
 	protected $primaryKey = 'address_id';
-	protected $fields = array('address_id', 'firstname', 'lastname', 'company', 'address_1', 'address_2', 'city',
-		'postcode',	'country_id', 'zone_id');
+	protected $fields = array('address_id', 'firstname', 'lastname', 'company', 'address_1', 'address_2', 'city', 'postcode',	'country_id', 'zone_id');
 
 	public function addCustomer($data)
 	{
@@ -150,11 +149,25 @@ class ModelAccountCustomer extends Model
 	}
 
 	public function getCustomerByToken($token) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE token = " . $this->db->escape($token) . " AND token != ''");
+		$this->db->select('*')
+			->from('customer')
+			->where('token', $token)
+			->where('token <>', '');
+		$data = $this->db->get()->row_array();
+
+		// Reset token
+		if(isset($data)) {
+			$this->db->where('customer_id', (int)$data['customer_id']);
+			$this->db->update('customer');
+		}
+
+		return $data;
+
+		/*$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE token = " . $this->db->escape($token) . " AND token != ''");
 
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET token = ''");
 
-		return $query->row;
+		return $query->row;*/
 	}
 
 	public function getTotalCustomersByEmail($email)
@@ -170,38 +183,78 @@ class ModelAccountCustomer extends Model
 	}
 
 	public function getIps($customer_id) {
-		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_ip` WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->select('*')
+			->from('customer_ip')
+			->where('customer_id', (int)$customer_id);
+		return $this->db->get()->result_array();
 
-		return $query->rows;
+		/*$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_ip` WHERE customer_id = '" . (int)$customer_id . "'");
+
+		return $query->rows;*/
 	}
 
 	public function isBanIp($ip) {
+		$this->db->select('COUNT(*) AS total')
+			->from('customer_ban_ip')
+			->where('ip', $ip);
+
+		$data = $this->db->get()->row_array();
+		return $data['total'];
+
+		/*
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_ban_ip` WHERE ip = " . $this->db->escape($ip));
 
-		return $query->num_rows;
+		return $query->num_rows;*/
 	}
 	
 	public function addLoginAttempt($email) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE email = " . $this->db->escape(utf8_strtolower((string)$email))
-			. " AND ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']));
+		$this->db->select('*')
+			->from('customer_login')
+			->where('email', utf8_strtolower($email))
+			->where('ip', $this->request->server['REMOTE_ADDR']);
+		$data = $this->db->get()->row_array();
+
+		/*$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE email = " . $this->db->escape(utf8_strtolower((string)$email))
+			. " AND ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']));*/
 		
-		if (!$query->num_rows) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = " . $this->db->escape(utf8_strtolower((string)$email))
+		if (!isset($data['customer_login_id'])) {
+			$this->db->set('email', utf8_strtolower((string)$email));
+			$this->db->set('ip', $this->request->server['REMOTE_ADDR']);
+			$this->db->set('total', 1);
+			$this->db->set('date_added', date('Y-m-d H:i:s'));
+			$this->db->set('date_modified', date('Y-m-d H:i:s'));
+			$this->db->update('customer_login');
+
+			/*$this->db->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = " . $this->db->escape(utf8_strtolower((string)$email))
 				. ", ip = " . $this->db->escape($this->request->server['REMOTE_ADDR']) . ", total = 1, date_added = " . $this->db->escape(date('Y-m-d H:i:s'))
-				. ", date_modified = " . $this->db->escape(date('Y-m-d H:i:s')));
+				. ", date_modified = " . $this->db->escape(date('Y-m-d H:i:s')));*/
 		} else {
-			$this->db->query("UPDATE " . DB_PREFIX . "customer_login SET total = (total + 1), date_modified = " . $this->db->escape(date('Y-m-d H:i:s'))
-				. " WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");
+			$this->db->set('total', '(total + 1)', FALSE);
+			$this->db->set('date_modified', date('Y-m-d H:i:s'));
+			$this->db->where('customer_login_id', (int)$data['customer_login_id']);
+			$this->db->update('customer_login');
+
+			/*$this->db->query("UPDATE " . DB_PREFIX . "customer_login SET total = (total + 1), date_modified = " . $this->db->escape(date('Y-m-d H:i:s'))
+				. " WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");*/
 		}			
 	}	
 	
 	public function getLoginAttempts($email) {
+		$this->db->select('*')
+			->from('customer_login')
+			->where('email', utf8_strtolower($email));
+
+		return $this->db->get()->row_array();
+		/*
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_login` WHERE email = " . $this->db->escape(utf8_strtolower($email)));
 
-		return $query->row;
+		return $query->row;*/
 	}
 	
 	public function deleteLoginAttempts($email) {
-		$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = " . $this->db->escape(utf8_strtolower($email)));
+		$this->db->where('email', utf8_strtolower($email));
+		$this->db->delete('customer_login');
+
+		//$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = " . $this->db->escape(utf8_strtolower($email)));
 	}	
 }

@@ -44,10 +44,10 @@ class ModelReportCustomer extends Model {
 
 		$this->db->select('COUNT(*) AS total, date_added');
 		$this->db->from('customer');
-		$this->db->where('DATE(date_added) >= DATE(\'' . $this->db->escape(date('Y-m-d', $date_start)) . '\')', NULL, FALSE);
+		$this->db->where('DATE(date_added) >= DATE(\'' . (date('Y-m-d', $date_start)) . '\')', NULL, FALSE);
 		$this->db->group_by('DAYNAME(date_added)');
 
-		//$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "customer` WHERE DATE(date_added) >= DATE('" . $this->db->escape(date('Y-m-d', $date_start)) . "') GROUP BY DAYNAME(date_added)");
+		//$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "customer` WHERE DATE(date_added) >= DATE('" . (date('Y-m-d', $date_start)) . "') GROUP BY DAYNAME(date_added)");
 
 		foreach ($this->db->get()->result_array() as $result) {
 			$customer_data[date('w', strtotime($result['date_added']))] = array(
@@ -73,9 +73,9 @@ class ModelReportCustomer extends Model {
 
 		$this->db->select('COUNT(*) AS total, date_added');
 		$this->db->from('customer');
-		$this->db->where('DATE(date_added) >= \'' . $this->db->escape(date('Y') . '-' . date('m') . '-1') . '\'');
+		$this->db->where('DATE(date_added) >= \'' . (date('Y') . '-' . date('m') . '-1') . '\'');
 
-		//$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "customer` WHERE DATE(date_added) >= '" . $this->db->escape(date('Y') . '-' . date('m') . '-1') . "' GROUP BY DATE(date_added)");
+		//$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "customer` WHERE DATE(date_added) >= '" . (date('Y') . '-' . date('m') . '-1') . "' GROUP BY DATE(date_added)");
 
 		foreach ($this->db->get()->result_array() as $result) {
 			$customer_data[date('j', strtotime($result['date_added']))] = array(
@@ -116,7 +116,7 @@ class ModelReportCustomer extends Model {
 	
 	public function getOrders($data = array()) {
 
-		$this->db->select('c.customer_id, CONCAT(c.firstname, \' \', c.lastname) AS customer, c.email, cgd.name AS customer_group, c.status, COUNT(o.order_id) AS orders, SUM(op.quantity) AS products, SUM(o.total) AS `total`');
+		$this->db->select('c.customer_id, CONCAT(c.firstname, \' \', c.lastname) AS customer, c.email, cgd.name AS customer_group, c.status, COUNT(o.order_id) AS orders, SUM(op.quantity) AS products, SUM(o.total) AS `total`', FALSE);
 		$this->db->from('order o');
 		$this->db->join('order_product op', 'o.order_id = op.order_id', 'left');
 		$this->db->join('customer c', 'o.customer_id = c.customer_id', 'left');
@@ -138,15 +138,15 @@ class ModelReportCustomer extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$this->db->where('AND DATE(o.date_added) >= \''. $this->db->escape($data['filter_date_start']) . '\'', NULL, FALSE);
+			$this->db->where('AND DATE(o.date_added) >= \''. ($data['filter_date_start']) . '\'', NULL, FALSE);
 
-			//$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			//$sql .= " AND DATE(o.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$this->db->where('DATE(o.date_added) <= \''. $this->db->escape($data['filter_date_end']) . '\'');
+			$this->db->where('DATE(o.date_added) <= \''. ($data['filter_date_end']) . '\'');
 
-			//$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			//$sql .= " AND DATE(o.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		$this->db->group_by('o.customer_id');
@@ -183,27 +183,27 @@ class ModelReportCustomer extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 		
 	public function getRewardPoints($data = array()) {
 		$sql = "SELECT cr.customer_id, CONCAT(c.firstname, ' ', c.lastname) AS customer, c.email, cgd.name AS customer_group, c.status, SUM(cr.points) AS points, COUNT(o.order_id) AS orders, SUM(o.total) AS total FROM " . DB_PREFIX . "customer_reward cr LEFT JOIN `" . DB_PREFIX . "customer` c ON (cr.customer_id = c.customer_id) LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (c.customer_group_id = cgd.customer_group_id) LEFT JOIN `" . DB_PREFIX . "order` o ON (cr.order_id = o.order_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(cr.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(cr.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(cr.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(cr.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		$sql .= " GROUP BY cr.customer_id ORDER BY points DESC";
@@ -222,7 +222,7 @@ class ModelReportCustomer extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalRewardPoints($data = array()) {
@@ -231,31 +231,31 @@ class ModelReportCustomer extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_date_start'])) {
-			$implode[] = "DATE(date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$implode[] = "DATE(date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$implode[] = "DATE(date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$implode[] = "DATE(date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if ($implode) {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getCredit($data = array()) {
 		$sql = "SELECT ct.customer_id, CONCAT(c.firstname, ' ', c.lastname) AS customer, c.email, cgd.name AS customer_group, c.status, SUM(ct.amount) AS total FROM `" . DB_PREFIX . "customer_transaction` ct LEFT JOIN `" . DB_PREFIX . "customer` c ON (ct.customer_id = c.customer_id) LEFT JOIN `" . DB_PREFIX . "customer_group_description` cgd ON (c.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= "DATE(ct.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= "DATE(ct.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= "DATE(ct.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= "DATE(ct.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		$sql .= " GROUP BY ct.customer_id ORDER BY total DESC";
@@ -274,7 +274,7 @@ class ModelReportCustomer extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalCredit($data = array()) {
@@ -283,20 +283,20 @@ class ModelReportCustomer extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_date_start'])) {
-			$implode[] = "DATE(date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$implode[] = "DATE(date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$implode[] = "DATE(date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$implode[] = "DATE(date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if ($implode) {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getCustomersOnline($data = array()) {
@@ -305,11 +305,11 @@ class ModelReportCustomer extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_ip'])) {
-			$implode[] = "co.ip LIKE '" . $this->db->escape($data['filter_ip']) . "'";
+			$implode[] = "co.ip LIKE '" . ($data['filter_ip']) . "'";
 		}
 
 		if (!empty($data['filter_customer'])) {
-			$implode[] = "co.customer_id > 0 AND CONCAT(c.firstname, ' ', c.lastname) LIKE '" . $this->db->escape($data['filter_customer']) . "'";
+			$implode[] = "co.customer_id > 0 AND CONCAT(c.firstname, ' ', c.lastname) LIKE '" . ($data['filter_customer']) . "'";
 		}
 
 		if ($implode) {
@@ -332,7 +332,7 @@ class ModelReportCustomer extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalCustomersOnline($data = array()) {
@@ -341,11 +341,11 @@ class ModelReportCustomer extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_ip'])) {
-			$implode[] = "co.ip LIKE '" . $this->db->escape($data['filter_ip']) . "'";
+			$implode[] = "co.ip LIKE '" . ($data['filter_ip']) . "'";
 		}
 
 		if (!empty($data['filter_customer'])) {
-			$implode[] = "co.customer_id > 0 AND CONCAT(c.firstname, ' ', c.lastname) LIKE '" . $this->db->escape($data['filter_customer']) . "'";
+			$implode[] = "co.customer_id > 0 AND CONCAT(c.firstname, ' ', c.lastname) LIKE '" . ($data['filter_customer']) . "'";
 		}
 
 		if ($implode) {
@@ -363,19 +363,19 @@ class ModelReportCustomer extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_customer'])) {
-			$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '" . $this->db->escape($data['filter_customer']) . "'";
+			$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '" . ($data['filter_customer']) . "'";
 		}
 
 		if (!empty($data['filter_ip'])) {
-			$implode[] = "ca.ip LIKE '" . $this->db->escape($data['filter_ip']) . "'";
+			$implode[] = "ca.ip LIKE '" . ($data['filter_ip']) . "'";
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$implode[] = "DATE(ca.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$implode[] = "DATE(ca.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$implode[] = "DATE(ca.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$implode[] = "DATE(ca.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if ($implode) {
@@ -407,19 +407,19 @@ class ModelReportCustomer extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_customer'])) {
-			$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '" . $this->db->escape($data['filter_customer']) . "'";
+			$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '" . ($data['filter_customer']) . "'";
 		}
 
 		if (!empty($data['filter_ip'])) {
-			$implode[] = "ca.ip LIKE '" . $this->db->escape($data['filter_ip']) . "'";
+			$implode[] = "ca.ip LIKE '" . ($data['filter_ip']) . "'";
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$implode[] = "DATE(ca.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$implode[] = "DATE(ca.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$implode[] = "DATE(ca.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$implode[] = "DATE(ca.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if ($implode) {

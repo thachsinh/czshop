@@ -11,6 +11,7 @@ class ControllerCommonMenu extends Controller {
 		$data['text_banner'] = $this->language->get('text_banner');
 		$data['text_catalog'] = $this->language->get('text_catalog');
 		$data['text_category'] = $this->language->get('text_category');
+		$data['text_custom_field_group'] = $this->language->get('text_custom_field_group');
 		$data['text_confirm'] = $this->language->get('text_confirm');
 		$data['text_contact'] = $this->language->get('text_contact');
 		$data['text_country'] = $this->language->get('text_country');
@@ -104,6 +105,9 @@ class ControllerCommonMenu extends Controller {
 		$data['text_openbay_links'] = $this->language->get('text_openbay_links');
 		$data['text_openbay_report_price'] = $this->language->get('text_openbay_report_price');
 		$data['text_openbay_order_import'] = $this->language->get('text_openbay_order_import');
+		$data['text_logictics'] = $this->language->get('text_logictics');
+		$data['text_logictics_driver'] = $this->language->get('text_logictics_driver');
+		$data['text_logictics_vehicle'] = $this->language->get('text_logictics_vehicle');
 
 		$data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
 		$data['affiliate'] = $this->url->link('marketing/affiliate', 'token=' . $this->session->data['token'], 'SSL');
@@ -113,6 +117,8 @@ class ControllerCommonMenu extends Controller {
 		$data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');
 		$data['banner'] = $this->url->link('design/banner', 'token=' . $this->session->data['token'], 'SSL');
 		$data['category'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL');
+		$data['product_custom_field'] = $this->url->link('catalog/custom_field', 'token=' . $this->session->data['token'], 'SSL');
+		$data['product_custom_field_group'] = $this->url->link('catalog/custom_field_group', 'token=' . $this->session->data['token'], 'SSL');
 		$data['country'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'], 'SSL');
 		$data['contact'] = $this->url->link('marketing/contact', 'token=' . $this->session->data['token'], 'SSL');
 		$data['coupon'] = $this->url->link('marketing/coupon', 'token=' . $this->session->data['token'], 'SSL');
@@ -196,6 +202,8 @@ class ControllerCommonMenu extends Controller {
 		$data['openbay_link_amazonus'] = $this->url->link('openbay/amazonus', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_link_amazonus_settings'] = $this->url->link('openbay/amazonus/settings', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_link_amazonus_links'] = $this->url->link('openbay/amazonus/itemlinks', 'token=' . $this->session->data['token'], 'SSL');
+		$data['logictics_driver'] = $this->url->link('logictics/driver', 'token=' . $this->session->data['token'], 'SSL');
+		$data['logictics_vehicle'] = $this->url->link('logictics/vehicle', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_markets'] = array(
 			'ebay' => $this->config->get('ebay_status'),
 			'amazon' => $this->config->get('openbay_amazon_status'),

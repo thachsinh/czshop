@@ -64,6 +64,7 @@ class ModelLocalisationReturnStatus extends Model {
 	}
 
 	public function getReturnStatuses($data = array()) {
+
 		if ($data) {
 			$this->db->select('*');
 			$this->db->from($this->table);
@@ -79,12 +80,14 @@ class ModelLocalisationReturnStatus extends Model {
 				$sql .= " ASC";
 			}*/
 
-			$this->db->order_by('name', $order);
+
 
 			$order = 'ASC';
 			if (isset($data['order']) && ($data['order'] == 'DESC')) {
 				$order = 'DESC';
 			}
+
+			$this->db->order_by('name', $order);
 
 
 
