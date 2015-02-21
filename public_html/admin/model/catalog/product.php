@@ -17,9 +17,16 @@ class ModelCatalogProduct extends Model {
 	public $recurrings_table = 'product_recurring';
 
 
+	private function _getProductSolr() {
+		$this->load->model('catalog/product_solr');
+		return $this->model_catalog_product_solr;
+	}
 
 	public function addProduct($data) {
 		$this->event->trigger('pre.admin.product.add', $data);
+		// Solr params
+		$solr = array();
+
 		if(isset($data['product_id'])) unset($data['product_id']);
 		$tmp = $this->initData($data, TRUE);
 		$tmp['price'] = (float)$data['price'];
@@ -45,11 +52,15 @@ class ModelCatalogProduct extends Model {
 			//$this->db->query("UPDATE " . DB_PREFIX . "product SET image = '" . $this->db->escape($data['image']) . "' WHERE product_id = '" . (int)$product_id . "'");
 		}
 
+		$solr = $tmp;
+
 		foreach ($data['product_description'] as $language_id => $value) {
 			$tmp = $this->initData($data['product_description'][$language_id], TRUE, $this->desc_fields);
 			$this->db->set('language_id', (int)$language_id);
 			$this->db->set($this->primaryKey, $product_id);
 			$this->db->insert($this->desc_table, $tmp);
+
+			$solr = array_merge($solr, $tmp);
 
 			//$this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET product_id = '" . (int)$product_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', tag = '" . $this->db->escape($value['tag']) . "', meta_title = '" . $this->db->escape($value['meta_title']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "'");
 		}
@@ -207,6 +218,11 @@ class ModelCatalogProduct extends Model {
 			}
 		}
 
+		// Add product_id to solr variable
+		$solr['product_id'] = $product_id;
+		$this->_getProductSolr()->editProduct($solr);
+
+
 		$this->cache->delete('product');
 
 		$this->event->trigger('post.admin.product.add', $product_id);
@@ -216,6 +232,9 @@ class ModelCatalogProduct extends Model {
 
 	public function editProduct($product_id, $data) {
 		$this->event->trigger('pre.admin.product.edit', $data);
+
+		// Add solr
+		$solr = array();
 
 		$tmp = $this->initData($data, TRUE);
 		$tmp['price'] = (float)$data['price'];
@@ -243,11 +262,15 @@ class ModelCatalogProduct extends Model {
 
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "product_description WHERE product_id = '" . (int)$product_id . "'");
 
+		$solr = $tmp;
+
 		foreach ($data['product_description'] as $language_id => $value) {
 			$tmp = $this->initData($data['product_description'][$language_id], TRUE, $this->desc_fields);
 			$this->db->set('language_id', (int)$language_id);
 			$this->db->set($this->primaryKey, $product_id);
 			$this->db->insert($this->desc_table, $tmp);
+
+			$solr = array_merge($solr, $tmp);
 
 			//$this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET product_id = '" . (int)$product_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', tag = '" . $this->db->escape($value['tag']) . "', meta_title = '" . $this->db->escape($value['meta_title']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "'");
 		}
@@ -452,6 +475,11 @@ class ModelCatalogProduct extends Model {
 			}
 		}
 
+		// Add product_id to solr variable
+		$solr['product_id'] = $product_id;
+		$this->_getProductSolr()->editProduct($solr);
+		//var_dump($r);
+
 		$this->cache->delete('product');
 
 		$this->event->trigger('post.admin.product.edit', $product_id);
@@ -519,6 +547,8 @@ class ModelCatalogProduct extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "review WHERE product_id = '" . (int)$product_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_recurring WHERE product_id = " . (int)$product_id);
 		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'product_id=" . (int)$product_id . "'");
+
+		$this->_getProductSolr()->deleteProduct($product_id);
 
 		$this->cache->delete('product');
 

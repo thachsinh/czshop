@@ -1,6 +1,22 @@
 <?php
 class ControllerCommonHome extends Controller {
 	public function index() {
+		/*
+		// create a ping query
+		$ping = $this->solr->createPing();
+
+		try{
+			$result = $this->solr->ping($ping);
+			echo 'Ping query successful';
+			//echo '<br/><pre>';
+			//var_dump($result->getData());
+		}catch(Solarium_Exception $e){
+			echo 'Ping query failed';
+		}
+
+		echo "xxx"; exit;
+		*/
+
 		$this->document->setTitle($this->config->get('config_meta_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
 		$this->document->setKeywords($this->config->get('config_meta_keyword'));
