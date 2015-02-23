@@ -3,11 +3,15 @@ class ControllerAccountAjax extends Controller
 {
   function add() {
     $this->load->model('account/customer');
-    $this->load->language('account/success');
+    $this->load->language('account/register');
 
 
-    $this->model_account_customer->addCustomerAjax($this->request->post);
-    $this->session->data['message']['success'] = $this->language->get('text_register_ajax');
+    if ($this->model_account_customer->getTotalCustomersByEmail($this->request->post['email'])) {
+      $this->session->data['message']['error_warning'] = $this->language->get('error_exists');
+    } else {
+      $this->model_account_customer->addCustomerAjax($this->request->post);
+      $this->session->data['message']['success'] = $this->language->get('text_register_ajax');
+    }
 
     $this->response->redirect('/');
   }

@@ -260,7 +260,7 @@ class ModelAccountCustomer extends Model
 
 	public function addCustomerAjax($data) {
 		$tmp = $this->initData($data, FALSE, array('email', 'password'));
-		$tmp['salt'] = substr(md5(uniqid(rand(), true)), 0, 9);
+		$tmp['salt'] = $salt = substr(md5(uniqid(rand(), true)), 0, 9);
 		$tmp['password'] = sha1($salt . sha1($salt . sha1($data['password'])));
 		
 		$this->db->set('date_added', 'NOW()', FALSE);

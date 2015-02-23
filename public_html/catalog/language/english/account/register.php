@@ -11,6 +11,7 @@ $_['text_your_address']    = 'Your Address';
 $_['text_newsletter']      = 'Newsletter';
 $_['text_your_password']   = 'Your Password';
 $_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
+$_['text_register_ajax']  = 'Congratulations! Your new account has been successfully created!';
 
 // Entry
 $_['entry_customer_group'] = 'Customer Group';
