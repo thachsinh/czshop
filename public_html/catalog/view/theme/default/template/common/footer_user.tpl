@@ -6,7 +6,7 @@
 
     <p>Pro obnovení hesla zadejte email na který jste se zaregistrovali.</p>
 
-    <form action="/" method="post" novalidate="novalidate" id="frm-forgottenPasswordForm" data-name="forgottenPasswordForm" class="ajax">
+    <form action="/index.php?route=account/forgotten/ajax" method="post" novalidate="novalidate" id="frm-forgottenPasswordForm" data-name="forgottenPasswordForm" class="ajax">
       <div class="input">
         <input type="text" name="email" placeholder="E-mail" title="E-mail" id="frm-forgottenPasswordForm-email" required data-nette-rules='[{"op":":filled","msg":"Vyplňte prosím svůj email"},{"op":":email","msg":"Pole \"E-mail\" neobsahuje platný e-mail."}]'>
         <input type="submit" name="_submit" id="frm-forgottenPasswordForm-submit" value="Odeslat">

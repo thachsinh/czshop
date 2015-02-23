@@ -48,6 +48,7 @@ class ControllerCommonHome extends Controller {
 		$data['navigation'] = $this->load->controller('common/menu');
 		$data['main_content'] = $this->load->frontView('common/home');
 		$data['message'] = $this->load->controller('common/message');
+		
 		$this->load->layout($data);
 	}
 }

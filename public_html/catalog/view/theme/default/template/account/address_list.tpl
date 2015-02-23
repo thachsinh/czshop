@@ -8,8 +8,10 @@
                     <?php foreach ($addresses as $result) :?>
                     <ul>
                         <li class="address"><strong><font><font class=""><?php echo $result['address']; ?></font></font></strong></li>
-                        <li class="detail"><a href="<?php echo $result['update']; ?>"><font><font><?php echo $button_edit; ?></font></font></a></li>
-                        <li class="detail"><a href="<?php echo $result['delete']; ?>"><font><font><?php echo $button_delete; ?></font></font></a></li>
+                        <li class="detail">
+                            <a href="<?php echo $result['update']; ?>"><font><font><?php echo $button_edit; ?></font></font></a>
+                            <a href="<?php echo $result['delete']; ?>"><font><font><?php echo $button_delete; ?></font></font></a>
+                        </li>
                     </ul>
                     <?php endforeach; ?>
                 </div>
