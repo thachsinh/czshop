@@ -3,7 +3,7 @@ class ModelCatalogProduct extends Model {
 	public $table = 'product';
 	public $primaryKey = 'product_id';
 	public $desc_table = 'product_description';
-	public $fields = array('product_id', 'category_id', 'sku', 'upc', 'ean', 'jan', 'isbn', 'mpn', 'location', 'quantity', 'stock_status_id', 'image', 'manufacturer_id', 'shipping', 'price', 'points', 'tax_class_id', 'date_available', 'weight', 'weight_class_id', 'length', 'width', 'height', 'length_class_id', 'subtract', 'minimum', 'sort_order', 'viewed', 'date_added', 'date_modified');
+	public $fields = array('product_id', 'category_id', 'sku', 'upc', 'ean', 'jan', 'isbn', 'mpn', 'location', 'quantity', 'stock_status_id', 'image', 'manufacturer_id', 'shipping', 'price', 'points', 'tax_class_id', 'date_available', 'weight', 'weight_class_id', 'length', 'width', 'height', 'length_class_id', 'subtract', 'minimum', 'sort_order', 'viewed', 'date_added', 'date_modified', 'model');
 	public $desc_fields = array('product_id', 'language_id', 'name', 'description', 'tag', 'meta_title', 'meta_description', 'meta_keyword');
 	public $discount_table = 'product_discount';
 	public $discount_fields = array('product_id', 'customer_group_id', 'quantity', 'priority', 'price', 'date_start', 'date_end');

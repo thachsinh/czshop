@@ -6,6 +6,8 @@ class Document {
 	private $links = array();
 	private $styles = array();
 	private $scripts = array();
+	private $siteName;
+	private $siteBase;
 
 	public function setTitle($title) {
 		$this->title = $title;
@@ -60,5 +62,21 @@ class Document {
 
 	public function getScripts() {
 		return $this->scripts;
+	}
+
+	public function getSiteName() {
+		return $this->siteName;
+	}
+
+	public function setSiteName($siteName) {
+		$this->siteName = $siteName;
+	}
+
+	public function getSiteBase() {
+		return $this->siteBase;
+	}
+
+	public function setSiteBase($siteBase) {
+		$this->siteBase = $siteBase;
 	}
 }

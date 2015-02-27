@@ -1,9 +1,13 @@
 <?php
 class ControllerProductCategory extends Controller {
+	private $_categoryTree = array();
+
 	public function index() {
 		$this->load->language('product/category');
 
 		$this->load->model('catalog/category');
+
+		$this->_categoryTree = $this->model_catalog_category->categoryTree();
 
 		$this->load->model('catalog/product');
 
@@ -42,9 +46,11 @@ class ControllerProductCategory extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => strip_tags($this->language->get('text_home')),
 			'href' => $this->url->link('common/home')
 		);
+
+		/*
 
 		if (isset($this->request->get['path'])) {
 			$url = '';
@@ -87,7 +93,16 @@ class ControllerProductCategory extends Controller {
 			$category_id = 0;
 		}
 
-		$category_info = $this->model_catalog_category->getCategory($category_id);
+		*/
+
+		$category_info = null;
+
+		if(isset($this->request->get['path'])) {
+			$category_id = (int)$this->request->get['path'];
+			if($category_id > 0) {
+				$category_info = $this->model_catalog_category->getCategory($category_id);
+			}
+		}
 
 		if ($category_info) {
 			$this->document->setTitle($category_info['meta_title']);
@@ -117,10 +132,31 @@ class ControllerProductCategory extends Controller {
 			$data['button_grid'] = $this->language->get('button_grid');
 
 			// Set the last category breadcrumb
-			$data['breadcrumbs'][] = array(
+			/*$data['breadcrumbs'][] = array(
 				'text' => $category_info['name'],
 				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'])
-			);
+			);*/
+
+
+			// Load Sub Menu
+			$this->load->model('catalog/category');
+			$categoryPath = $this->model_catalog_category->buildPath($category_info['category_id']);
+
+			if(!empty($categoryPath)) {
+				foreach($categoryPath as $item) {
+					$data['breadcrumbs'][] = array(
+						'text' => $item['name'],
+						'href' => ''
+					);
+				}
+
+				$data['sub_categories'] = $this->model_catalog_category->getCategories($category_info['category_id']);
+				$data['active_category'] = $category_info;
+				$data['parent_category'] = $category_info;
+
+				$data['left_menu'] = $this->load->frontView('product/left_menu', $data);
+			}
+
 
 			if ($category_info['image']) {
 				$data['thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get('config_image_category_width'), $this->config->get('config_image_category_height'));
@@ -167,8 +203,14 @@ class ControllerProductCategory extends Controller {
 
 			$data['products'] = array();
 
+			//print_r($this->model_catalog_category->getAllCategories());
+
+			$categories = $this->model_catalog_category->getCategoryChildId($this->model_catalog_category->getAllCategories(), $category_id);
+			//print_r($categories); exit;
+			array_push($categories, $category_id);
+
 			$filter_data = array(
-				'filter_category_id' => $category_id,
+				'filter_category_id' => $categories,
 				'filter_filter'      => $filter,
 				'sort'               => $sort,
 				'order'              => $order,
@@ -176,11 +218,16 @@ class ControllerProductCategory extends Controller {
 				'limit'              => $limit
 			);
 
-			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+			//$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
 
-			foreach ($results as $result) {
+			if(isset($results['products']));
+
+			$products = $results['products'];
+			$product_total = $results['total'];
+
+			foreach ($products as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				} else {
@@ -205,22 +252,22 @@ class ControllerProductCategory extends Controller {
 					$tax = false;
 				}
 
-				if ($this->config->get('config_review_status')) {
+				/*if ($this->config->get('config_review_status')) {
 					$rating = (int)$result['rating'];
 				} else {
 					$rating = false;
-				}
+				}*/
 
 				$data['products'][] = array(
-					'product_id'  => $result['product_id'],
-					'thumb'       => $image,
+					'product_id'  => $result['id'],
+					'image'       => $image,
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
 					'price'       => $price,
 					'special'     => $special,
 					'tax'         => $tax,
-					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+					//'rating'      => $result['rating'],
+					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['id'] . $url)
 				);
 			}
 
@@ -354,18 +401,25 @@ class ControllerProductCategory extends Controller {
 
 			$data['continue'] = $this->url->link('common/home');
 
-			$data['column_left'] = $this->load->controller('common/column_left');
-			$data['column_right'] = $this->load->controller('common/column_right');
-			$data['content_top'] = $this->load->controller('common/content_top');
-			$data['content_bottom'] = $this->load->controller('common/content_bottom');
+			//$data['column_left'] = $this->load->controller('common/column_left');
+			//$data['column_right'] = $this->load->controller('common/column_right');
+			//$data['content_top'] = $this->load->controller('common/content_top');
+			//$data['content_bottom'] = $this->load->controller('common/content_bottom');
+			$data['navigation'] = $this->load->controller('common/menu');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['breadcrumbs_class'] = 'aside';
+			$data['breadcrumbs'] = $this->load->frontView('common/breadcrumbs', $data);
+			$data['main_content'] = $this->load->frontView('product/category', $data);
+			$this->load->layout($data);
 
+			/*
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/category.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/category.tpl', $data));
 			} else {
 				$this->response->setOutput($this->load->view('default/template/product/category.tpl', $data));
 			}
+			*/
 		} else {
 			$url = '';
 

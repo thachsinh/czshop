@@ -59,6 +59,58 @@ class ModelCatalogCategory extends Model {
 		return $query->result_array();*/
 	}
 
+	public function getAllCategories() {
+		$this->db->select('*')
+			->from($this->table . ' c')
+			->join($this->desc_table . ' cd', 'c.category_id = cd.category_id', 'left')
+			->where('cd.language_id', (int)$this->config->get('config_language_id'))
+			->where('cd.language_id', (int)$this->config->get('config_language_id'))
+			->where('c.status', 1)
+			->order_by('c.sort_order', 'ASC')
+			->order_by('cd.name', 'ASC');
+
+		return $this->db->get()->result_array();
+	}
+
+	public function categoryTree($level = 10) {
+		$categories = $this->getAllCategories();
+		//print_r($categories);
+		return $this->buildCategoryTree($categories, 0, $level);
+	}
+
+	public function buildPath($category_id) {
+		$this->db->select('cd.*, cp.level')
+			->from($this->table . ' c')
+			->join('category_path cp', 'cp.path_id = c.category_id', 'left')
+			->join($this->desc_table . ' cd', 'c.category_id = cd.category_id', 'left')
+			->where('cd.language_id', (int)$this->config->get('config_language_id'))
+			->where('cp.category_id', (int)$category_id)
+			->where('c.status', 1)
+			->order_by('cp.level', 'ASC');
+		return $this->db->get()->result_array();
+	}
+
+	public function buildCategoryTree($categories, $parent_id = 0, $level = 0) {
+		$tmp = array();
+		if(!empty($categories)) {
+			if($level > 0) {
+				foreach($categories as $item) {
+					if($item['parent_id'] == $parent_id) {
+						$subLevel = $level;
+						//$this->tree[$item['category_id']] = $item;
+						$tmp[$item['category_id']] = $item;
+						$r = $this->buildCategoryTree($categories, $item['category_id'], --$subLevel);
+						if(!empty($r)) {
+							$tmp[$item['category_id']]['child'] = $r;
+						}
+					}
+				}
+			}
+		}
+
+		return $tmp;
+	}
+
 	/**
 	 * @param $category_id
 	 * @return array
@@ -156,5 +208,26 @@ class ModelCatalogCategory extends Model {
 		)->row_array();
 
 		return $query['total'];*/
+	}
+
+	public function getCategoryChildId($categories, $parentId = 0, $childId = array())
+	{
+		if(!is_array($categories) || empty($categories)) {
+			return false;
+		}
+
+		foreach($categories as &$item) {
+			if($parentId == $item['parent_id']) {
+				$childId[] = $item['category_id'];
+				$tmpId = $item['category_id'];
+				unset($item);
+				$child = $this->getCategoryChildId($categories, $tmpId);
+				if(!empty($child)) {
+					$childId = array_merge($childId, $child);
+				}
+			}
+		}
+
+		return $childId;
 	}
 }

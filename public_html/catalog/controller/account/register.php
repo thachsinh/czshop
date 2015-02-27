@@ -42,7 +42,7 @@ class ControllerAccountRegister extends Controller
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => strip_tags($this->language->get('text_home')),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -55,6 +55,8 @@ class ControllerAccountRegister extends Controller
 			'text' => $this->language->get('text_register'),
 			'href' => $this->url->link('account/register', '', 'SSL')
 		);
+
+		$data['breadcrumbs'] = $this->load->frontView('common/breadcrumbs', $data);
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
@@ -339,14 +341,17 @@ class ControllerAccountRegister extends Controller
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['main_content'] = $this->load->frontView('account/register', $data);
+		$this->load->layout($data);
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/register.tpl')) {
+
+		/*if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/register.tpl')) {
 			$template = $this->config->get('config_template');
 		} else {
 			$template = 'default';
 		}
 		$data['content'] = $this->load->view($template . '/template/account/register.tpl', $data);
-		$this->response->setOutput($this->load->view($template . '/template/account/layout.tpl', $data));
+		$this->response->setOutput($this->load->view($template . '/template/account/layout.tpl', $data));*/
 	}
 
 	public function validate() {

@@ -2,10 +2,11 @@
 class ModelCatalogProductSolr extends Model
 {
     public $primaryKey = 'id';
-    public $fields = array('id', 'sku', 'name', 'description', 'price');
+    public $fields = array('id' ,'name', 'sku', 'category_id', 'description', 'price', 'image', 'quantity', 'stock_status_id');
 
     public function editProduct($data)
     {
+
         if (!isset($data['product_id'])) return false;
 
         $data['id'] = $data['product_id'];
@@ -18,6 +19,8 @@ class ModelCatalogProductSolr extends Model
         $doc = $update->createDocument();
 
         $data = $this->initData($data);
+
+        //print_r($data); exit;
 
         if(empty($data)) return false;
 

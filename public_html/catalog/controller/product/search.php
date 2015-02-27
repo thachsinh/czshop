@@ -452,4 +452,33 @@ class ControllerProductSearch extends Controller {
 			$this->response->setOutput($this->load->view('default/template/product/search.tpl', $data));
 		}
 	}
+
+	public function autocomplete()
+	{
+
+		$this->load->model('catalog/search');
+		$json = null;
+
+		if(isset($this->request->get['keywords'])) {
+			$keywords = $this->request->get['keywords'];
+
+			$products = $this->model_catalog_search->autocomplete($keywords);
+			//print_r($products);
+			if(!empty($products)) {
+				foreach($products['products'] as $item) {
+					$tmp = array();
+					$tmp['value'] = $keywords;
+					$tmp['link'] = '';
+					$tmp['popupLink'] = '';
+					$tmp['html'] = '<div class="item"><div class="img"><img
+src="' . $item['image'] . '" alt=""></div><h3>'. $item['name'] . '
+</h3><p><strong>' . $item['price'] .'</strong></p></div>';
+					$json[] = $tmp;
+				}
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode(array('products' => $json)));
+	}
 }

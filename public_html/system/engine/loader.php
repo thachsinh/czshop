@@ -6,6 +6,10 @@ final class Loader {
 		$this->registry = $registry;
 	}
 
+	public function __get($key) {
+		return $this->registry->get($key);
+	}
+
 	public function controller($route, $args = array()) {
 		$action = new Action($route, $args);
 
@@ -44,6 +48,24 @@ final class Loader {
 		} else {
 			trigger_error('Error: Could not load template ' . $file . '!');
 			exit();
+		}
+	}
+
+	public function frontView($template, $data = array()) {
+		$rs = null;
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/' . $template . '.tpl')) {
+			return $this->load->view($this->config->get('config_template') . '/template/' . $template . '.tpl', $data);
+		} else {
+			return $this->load->view('default/template/'. $template . '.tpl', $data);
+		}
+	}
+
+	public function layout($data, $layout = 'default') {
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/layout/' . $layout . '.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/layout/'. $layout . '.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/layout/default.tpl', $data));
 		}
 	}
 
