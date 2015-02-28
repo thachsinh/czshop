@@ -73,6 +73,9 @@
 <!-- Breadcrumb -->
 <?php echo (isset($breadcrumbs) && is_string($breadcrumbs)) ? $breadcrumbs : ''; ?>
 <!-- End Breadcrumb -->
+<!-- Message -->
+<?php echo $message; ?>
+<!-- End Message -->
 <!-- Main Content -->
 <?php echo isset($main_content) ? $main_content : ''; ?>
 <!-- End Main Content -->

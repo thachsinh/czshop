@@ -84,7 +84,7 @@ class ModelAccountAddress extends Model
 			->row_array();*/
 
 		if ($address_query) {
-			$country_query = $this->db->select('*')->from('country')->where('country_id', (int)$address_query['country_id'])->row_array();
+			$country_query = $this->db->select('*')->from('country')->where('country_id', (int)$address_query['country_id'])->get()->row_array();
 			/*$country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country`
 				WHERE country_id = '" . (int)$address_query['country_id'] . "'")
 				->row_array();*/
@@ -101,7 +101,7 @@ class ModelAccountAddress extends Model
 				$address_format = '';
 			}
 
-			$zone_query = $this->db->select('*')->from('zone')->where('zone_id', (int)$address_query['zone_id'])->row_array();
+			$zone_query = $this->db->select('*')->from('zone')->where('zone_id', (int)$address_query['zone_id'])->get()->row_array();
 
 			/*$zone_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone`
 				WHERE zone_id = '" . (int)$address_query['zone_id'] . "'")

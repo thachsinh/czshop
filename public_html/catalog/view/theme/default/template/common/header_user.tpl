@@ -2,8 +2,8 @@
 <?php if (!$logged) : ?>
 <ul id="snippet--user-panel" class="user">
     <li class="arrow">
-        <a class="xregistration" href="<?php echo $register; ?>">Register</a>
-        <a class="xlogin" href="<?php echo $login; ?>">Log in</a>
+        <a href="javascript:;" class="registration"><font><font>Register </font></font></a>
+        <a href="javascript:;" class="login"><font><font class="">Log in</font></font></a>
     </li>
     <li id="snippet--userAddressPanel">
         <span class="change-wrapper">
