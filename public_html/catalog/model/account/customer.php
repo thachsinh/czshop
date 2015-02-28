@@ -256,5 +256,14 @@ class ModelAccountCustomer extends Model
 		$this->db->delete('customer_login');
 
 		//$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = " . $this->db->escape(utf8_strtolower($email)));
+	}
+
+	public function addCustomerAjax($data) {
+		$tmp = $this->initData($data, FALSE, array('email', 'password'));
+		$tmp['salt'] = substr(md5(uniqid(rand(), true)), 0, 9);
+		$tmp['password'] = sha1($salt . sha1($salt . sha1($data['password'])));
+		
+		$this->db->set('date_added', 'NOW()', FALSE);
+		$this->db->insert('customer', $tmp);
 	}	
 }

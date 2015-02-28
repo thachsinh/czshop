@@ -6,8 +6,6 @@
 <!-- Content -->
 <div class="content home">
   <div class="container">
-    <div id="snippet--flashMessages"></div>
-
     <div id="snippet--referral"></div>
   </div>
   <!-- Slide -->

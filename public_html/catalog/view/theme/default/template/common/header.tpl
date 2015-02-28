@@ -23,7 +23,7 @@
 
             <p class="center">nebo</p>
 
-            <form action="/" method="post" novalidate="novalidate" id="frm-loginForm" data-name="loginForm">
+            <form action="/index.php?route=account/login" method="post" novalidate="novalidate" id="frm-loginForm" data-name="loginForm">
                 <label for="frm-loginForm-email"><input type="email" name="email" placeholder="Váš e-mail"
                                                         title="Váš e-mail" id="frm-loginForm-email" required
                                                         data-nette-rules='[{"op":":filled","msg":"Pole \"E-mail\" je povinné."},{"op":":email","msg":"Pole \"E-mail\" neobsahuje platný e-mail."}]'
@@ -46,7 +46,7 @@
 
             <p class="center">nebo</p>
 
-            <form class="registration-form" action="/" method="post" novalidate="novalidate"
+            <form class="registration-form" action="/index.php?route=account/ajax/add" method="post" novalidate="novalidate"
                   id="frm-userRegistrationForm" data-name="userRegistrationForm">
                 <label for="frm-userRegistrationForm-email"><input class="user" type="email" name="email"
                                                                    placeholder="E-mail" title="E-mail"

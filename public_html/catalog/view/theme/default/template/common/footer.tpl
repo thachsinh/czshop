@@ -1,3 +1,5 @@
+<?php require_once 'footer_user.tpl'; ?>
+<div class="overlay"></div>
 <!-- Footer -->
 <footer>
   <div class="container">
