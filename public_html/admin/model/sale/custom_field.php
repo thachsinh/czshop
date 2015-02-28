@@ -55,6 +55,8 @@ class ModelSaleCustomField extends Model {
 				}
 			}
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_custom_field, LOG_ACTION_ADD, $custom_field_id);
 	}
 
 	public function editCustomField($custom_field_id, $data) {
@@ -132,12 +134,16 @@ class ModelSaleCustomField extends Model {
 				}
 			}
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_custom_field, LOG_ACTION_MODIFY, $custom_field_id);
 	}
 
 	public function editStatus($custom_field_id, $status) {
 		$this->db->set('status', (int)$status);
 		$this->db->where($this->primaryKey, (int)$custom_field_id);
 		return $this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$sale_custom_field, LOG_ACTION_MODIFY, $custom_field_id);
 	}
 
 	public function deleteCustomField($custom_field_id) {
@@ -149,6 +155,8 @@ class ModelSaleCustomField extends Model {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "custom_field_customer_group` WHERE custom_field_id = '" . (int)$custom_field_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "custom_field_value` WHERE custom_field_id = '" . (int)$custom_field_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "custom_field_value_description` WHERE custom_field_id = '" . (int)$custom_field_id . "'");*/
+
+		$this->tracking->log(LOG_FUNCTION::$sale_custom_field, LOG_ACTION_DELETE, $custom_field_id);
 	}
 
 	public function getCustomField($custom_field_id) {

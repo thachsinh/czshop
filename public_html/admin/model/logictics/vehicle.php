@@ -7,7 +7,11 @@ class ModelLogicticsVehicle extends Model {
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
 
+		$vehicle_id = $this->db->insert_id();
+
 		$this->cache->delete('vehicle');
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_vehicle, LOG_ACTION_ADD, $vehicle_id);
 	}
 
 	public function editVehicle($vehicle_id, $data) {
@@ -15,6 +19,8 @@ class ModelLogicticsVehicle extends Model {
 		$this->db->where($this->primaryKey, (int)$vehicle_id);
 		$this->db->update($this->table, $data);
 		$this->cache->delete('vehicle');
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_vehicle, LOG_ACTION_MODIFY, $vehicle_id);
 	}
 
 	public function editStatus($vehicle_id, $status) {
@@ -22,6 +28,8 @@ class ModelLogicticsVehicle extends Model {
 		$this->db->set('status', (int) $status);
 		$this->db->where($this->primaryKey, (int) $vehicle_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_vehicle, LOG_ACTION_MODIFY, $vehicle_id);
 	}
 
 	public function deleteVehicle($vehicle_id) {
@@ -30,6 +38,8 @@ class ModelLogicticsVehicle extends Model {
 		$this->db->delete($this->table);
 
 		$this->cache->delete('vehicle');
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_vehicle, LOG_ACTION_DELETE, $vehicle_id);
 	}
 
 	public function getVehicle($vehicle_id) {

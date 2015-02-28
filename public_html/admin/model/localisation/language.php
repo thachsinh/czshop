@@ -359,6 +359,8 @@ class ModelLocalisationLanguage extends Model {
 			$this->db->insert('recurring_description');
 			//$this->db->query("INSERT INTO " . DB_PREFIX . "recurring_description SET recurring_id = '" . (int)$recurring['recurring_id'] . "', language_id = '" . (int)$language_id . "', name = '" . ($recurring['name']));
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_language, LOG_ACTION_ADD, $language_id);
 	}
 
 	private function _getCurrentItemLanguage($table) {
@@ -374,6 +376,8 @@ class ModelLocalisationLanguage extends Model {
 		$this->db->where($this->primaryKey, (int)$language_id);
 		$this->db->update($this->table, $data);
 		$this->cache->delete('language');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_language, LOG_ACTION_MODIFY, $language_id);
 	}
 
 	public function editStatus($language_id, $status) {
@@ -381,6 +385,8 @@ class ModelLocalisationLanguage extends Model {
 		$this->db->set('status', (int) $status);
 		$this->db->where($this->primaryKey, (int) $language_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_language, LOG_ACTION_MODIFY, $language_id);
 	}
 
 	public function deleteLanguage($language_id) {
@@ -465,6 +471,8 @@ class ModelLocalisationLanguage extends Model {
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "recurring_description WHERE language_id = '" . (int)$language_id . "'");
 		*/
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_language, LOG_ACTION_DELETE, $language_id);
 	}
 
 	public function getLanguage($language_id) {

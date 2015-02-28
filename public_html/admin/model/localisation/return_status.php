@@ -25,6 +25,8 @@ class ModelLocalisationReturnStatus extends Model {
 		}
 
 		$this->cache->delete('return_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_status, LOG_ACTION_ADD, $return_status_id);
 	}
 
 	public function editReturnStatus($return_status_id, $data) {
@@ -42,6 +44,8 @@ class ModelLocalisationReturnStatus extends Model {
 		}
 
 		$this->cache->delete('return_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_status, LOG_ACTION_MODIFY, $return_status_id);
 	}
 
 	public function deleteReturnStatus($return_status_id) {
@@ -50,6 +54,8 @@ class ModelLocalisationReturnStatus extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "return_status WHERE return_status_id = '" . (int)$return_status_id . "'");
 
 		$this->cache->delete('return_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_status, LOG_ACTION_DELETE, $return_status_id);
 	}
 
 	public function getReturnStatus($return_status_id) {

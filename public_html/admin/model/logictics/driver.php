@@ -7,7 +7,12 @@ class ModelLogicticsDriver extends Model {
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
 
+		$driver_id = $this->db->insert_id();
+
+
 		$this->cache->delete('driver');
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_driver, LOG_ACTION_ADD, $driver_id);
 	}
 
 	public function editDriver($driver_id, $data) {
@@ -15,6 +20,8 @@ class ModelLogicticsDriver extends Model {
 		$this->db->where($this->primaryKey, (int)$driver_id);
 		$this->db->update($this->table, $data);
 		$this->cache->delete('driver');
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_driver, LOG_ACTION_MODIFY, $driver_id);
 	}
 
 	public function editStatus($driver_id, $status) {
@@ -22,6 +29,8 @@ class ModelLogicticsDriver extends Model {
 		$this->db->set('status', (int) $status);
 		$this->db->where($this->primaryKey, (int) $driver_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_driver, LOG_ACTION_MODIFY, $driver_id);
 	}
 
 	public function deleteDriver($driver_id) {
@@ -29,6 +38,8 @@ class ModelLogicticsDriver extends Model {
 		$this->db->delete($this->table);
 
 		$this->cache->delete('driver');
+
+		$this->tracking->log(LOG_FUNCTION::$logictics_driver, LOG_ACTION_DELETE, $driver_id);
 	}
 
 	public function getDriver($driver_id) {

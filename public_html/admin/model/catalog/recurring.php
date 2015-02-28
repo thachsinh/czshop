@@ -25,6 +25,8 @@ class ModelCatalogRecurring extends Model {
 
 		$this->event->trigger('post.admin.recurring.add', $recurring_id);
 
+		$this->tracking->log(LOG_FUNCTION::$catalog_recurring, LOG_ACTION_ADD, $recurring_id);
+
 		return $recurring_id;
 	}
 
@@ -32,6 +34,8 @@ class ModelCatalogRecurring extends Model {
 		$this->db->set('status', (int)$status);
 		$this->db->where($this->primaryKey, (int)$recurring_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_recurring, LOG_ACTION_MODIFY, $recurring_id);
 	}
 
 	public function editRecurring($recurring_id, $data) {
@@ -57,6 +61,7 @@ class ModelCatalogRecurring extends Model {
 		}
 
 		$this->event->trigger('post.admin.recurring.edit', $recurring_id);
+		$this->tracking->log(LOG_FUNCTION::$catalog_recurring, LOG_ACTION_MODIFY, $recurring_id);
 	}
 
 	public function copyProfile($recurring_id) {
@@ -86,6 +91,7 @@ class ModelCatalogRecurring extends Model {
 		//$this->db->query("UPDATE `" . DB_PREFIX . "order_recurring` SET `recurring_id` = 0 WHERE `recurring_id` = " . (int)$recurring_id . "");
 
 		$this->event->trigger('post.admin.recurring.delete', $recurring_id);
+		$this->tracking->log(LOG_FUNCTION::$catalog_recurring, LOG_ACTION_DELETE, $recurring_id);
 	}
 
 	public function getRecurring($recurring_id) {

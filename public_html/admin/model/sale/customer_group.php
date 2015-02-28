@@ -21,6 +21,8 @@ class ModelSaleCustomerGroup extends Model {
 			$this->db->insert('customer_group_description', $tmp);
 			//$this->db->query("INSERT INTO " . DB_PREFIX . "customer_group_description SET customer_group_id = '" . (int)$customer_group_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "'");
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer_group, LOG_ACTION_ADD, $customer_group_id);
 	}
 
 	public function editCustomerGroup($customer_group_id, $data) {
@@ -42,6 +44,8 @@ class ModelSaleCustomerGroup extends Model {
 
 			//$this->db->query("INSERT INTO " . DB_PREFIX . "customer_group_description SET customer_group_id = '" . (int)$customer_group_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "'");
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer_group, LOG_ACTION_MODIFY, $customer_group_id);
 	}
 
 	public function deleteCustomerGroup($customer_group_id) {
@@ -54,6 +58,8 @@ class ModelSaleCustomerGroup extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_special WHERE customer_group_id = '" . (int)$customer_group_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_reward WHERE customer_group_id = '" . (int)$customer_group_id . "'");
 		*/
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer_group, LOG_ACTION_DELETE, $customer_group_id);
 	}
 
 	public function getCustomerGroup($customer_group_id) {

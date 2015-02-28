@@ -7,8 +7,10 @@ class ModelSaleCustomerBanIp extends Model {
 	public function addCustomerBanIp($data) {
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
-		return $this->db->insert_id();
+		$customer_ban_ip_id =  $this->db->insert_id();
 		//$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_ban_ip` SET `ip` = '" . $this->db->escape($data['ip']) . "'");
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer_ban_ip, LOG_ACTION_ADD, $customer_ban_ip_id);
 	}
 
 	public function editCustomerBanIp($customer_ban_ip_id, $data) {
@@ -17,11 +19,15 @@ class ModelSaleCustomerBanIp extends Model {
 		$this->db->update($this->table, $data);
 
 		//$this->db->query("UPDATE `" . DB_PREFIX . "customer_ban_ip` SET `ip` = '" . $this->db->escape($data['ip']) . "' WHERE customer_ban_ip_id = '" . (int)$customer_ban_ip_id . "'");
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer_ban_ip, LOG_ACTION_MODIFY, $customer_ban_ip_id);
 	}
 
 	public function deleteCustomerBanIp($customer_ban_ip_id) {
 		$this->db->where($this->primaryKey, (int)$customer_ban_ip_id);
 		$this->db->delete($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer_ban_ip, LOG_ACTION_DELETE, $customer_ban_ip_id);
 
 		//$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_ban_ip` WHERE customer_ban_ip_id = '" . (int)$customer_ban_ip_id . "'");
 	}

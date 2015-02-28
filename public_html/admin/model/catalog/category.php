@@ -14,6 +14,9 @@ class ModelCatalogCategory extends Model {
 
 		$category_id = $this->db->insert_id();
 
+		// Tracking
+		$this->tracking->log(LOG_FUNCTION::$catalog_category, LOG_ACTION_ADD, $category_id);
+
 		if (isset($data['image'])) {
 			$this->db->where($this->primaryKey, (int)$category_id);
 			$this->db->set('image', ($data['image']));
@@ -269,6 +272,8 @@ class ModelCatalogCategory extends Model {
 
 		$this->cache->delete('category');
 
+		$this->tracking->log(LOG_FUNCTION::$catalog_category, LOG_ACTION_MODIFY, $category_id);
+
 		$this->event->trigger('post.admin.category.edit', $category_id);
 	}
 
@@ -276,6 +281,7 @@ class ModelCatalogCategory extends Model {
 		$this->db->set('status', (int)$status);
 		$this->db->where($this->primaryKey, (int)$category_id);
 		$this->db->update($this->table);
+		$this->tracking->log(LOG_FUNCTION::$catalog_category, LOG_ACTION_MODIFY, $category_id);
 	}
 
 	public function deleteCategory($category_id) {
@@ -300,6 +306,8 @@ class ModelCatalogCategory extends Model {
 		$this->db->delete('url_alias');
 
 		$this->cache->delete('category');
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_category, LOG_ACTION_DELETE, $category_id);
 
 		$this->event->trigger('post.admin.category.delete', $category_id);
 	}

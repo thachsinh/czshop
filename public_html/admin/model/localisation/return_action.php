@@ -11,6 +11,7 @@ class ModelLocalisationReturnAction extends Model {
 				$this->db->set('language_id', (int)$language_id);
 				$this->db->set('name', $this->db->escape($value['name']));
 				$this->db->insert($this->table);
+				$return_action_id = $this->db->insert_id();
 				//$this->db->query("INSERT INTO " . DB_PREFIX . "return_action SET return_action_id = '" . (int)$return_action_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
 			} else {
 				$this->db->set('language_id', (int)$language_id);
@@ -24,6 +25,7 @@ class ModelLocalisationReturnAction extends Model {
 		}
 
 		$this->cache->delete('return_action');
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_action, LOG_ACTION_ADD, $return_action_id);
 	}
 
 	public function editReturnAction($return_action_id, $data) {
@@ -41,6 +43,8 @@ class ModelLocalisationReturnAction extends Model {
 		}
 
 		$this->cache->delete('return_action');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_action, LOG_ACTION_MODIFY, $return_action_id);
 	}
 
 	public function deleteReturnAction($return_action_id) {
@@ -49,6 +53,7 @@ class ModelLocalisationReturnAction extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "return_action WHERE return_action_id = '" . (int)$return_action_id . "'");
 
 		$this->cache->delete('return_action');
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_action, LOG_ACTION_DELETE, $return_action_id);
 	}
 
 	public function getReturnAction($return_action_id) {

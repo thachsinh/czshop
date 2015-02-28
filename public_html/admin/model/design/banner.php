@@ -38,6 +38,8 @@ class ModelDesignBanner extends Model {
 
 		$this->event->trigger('post.admin.banner.add', $banner_id);
 
+		$this->tracking->log(LOG_FUNCTION::$design_banner, LOG_ACTION_ADD, $banner_id);
+
 		return $banner_id;
 	}
 
@@ -76,6 +78,8 @@ class ModelDesignBanner extends Model {
 		}
 
 		$this->event->trigger('post.admin.banner.edit', $banner_id);
+
+		$this->tracking->log(LOG_FUNCTION::$design_banner, LOG_ACTION_MODIFY, $banner_id);
 	}
 
 	public function deleteBanner($banner_id) {
@@ -88,6 +92,8 @@ class ModelDesignBanner extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE banner_id = '" . (int)$banner_id . "'");
 		*/
 		$this->event->trigger('post.admin.banner.delete', $banner_id);
+
+		$this->tracking->log(LOG_FUNCTION::$design_banner, LOG_ACTION_DELETE, $banner_id);
 	}
 
 	public function getBanner($banner_id) {

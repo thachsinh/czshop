@@ -8,6 +8,7 @@ class ModelLocalisationCurrency extends Model {
 		$data = $this->initData($data);
 		$this->db->set('date_modified', 'NOW()', FALSE);
 		$this->db->insert($this->table, $data);
+		$currency_id = $this->db->insert_id();
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "currency SET title = '" . $this->db->escape($data['title']) . "', code = '" . $this->db->escape($data['code']) . "', symbol_left = '" . $this->db->escape($data['symbol_left']) . "', symbol_right = '" . $this->db->escape($data['symbol_right']) . "', decimal_place = '" . $this->db->escape($data['decimal_place']) . "', value = '" . $this->db->escape($data['value']) . "', status = '" . (int)$data['status'] . "', date_modified = NOW()");
 
 		if ($this->config->get('config_currency_auto')) {
@@ -15,6 +16,8 @@ class ModelLocalisationCurrency extends Model {
 		}
 
 		$this->cache->delete('currency');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_currency, LOG_ACTION_ADD, $currency_id);
 	}
 
 	public function editCurrency($currency_id, $data) {
@@ -25,13 +28,17 @@ class ModelLocalisationCurrency extends Model {
 		$this->db->update($this->table, $data);
 
 		$this->cache->delete('currency');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_currency, LOG_ACTION_MODIFY, $currency_id);
 	}
 
-	public function editStatus($language_id, $status) {
+	public function editStatus($currency_id, $status) {
 
 		$this->db->set('status', (int) $status);
-		$this->db->where($this->primaryKey, (int) $language_id);
+		$this->db->where($this->primaryKey, (int) $currency_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_currency, LOG_ACTION_MODIFY, $currency_id);
 	}
 
 	public function deleteCurrency($currency_id) {
@@ -40,6 +47,8 @@ class ModelLocalisationCurrency extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "currency WHERE currency_id = '" . (int)$currency_id . "'");
 
 		$this->cache->delete('currency');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_currency, LOG_ACTION_DELETE, $currency_id);
 	}
 
 	public function getCurrency($currency_id) {

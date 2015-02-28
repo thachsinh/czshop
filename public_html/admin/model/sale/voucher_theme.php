@@ -22,6 +22,8 @@ class ModelSaleVoucherTheme extends Model {
 		}
 
 		$this->cache->delete('voucher_theme');
+
+		$this->tracking->log(LOG_FUNCTION::$sale_voucher_theme, LOG_ACTION_ADD, $voucher_theme_id);
 	}
 
 	public function editVoucherTheme($voucher_theme_id, $data) {
@@ -43,6 +45,8 @@ class ModelSaleVoucherTheme extends Model {
 		}
 
 		$this->cache->delete('voucher_theme');
+
+		$this->tracking->log(LOG_FUNCTION::$sale_voucher_theme, LOG_ACTION_MODIFY, $voucher_theme_id);
 	}
 
 	public function deleteVoucherTheme($voucher_theme_id) {
@@ -53,6 +57,8 @@ class ModelSaleVoucherTheme extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "voucher_theme_description WHERE voucher_theme_id = '" . (int)$voucher_theme_id . "'");
 
 		$this->cache->delete('voucher_theme');
+
+		$this->tracking->log(LOG_FUNCTION::$sale_voucher_theme, LOG_ACTION_DELETE, $voucher_theme_id);
 	}
 
 	public function getVoucherTheme($voucher_theme_id) {

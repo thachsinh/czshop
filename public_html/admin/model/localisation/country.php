@@ -9,7 +9,11 @@ class ModelLocalisationCountry extends Model {
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
 
+		$country_id = $this->db->insert_id();
+
 		$this->cache->delete('country');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_country, LOG_ACTION_ADD, $country_id);
 	}
 
 	public function editCountry($country_id, $data) {
@@ -19,6 +23,8 @@ class ModelLocalisationCountry extends Model {
 		$this->db->where($this->primaryKey, (int)$country_id);
 		$this->db->update($this->table, $data);
 		$this->cache->delete('country');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_country, LOG_ACTION_MODIFY, $country_id);
 	}
 
 	public function editStatus($country_id, $status) {
@@ -26,6 +32,8 @@ class ModelLocalisationCountry extends Model {
 		$this->db->set('status', (int) $status);
 		$this->db->where($this->primaryKey, (int) $country_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_country, LOG_ACTION_MODIFY, $country_id);
 	}
 
 	public function deleteCountry($country_id) {
@@ -34,6 +42,8 @@ class ModelLocalisationCountry extends Model {
 		$this->db->delete($this->table);
 
 		$this->cache->delete('country');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_country, LOG_ACTION_DELETE, $country_id);
 	}
 
 	public function getCountry($country_id) {

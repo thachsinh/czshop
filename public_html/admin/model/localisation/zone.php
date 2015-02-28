@@ -7,10 +7,13 @@ class ModelLocalisationZone extends Model {
 	public function addZone($data) {
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
+		$zone_id = $this->db->insert_id();
 
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "zone SET status = '" . (int)$data['status'] . "', name = '" . $this->db->escape($data['name']) . "', code = '" . $this->db->escape($data['code']) . "', country_id = '" . (int)$data['country_id'] . "'");
 
 		$this->cache->delete('zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_zone, LOG_ACTION_ADD, $zone_id);
 	}
 
 	public function editZone($zone_id, $data) {
@@ -21,6 +24,8 @@ class ModelLocalisationZone extends Model {
 		//$this->db->query("UPDATE " . DB_PREFIX . "zone SET status = '" . (int)$data['status'] . "', name = '" . $this->db->escape($data['name']) . "', code = '" . $this->db->escape($data['code']) . "', country_id = '" . (int)$data['country_id'] . "' WHERE zone_id = '" . (int)$zone_id . "'");
 
 		$this->cache->delete('zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_zone, LOG_ACTION_MODIFY, $zone_id);
 	}
 
 	public function editStatus($zone_id, $status) {
@@ -30,6 +35,8 @@ class ModelLocalisationZone extends Model {
 		$this->db->update($this->table);
 
 		$this->cache->delete('zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_zone, LOG_ACTION_MODIFY, $zone_id);
 	}
 
 	public function deleteZone($zone_id) {
@@ -38,6 +45,8 @@ class ModelLocalisationZone extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "zone WHERE zone_id = '" . (int)$zone_id . "'");
 
 		$this->cache->delete('zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_zone, LOG_ACTION_DELETE, $zone_id);
 	}
 
 	public function getZone($zone_id) {

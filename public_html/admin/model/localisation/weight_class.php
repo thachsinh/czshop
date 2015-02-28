@@ -23,6 +23,8 @@ class ModelLocalisationWeightClass extends Model {
 		}
 
 		$this->cache->delete('weight_class');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_weight_class, LOG_ACTION_ADD, $weight_class_id);
 	}
 
 	public function editWeightClass($weight_class_id, $data) {
@@ -47,6 +49,8 @@ class ModelLocalisationWeightClass extends Model {
 		}
 
 		$this->cache->delete('weight_class');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_weight_class, LOG_ACTION_MODIFY, $weight_class_id);
 	}
 
 	public function deleteWeightClass($weight_class_id) {
@@ -57,6 +61,8 @@ class ModelLocalisationWeightClass extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "weight_class_description WHERE weight_class_id = '" . (int)$weight_class_id . "'");
 
 		$this->cache->delete('weight_class');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_weight_class, LOG_ACTION_DELETE, $weight_class_id);
 	}
 
 	public function getWeightClasses($data = array()) {

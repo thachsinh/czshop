@@ -38,6 +38,8 @@ class ModelSaleCustomer extends Model {
 				}
 			}
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_ADD, $customer_id);
 	}
 
 	public function editCustomer($customer_id, $data) {
@@ -93,12 +95,16 @@ class ModelSaleCustomer extends Model {
 				}
 			}
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
 	}
 
 	public function editStatus($customer_id, $status) {
 		$this->db->where($this->primaryKey, (int)$customer_id);
 		$this->db->set('status', (int)$status);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
 	}
 
 	public function editToken($customer_id, $token) {
@@ -107,6 +113,8 @@ class ModelSaleCustomer extends Model {
 		$this->db->update($this->table);
 
 		//$this->db->query("UPDATE " . DB_PREFIX . "customer SET token = '" . $this->db->escape($token) . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
 	}
 
 	public function deleteCustomer($customer_id) {
@@ -118,6 +126,8 @@ class ModelSaleCustomer extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");*/
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_DELETE, $customer_id);
 	}
 
 	public function getCustomer($customer_id) {
@@ -286,6 +296,8 @@ class ModelSaleCustomer extends Model {
 			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
 			$mail->send();
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
 	}
 
 	public function getAddress($address_id) {
@@ -573,6 +585,8 @@ class ModelSaleCustomer extends Model {
 		$this->db->set('date_added', 'NOW()', FALSE);
 		$this->db->insert('customer_history');
 
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
+
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "customer_history SET customer_id = '" . (int)$customer_id . "', comment = '" . $this->db->escape(strip_tags($comment)) . "', date_added = NOW()");
 	}
 
@@ -645,6 +659,8 @@ class ModelSaleCustomer extends Model {
 			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
 			$mail->send();
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
 	}
 
 	public function deleteTransaction($order_id) {
@@ -747,6 +763,8 @@ class ModelSaleCustomer extends Model {
 			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
 			$mail->send();
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$sale_customer, LOG_ACTION_MODIFY, $customer_id);
 	}
 
 	public function deleteReward($order_id) {

@@ -10,7 +10,9 @@ class ModelUserUserGroup extends Model {
 			$tmp['permission'] = serialize($data['permission']);
 		}
 		$this->db->insert($this->table, $tmp);
-		return $this->db->insert_id();
+		$user_group_id = $this->db->insert_id();
+
+		$this->tracking->log(LOG_FUNCTION::$user_group, LOG_ACTION_ADD, $user_group_id);
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "user_group SET name = '" . ($data['name']) . "', permission = '" . (isset($data['permission']) ? (serialize($data['permission'])) : '') . "'");
 	}
 
@@ -22,6 +24,8 @@ class ModelUserUserGroup extends Model {
 		$this->db->where($this->primaryKey, (int)$user_group_id);
 		$this->db->update($this->table, $tmp);
 
+		$this->tracking->log(LOG_FUNCTION::$user_group, LOG_ACTION_MODIFY, $user_group_id);
+
 		/*$this->db->where($this->primaryKey, (int)$user_group_id);
 		$this->db->query("UPDATE " . DB_PREFIX . "user_group SET name = '" . ($data['name']) . "', permission = '" . (isset($data['permission']) ? (serialize($data['permission'])) : '') . "' WHERE user_group_id = '" . (int)$user_group_id . "'");*/
 	}
@@ -29,6 +33,8 @@ class ModelUserUserGroup extends Model {
 	public function deleteUserGroup($user_group_id) {
 		$this->db->where($this->primaryKey, (int)$user_group_id);
 		$this->db->delete($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$user_group, LOG_ACTION_DELETE, $user_group_id);
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
 	}
 
@@ -106,6 +112,8 @@ class ModelUserUserGroup extends Model {
 			$this->db->set('permission', (serialize($data)));
 			$this->db->where($this->primaryKey, (int)$user_group_id);
 			$this->db->update($this->table);
+
+			$this->tracking->log(LOG_FUNCTION::$user_group, LOG_ACTION_MODIFY, $user_group_id);
 			//$this->db->query("UPDATE " . DB_PREFIX . "user_group SET permission = '" . (serialize($data)) . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
 		}
 	}
@@ -124,6 +132,8 @@ class ModelUserUserGroup extends Model {
 			$this->db->set('permission', (serialize($data)));
 			$this->db->where($this->primaryKey, (int)$user_group_id);
 			$this->db->update($this->table);
+
+			$this->tracking->log(LOG_FUNCTION::$user_group, LOG_ACTION_MODIFY, $user_group_id);
 			//$this->db->query("UPDATE " . DB_PREFIX . "user_group SET permission = '" . (serialize($data)) . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
 		}
 	}

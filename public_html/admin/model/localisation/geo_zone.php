@@ -24,6 +24,8 @@ class ModelLocalisationGeoZone extends Model {
 		}
 
 		$this->cache->delete('geo_zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_geo_zone, LOG_ACTION_ADD, $geo_zone_id);
 	}
 
 	public function editGeoZone($geo_zone_id, $data) {
@@ -52,6 +54,8 @@ class ModelLocalisationGeoZone extends Model {
 		}
 
 		$this->cache->delete('geo_zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_geo_zone, LOG_ACTION_MODIFY, $geo_zone_id);
 	}
 
 	public function deleteGeoZone($geo_zone_id) {
@@ -61,6 +65,8 @@ class ModelLocalisationGeoZone extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
 
 		$this->cache->delete('geo_zone');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_geo_zone, LOG_ACTION_DELETE, $geo_zone_id);
 	}
 
 	public function getGeoZone($geo_zone_id) {

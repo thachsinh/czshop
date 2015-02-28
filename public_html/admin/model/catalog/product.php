@@ -227,6 +227,8 @@ class ModelCatalogProduct extends Model {
 
 		$this->event->trigger('post.admin.product.add', $product_id);
 
+		$this->tracking->log(LOG_FUNCTION::$catalog_product, LOG_ACTION_ADD, $product_id);
+
 		return $product_id;
 	}
 
@@ -483,6 +485,8 @@ class ModelCatalogProduct extends Model {
 		$this->cache->delete('product');
 
 		$this->event->trigger('post.admin.product.edit', $product_id);
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_product, LOG_ACTION_MODIFY, $product_id);
 	}
 
 	public function copyProduct($product_id) {
@@ -553,6 +557,8 @@ class ModelCatalogProduct extends Model {
 		$this->cache->delete('product');
 
 		$this->event->trigger('post.admin.product.delete', $product_id);
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_product, LOG_ACTION_DELETE, $product_id);
 	}
 
 	public function getProduct($product_id) {
@@ -1039,5 +1045,7 @@ class ModelCatalogProduct extends Model {
 		$this->db->set('status', (int)$status);
 		$this->db->where($this->primaryKey, (int)$product_id);
 		$this->db->update($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_product, LOG_ACTION_MODIFY, $product_id);
 	}
 }

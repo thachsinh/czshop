@@ -13,7 +13,9 @@ class ModelSaleVoucher extends Model {
 		$this->db->insert($this->table, $tmp);
 
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "voucher SET code = '" . $this->db->escape($data['code']) . "', from_name = '" . $this->db->escape($data['from_name']) . "', from_email = '" . $this->db->escape($data['from_email']) . "', to_name = '" . $this->db->escape($data['to_name']) . "', to_email = '" . $this->db->escape($data['to_email']) . "', voucher_theme_id = '" . (int)$data['voucher_theme_id'] . "', message = '" . $this->db->escape($data['message']) . "', amount = '" . (float)$data['amount'] . "', status = '" . (int)$data['status'] . "', date_added = NOW()");
-		return $this->db->insert_id();
+		$voucher_id = $this->db->insert_id();
+
+		$this->tracking->log(LOG_FUNCTION::$sale_voucher, LOG_ACTION_ADD, $voucher_id);
 	}
 
 	public function editVoucher($voucher_id, $data) {
@@ -23,12 +25,16 @@ class ModelSaleVoucher extends Model {
 		$this->db->where($this->primaryKey, (int)$voucher_id);
 		$this->db->update($this->table, $tmp);
 
+		$this->tracking->log(LOG_FUNCTION::$sale_voucher, LOG_ACTION_MODIFY, $voucher_id);
+
 		//$this->db->query("UPDATE " . DB_PREFIX . "voucher SET code = '" . $this->db->escape($data['code']) . "', from_name = '" . $this->db->escape($data['from_name']) . "', from_email = '" . $this->db->escape($data['from_email']) . "', to_name = '" . $this->db->escape($data['to_name']) . "', to_email = '" . $this->db->escape($data['to_email']) . "', voucher_theme_id = '" . (int)$data['voucher_theme_id'] . "', message = '" . $this->db->escape($data['message']) . "', amount = '" . (float)$data['amount'] . "', status = '" . (int)$data['status'] . "' WHERE voucher_id = '" . (int)$voucher_id . "'");
 	}
 
 	public function deleteVoucher($voucher_id) {
 		$this->db->where($this->primaryKey, (int)$voucher_id);
 		$this->db->delete(array($this->table, $this->history_table));
+
+		$this->tracking->log(LOG_FUNCTION::$sale_voucher, LOG_ACTION_DELETE, $voucher_id);
 
 		/*$this->db->query("DELETE FROM " . DB_PREFIX . "voucher WHERE voucher_id = '" . (int)$voucher_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "voucher_history WHERE voucher_id = '" . (int)$voucher_id . "'");*/

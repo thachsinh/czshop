@@ -11,6 +11,10 @@ class ModelUserUser extends Model {
 		$this->db->set('date_added', 'NOW()', FALSE);
 		$this->db->insert($this->table, $tmp);
 
+		$user_id = $this->db->insert_id();
+
+		$this->tracking->log(LOG_FUNCTION::$user_user, LOG_ACTION_ADD, $user_id);
+
 		//$this->db->query("INSERT INTO `" . DB_PREFIX . "user` SET username = '" . ($data['username']) . "', user_group_id = '" . (int)$data['user_group_id'] . "', salt = '" . ($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . (sha1($salt . sha1($salt . sha1($data['password'])))) . "', firstname = '" . ($data['firstname']) . "', lastname = '" . ($data['lastname']) . "', email = '" . ($data['email']) . "', image = '" . ($data['image']) . "', status = '" . (int)$data['status'] . "', date_added = NOW()");
 	}
 
@@ -29,6 +33,8 @@ class ModelUserUser extends Model {
 
 			//$this->db->query("UPDATE `" . DB_PREFIX . "user` SET salt = '" . ($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . (sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE user_id = '" . (int)$user_id . "'");
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$user_user, LOG_ACTION_MODIFY, $user_id);
 	}
 
 	public function editPassword($user_id, $password) {
@@ -37,6 +43,8 @@ class ModelUserUser extends Model {
 		$this->db->where($this->primaryKey, (int)$user_id);
 		$this->db->update($this->table);
 		//$this->db->query("UPDATE `" . DB_PREFIX . "user` SET salt = '" . ($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . (sha1($salt . sha1($salt . sha1($password)))) . "', code = '' WHERE user_id = '" . (int)$user_id . "'");
+
+		$this->tracking->log(LOG_FUNCTION::$user_user, LOG_ACTION_MODIFY, $user_id);
 	}
 
 	public function editCode($email, $code) {
@@ -49,6 +57,8 @@ class ModelUserUser extends Model {
 	public function deleteUser($user_id) {
 		$this->db->where($this->primaryKey, (int)$user_id);
 		$this->db->delete($this->table);
+
+		$this->tracking->log(LOG_FUNCTION::$user_user, LOG_ACTION_DELETE, $user_id);
 		//$this->db->query("DELETE FROM `" . DB_PREFIX . "user` WHERE user_id = '" . (int)$user_id . "'");
 	}
 

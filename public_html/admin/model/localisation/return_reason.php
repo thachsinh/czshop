@@ -24,6 +24,8 @@ class ModelLocalisationReturnReason extends Model {
 			}
 		}
 
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_season, LOG_ACTION_ADD, $return_reason_id);
+
 		$this->cache->delete('return_reason');
 	}
 
@@ -43,6 +45,8 @@ class ModelLocalisationReturnReason extends Model {
 		}
 
 		$this->cache->delete('return_reason');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_season, LOG_ACTION_MODIFY, $return_reason_id);
 	}
 
 	public function deleteReturnReason($return_reason_id) {
@@ -51,6 +55,7 @@ class ModelLocalisationReturnReason extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "return_reason WHERE return_reason_id = '" . (int)$return_reason_id . "'");
 
 		//$this->cache->delete('return_reason');
+		$this->tracking->log(LOG_FUNCTION::$localisation_return_season, LOG_ACTION_DELETE, $return_reason_id);
 	}
 
 	public function getReturnReason($return_reason_id) {

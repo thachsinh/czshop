@@ -48,6 +48,8 @@ class ModelCatalogCustomField extends Model {
 				}
 			}
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field, LOG_ACTION_ADD, $custom_field_id);
 	}
 
 	public function editCustomField($custom_field_id, $data) {
@@ -106,17 +108,21 @@ class ModelCatalogCustomField extends Model {
 				}
 			}
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field, LOG_ACTION_MODIFY, $custom_field_id);
 	}
 
 	public function editStatus($custom_field_id, $status) {
 		$this->db->set('status', (int)$status);
 		$this->db->where($this->primaryKey, (int)$custom_field_id);
-		return $this->db->update($this->table);
+		$this->db->update($this->table);
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field, LOG_ACTION_MODIFY, $custom_field_id);
 	}
 
 	public function deleteCustomField($custom_field_id) {
 		$this->db->where($this->primaryKey, (int)$custom_field_id);
 		$this->db->delete(array($this->table, $this->desc_table, $this->value_table, $this->desc_value_table, $this->group_table));
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field, LOG_ACTION_DELETE, $custom_field_id);
 	}
 
 	public function getCustomField($custom_field_id) {

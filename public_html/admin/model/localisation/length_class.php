@@ -22,6 +22,8 @@ class ModelLocalisationLengthClass extends Model {
 		}
 
 		$this->cache->delete('length_class');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_length_class, LOG_ACTION_ADD, $length_class_id);
 	}
 
 	public function editLengthClass($length_class_id, $data) {
@@ -44,6 +46,8 @@ class ModelLocalisationLengthClass extends Model {
 		}
 
 		$this->cache->delete('length_class');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_length_class, LOG_ACTION_MODIFY, $length_class_id);
 	}
 
 	public function deleteLengthClass($length_class_id) {
@@ -53,6 +57,8 @@ class ModelLocalisationLengthClass extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "length_class_description WHERE length_class_id = '" . (int)$length_class_id . "'");
 
 		$this->cache->delete('length_class');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_length_class, LOG_ACTION_DELETE, $length_class_id);
 	}
 
 	public function getLengthClasses($data = array()) {

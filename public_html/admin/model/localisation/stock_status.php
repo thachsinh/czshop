@@ -23,6 +23,8 @@ class ModelLocalisationStockStatus extends Model {
 		}
 
 		$this->cache->delete('stock_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_stock_status, LOG_ACTION_ADD, $stock_status_id);
 	}
 
 	public function editStockStatus($stock_status_id, $data) {
@@ -39,6 +41,8 @@ class ModelLocalisationStockStatus extends Model {
 		}
 
 		$this->cache->delete('stock_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_stock_status, LOG_ACTION_MODIFY, $stock_status_id);
 	}
 
 	public function deleteStockStatus($stock_status_id) {
@@ -48,6 +52,8 @@ class ModelLocalisationStockStatus extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "stock_status WHERE stock_status_id = '" . (int)$stock_status_id . "'");
 
 		$this->cache->delete('stock_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_stock_status, LOG_ACTION_DELETE, $stock_status_id);
 	}
 
 	public function getStockStatus($stock_status_id) {

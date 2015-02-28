@@ -36,6 +36,8 @@ class ModelCatalogManufacturer extends Model {
 
 		$this->event->trigger('post.admin.manufacturer.add', $manufacturer_id);
 
+		$this->tracking->log(LOG_FUNCTION::$catalog_manufacturer, LOG_ACTION_ADD, $manufacturer_id);
+
 		return $manufacturer_id;
 	}
 
@@ -75,6 +77,8 @@ class ModelCatalogManufacturer extends Model {
 		$this->cache->delete('manufacturer');
 
 		$this->event->trigger('post.admin.manufacturer.edit');
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_manufacturer, LOG_ACTION_MODIFY, $manufacturer_id);
 	}
 
 	public function deleteManufacturer($manufacturer_id) {
@@ -91,6 +95,8 @@ class ModelCatalogManufacturer extends Model {
 		$this->cache->delete('manufacturer');
 
 		$this->event->trigger('post.admin.manufacturer.delete', $manufacturer_id);
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_manufacturer, LOG_ACTION_DELETE, $manufacturer_id);
 	}
 
 	public function getManufacturer($manufacturer_id) {

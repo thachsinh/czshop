@@ -24,6 +24,8 @@ class ModelLocalisationOrderStatus extends Model {
 		}
 
 		$this->cache->delete('order_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_order_status, LOG_ACTION_ADD, $order_status_id);
 	}
 
 	public function editOrderStatus($order_status_id, $data) {
@@ -42,6 +44,8 @@ class ModelLocalisationOrderStatus extends Model {
 		}
 
 		$this->cache->delete('order_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_order_status, LOG_ACTION_MODIFY, $order_status_id);
 	}
 
 	public function deleteOrderStatus($order_status_id) {
@@ -51,6 +55,8 @@ class ModelLocalisationOrderStatus extends Model {
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
 
 		$this->cache->delete('order_status');
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_order_status, LOG_ACTION_DELETE, $order_status_id);
 	}
 
 	public function getOrderStatus($order_status_id) {

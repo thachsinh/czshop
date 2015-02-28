@@ -17,6 +17,8 @@ class ModelCatalogCustomFieldGroup extends Model {
 			$this->db->set('language_id', (int)$language_id);
 			$this->db->insert($this->desc_table, $tmp);
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field_group, LOG_ACTION_ADD, $custom_field_group_id);
 	}
 
 	public function editCustomFieldGroup($custom_field_group_id, $data) {
@@ -33,11 +35,14 @@ class ModelCatalogCustomFieldGroup extends Model {
 			$this->db->set('language_id', (int)$language_id);
 			$this->db->insert($this->desc_table, $tmp);
 		}
+
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field_group, LOG_ACTION_MODIFY, $custom_field_group_id);
 	}
 
 	public function deleteCustomFieldGroup($custom_field_group_id) {
 		$this->db->where($this->primaryKey, (int)$custom_field_group_id);
 		$this->db->delete(array($this->table, $this->desc_table));
+		$this->tracking->log(LOG_FUNCTION::$catalog_custom_field_group, LOG_ACTION_DELETE, $custom_field_group_id);
 	}
 
 	public function getCustomFieldGroup($custom_field_group_id) {

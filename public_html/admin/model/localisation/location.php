@@ -7,13 +7,17 @@ class ModelLocalisationLocation extends Model {
 	public function addLocation($data) {
 		$data = $this->initData($data, TRUE);
 		$this->db->insert($this->table, $data);
+		$location_id = $this->db->insert_id();
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "location SET name = '" . $this->db->escape($data['name']) . "', address = '" . $this->db->escape($data['address']) . "', geocode = '" . $this->db->escape($data['geocode']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', image = '" . $this->db->escape($data['image']) . "', open = '" . $this->db->escape($data['open']) . "', comment = '" . $this->db->escape($data['comment']) . "'");
+		$this->tracking->log(LOG_FUNCTION::$localisation_location, LOG_ACTION_ADD, $location_id);
 	}
 
 	public function editLocation($location_id, $data) {
 		$data = $this->initData($data, TRUE);
 		$this->db->where($this->primaryKey, (int)$location_id);
 		$this->db->update($this->table, $data);
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_location, LOG_ACTION_MODIFY, $location_id);
 
 		//$this->db->query("UPDATE " . DB_PREFIX . "location SET name = '" . $this->db->escape($data['name']) . "', address = '" . $this->db->escape($data['address']) . "', geocode = '" . $this->db->escape($data['geocode']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', image = '" . $this->db->escape($data['image']) . "', open = '" . $this->db->escape($data['open']) . "', comment = '" . $this->db->escape($data['comment']) . "' WHERE location_id = '" . (int)$location_id . "'");
 	}
@@ -22,6 +26,8 @@ class ModelLocalisationLocation extends Model {
 		$this->db->where($this->primaryKey, (int)$location_id);
 		$this->db->delete($this->table);
 		//$this->db->query("DELETE FROM " . DB_PREFIX . "location WHERE location_id = " . (int)$location_id);
+
+		$this->tracking->log(LOG_FUNCTION::$localisation_location, LOG_ACTION_DELETE, $location_id);
 	}
 
 	public function getLocation($location_id) {
