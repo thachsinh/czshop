@@ -32,8 +32,6 @@ $registry->set('db', $db);
 $solr = Solarium();
 $registry->set('solr', $solr);
 
-
-
 $db->select('*')
 	->from('setting')
 	->where('store_id', 0);
@@ -153,6 +151,10 @@ $registry->set('user', new User($registry));
 
 //OpenBay Pro
 $registry->set('openbay', new Openbay($registry));
+
+// Tracking
+$tracking = new Track($registry);
+$registry->set('tracking', $tracking);
 
 // Event
 $event = new Event($registry);
