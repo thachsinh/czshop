@@ -157,6 +157,7 @@ class ControllerLocalisationReturnStatus extends Controller {
 
 		$data['add'] = $this->url->link('localisation/return_status/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/return_status/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/return_status/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['return_statuses'] = array();
 
@@ -352,11 +353,26 @@ class ControllerLocalisationReturnStatus extends Controller {
 
 		$this->load->model('sale/return');
 
-		foreach ($this->request->post['selected'] as $return_status_id) {
-			if ($this->config->get('config_return_status_id') == $return_status_id) {
-				$this->error['warning'] = $this->language->get('error_default');
-			}
+		if(isset($this->request->post['selected'])) {
+			foreach ($this->request->post['selected'] as $return_status_id) {
+				if ($this->config->get('config_return_status_id') == $return_status_id) {
+					$this->error['warning'] = $this->language->get('error_default');
+				}
 
+				$return_total = $this->model_sale_return->getTotalReturnsByReturnStatusId($return_status_id);
+
+				if ($return_total) {
+					$this->error['warning'] = sprintf($this->language->get('error_return'), $return_total);
+				}
+
+				$return_total = $this->model_sale_return->getTotalReturnHistoriesByReturnStatusId($return_status_id);
+
+				if ($return_total) {
+					$this->error['warning'] = sprintf($this->language->get('error_return'), $return_total);
+				}
+			}
+		} elseif(isset($this->request->post['return_status_id'])) {
+			$return_status_id = (int)$this->request->post['return_status_id'];
 			$return_total = $this->model_sale_return->getTotalReturnsByReturnStatusId($return_status_id);
 
 			if ($return_total) {
@@ -371,5 +387,17 @@ class ControllerLocalisationReturnStatus extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		$return_status_id = (int) $this->request->post['return_status_id'];
+		if($return_status_id > 0 && $this->validateDelete()) {
+			$this->load->model('localisation/return_status');
+			$this->load->language('localisation/return_status');
+			$this->model_localisation_return_status->deleteReturnStatus($return_status_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		//die("{'msg': 'The Language status has been changed.', 'error': 0}");
 	}
 }

@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d7f25d7-3a95-431e-af17-d7b1f9daff8f" name="Default" comment="Done">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/longnt.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/marketing/affiliate.php" afterPath="$PROJECT_DIR$/admin/model/marketing/affiliate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/config.php" afterPath="$PROJECT_DIR$/admin/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/marketing/coupon.php" afterPath="$PROJECT_DIR$/admin/model/marketing/coupon.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/config/database.php" afterPath="$PROJECT_DIR$/system/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/marketing/marketing.php" afterPath="$PROJECT_DIR$/admin/model/marketing/marketing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/product.php" afterPath="$PROJECT_DIR$/admin/model/catalog/product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/sale/voucher.php" afterPath="$PROJECT_DIR$/admin/model/sale/voucher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/sale/voucher_theme.php" afterPath="$PROJECT_DIR$/admin/model/sale/voucher_theme.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <list id="7ef55cbf-bbfa-4026-94c8-a179ff14dce4" name="Rejected commit: Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/attribute.php" afterPath="$PROJECT_DIR$/admin/model/catalog/attribute.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/attribute_group.php" afterPath="$PROJECT_DIR$/admin/model/catalog/attribute_group.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/common/column_left.php" afterPath="$PROJECT_DIR$/admin/controller/common/column_left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/common/column_left.tpl" afterPath="$PROJECT_DIR$/admin/view/template/common/column_left.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/download.php" afterPath="$PROJECT_DIR$/admin/model/catalog/download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/filter.php" afterPath="$PROJECT_DIR$/admin/model/catalog/filter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/common/header.php" afterPath="$PROJECT_DIR$/admin/controller/common/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/common/header.tpl" afterPath="$PROJECT_DIR$/admin/view/template/common/header.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/common/menu.tpl" afterPath="$PROJECT_DIR$/admin/view/template/common/menu.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/option.php" afterPath="$PROJECT_DIR$/admin/model/catalog/option.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/localisation/return_action.php" afterPath="$PROJECT_DIR$/admin/controller/localisation/return_action.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/localisation/return_action_list.tpl" afterPath="$PROJECT_DIR$/admin/view/template/localisation/return_action_list.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/localisation/return_reason.php" afterPath="$PROJECT_DIR$/admin/controller/localisation/return_reason.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/localisation/return_reason_list.tpl" afterPath="$PROJECT_DIR$/admin/view/template/localisation/return_reason_list.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/localisation/return_status.php" afterPath="$PROJECT_DIR$/admin/controller/localisation/return_status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/localisation/return_status_list.tpl" afterPath="$PROJECT_DIR$/admin/view/template/localisation/return_status_list.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/catalog/review.php" afterPath="$PROJECT_DIR$/admin/model/catalog/review.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/startup.php" afterPath="$PROJECT_DIR$/system/startup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/localisation/tax_class.php" afterPath="$PROJECT_DIR$/admin/controller/localisation/tax_class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/localisation/tax_class.php" afterPath="$PROJECT_DIR$/admin/model/localisation/tax_class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/localisation/tax_class_list.tpl" afterPath="$PROJECT_DIR$/admin/view/template/localisation/tax_class_list.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/localisation/tax_rate.php" afterPath="$PROJECT_DIR$/admin/controller/localisation/tax_rate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/localisation/tax_rate.php" afterPath="$PROJECT_DIR$/admin/model/localisation/tax_rate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/localisation/tax_rate_list.tpl" afterPath="$PROJECT_DIR$/admin/view/template/localisation/tax_rate_list.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/localisation/zone_list.tpl" afterPath="$PROJECT_DIR$/admin/view/template/localisation/zone_list.tpl" />
+    </list>
+    <ignored path="public_html.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <file path="$PROJECT_DIR$/system/startup.php" ignored="true" />
+    <file path="$PROJECT_DIR$/admin/model/catalog/filter.php" ignored="false" />
+    <file path="$PROJECT_DIR$/admin/model/catalog/attribute.php" ignored="false" />
+    <file path="$PROJECT_DIR$/admin/model/catalog/attribute_group.php" ignored="false" />
+    <file path="$PROJECT_DIR$/admin/model/catalog/option.php" ignored="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="public_html" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="startup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/startup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0689654" vertical-offset="0" max-vertical-offset="2060">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/model/sale/order.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="7756" max-vertical-offset="12540">
+              <caret line="374" column="92" selection-start-line="374" selection-start-column="90" selection-end-line="374" selection-end-column="92" />
+              <folding>
+                <marker date="1423995364000" expanded="true" signature="18506:18654" placeholder="SELECT MAX(i..." />
+                <marker date="1423995364000" expanded="true" signature="19249:19612" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/catalog/product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="36.07143" vertical-offset="2460" max-vertical-offset="37660">
+              <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+              <folding>
+                <marker date="1424073199000" expanded="true" signature="31883:31965" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="31989:32081" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32105:32199" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32223:32314" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32338:32427" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32451:32539" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32563:32652" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32676:32771" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32795:32885" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="32909:32999" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33023:33112" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33136:33226" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33250:33344" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33368:33462" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33486:33578" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33602:33693" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33717:33798" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33822:33888" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="33931:34021" placeholder="DELETE FROM ..." />
+                <marker date="1424073199000" expanded="true" signature="34205:34576" placeholder="SELECT DISTI..DB_PREFIXproduct..." />
+                <marker date="1424073199000" expanded="true" signature="34225:34323" placeholder="SELECT keywo..DB_PREFIXurl_alias..." />
+                <marker date="1424073199000" expanded="true" signature="41743:42072" placeholder="SELECT * FRO..." />
+                <marker date="1424073199000" expanded="true" signature="42241:42370" placeholder="SELECT * FRO..DB_PREFIXproduct_option_value..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="voucher.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/sale/voucher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="7.62069" vertical-offset="5061" max-vertical-offset="5640">
+              <caret line="242" column="10" selection-start-line="242" selection-start-column="10" selection-end-line="242" selection-end-column="10" />
+              <folding>
+                <marker date="1424073955000" expanded="true" signature="402:954" placeholder="INSERT INTO ..." />
+                <marker date="1424073955000" expanded="true" signature="2077:2159" placeholder="DELETE FROM ..." />
+                <marker date="1424073955000" expanded="true" signature="2183:2273" placeholder="DELETE FROM ..." />
+                <marker date="1424073955000" expanded="true" signature="2516:2609" placeholder="SELECT DISTI..DB_PREFIXvoucher..." />
+                <marker date="1424073955000" expanded="true" signature="2853:2948" placeholder="SELECT DISTI..DB_PREFIXvoucher..." />
+                <marker date="1424073955000" expanded="true" signature="3040:3389" placeholder="SELECT v.vou..DB_PREFIXvoucher..." />
+                <marker date="1424073955000" expanded="true" signature="3120:3313" placeholder="SELECT vtd.n..DB_PREFIXvoucher_theme_description..." />
+                <marker date="1424073955000" expanded="true" signature="8154:8208" placeholder="SELECT COUNT..DB_PREFIXvoucher..." />
+                <marker date="1424073955000" expanded="true" signature="8557:8669" placeholder="SELECT COUNT..DB_PREFIXvoucher..." />
+                <marker date="1424073955000" expanded="true" signature="8898:9203" placeholder="SELECT vh.or..DB_PREFIXvoucher_history..." />
+                <marker date="1424073955000" expanded="true" signature="9544:9652" placeholder="SELECT COUNT..DB_PREFIXvoucher_history..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_form.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/template/sale/order_form.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="164.21428" vertical-offset="47116" max-vertical-offset="57660">
+              <caret line="1896" column="48" selection-start-line="1896" selection-start-column="30" selection-end-line="1896" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="voucher_theme.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/sale/voucher_theme.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-77.24138" vertical-offset="0" max-vertical-offset="4280">
+              <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
+              <folding>
+                <marker date="1424074477000" expanded="true" signature="321:419" placeholder="INSERT INTO ..." />
+                <marker date="1424074477000" expanded="true" signature="810:1015" placeholder="INSERT INTO ..." />
+                <marker date="1424074477000" expanded="true" signature="1474:1586" placeholder="DELETE FROM ..." />
+                <marker date="1424074477000" expanded="true" signature="1882:2087" placeholder="INSERT INTO ..." />
+                <marker date="1424074477000" expanded="true" signature="2345:2445" placeholder="DELETE FROM ..." />
+                <marker date="1424074477000" expanded="true" signature="2471:2583" placeholder="DELETE FROM ..." />
+                <marker date="1424074477000" expanded="true" signature="3076:3367" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme..." />
+                <marker date="1424074477000" expanded="true" signature="3481:3731" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme..." />
+                <marker date="1424074477000" expanded="true" signature="4710:4960" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme..." />
+                <marker date="1424074477000" expanded="true" signature="5612:5726" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme_description..." />
+                <marker date="1424074477000" expanded="true" signature="5963:6023" placeholder="SELECT COUNT..DB_PREFIXvoucher_theme..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attribute_group.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/catalog/attribute_group.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3280">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_group.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/user/user_group.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="102.10345" vertical-offset="2961" max-vertical-offset="3700">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coupon.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/marketing/coupon.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.7586207" vertical-offset="60" max-vertical-offset="7540">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="marketing.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/model/marketing/marketing.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0689654" vertical-offset="20" max-vertical-offset="4460">
+              <caret line="4" column="98" selection-start-line="4" selection-start-column="98" selection-end-line="4" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Push.Settings">
+    <option name="myUpdateMethod" value="REBASE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/catalog/view/theme/default/template/common/home.tpl" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/filter.php" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/attribute_group.php" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/attribute.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/admin/config.php" />
+        <option value="$PROJECT_DIR$/system/config/database.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/customer_group_form.tpl" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/custom_field_group_list.tpl" />
+        <option value="$PROJECT_DIR$/admin/language/english/catalog/custom_field_group.php" />
+        <option value="$PROJECT_DIR$/admin/controller/catalog/custom_field_group.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/custom_field_group_form.tpl" />
+        <option value="$PROJECT_DIR$/admin/language/english/catalog/custom_field.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/custom_field_list.tpl" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/custom_field_form.tpl" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/custom_field.php" />
+        <option value="$PROJECT_DIR$/admin/controller/catalog/custom_field.php" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/custom_field_group.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/category_form.tpl" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/category.php" />
+        <option value="$PROJECT_DIR$/admin/controller/catalog/category.php" />
+        <option value="$PROJECT_DIR$/admin/controller/sale/customer_group.php" />
+        <option value="$PROJECT_DIR$/admin/language/english/catalog/category.php" />
+        <option value="$PROJECT_DIR$/admin/language/english/catalog/product.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/catalog/product_form.tpl" />
+        <option value="$PROJECT_DIR$/admin/controller/catalog/product.php" />
+        <option value="$PROJECT_DIR$/admin/language/english/default.php" />
+        <option value="$PROJECT_DIR$/admin/model/sale/fraud.php" />
+        <option value="$PROJECT_DIR$/admin/model/sale/recurring.php" />
+        <option value="$PROJECT_DIR$/admin/model/sale/return.php" />
+        <option value="$PROJECT_DIR$/admin/controller/sale/return.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/length_class.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/location.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/order_status.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/return_action.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/return_reason.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/return_status.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/stock_status.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/weight_class.php" />
+        <option value="$PROJECT_DIR$/admin/model/localisation/zone.php" />
+        <option value="$PROJECT_DIR$/admin/model/report/customer.php" />
+        <option value="$PROJECT_DIR$/admin/model/report/affiliate.php" />
+        <option value="$PROJECT_DIR$/admin/model/sale/order.php" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/option.php" />
+        <option value="$PROJECT_DIR$/admin/model/marketing/coupon.php" />
+        <option value="$PROJECT_DIR$/admin/model/marketing/marketing.php" />
+        <option value="$PROJECT_DIR$/admin/model/marketing/affiliate.php" />
+        <option value="$PROJECT_DIR$/admin/model/catalog/product.php" />
+        <option value="$PROJECT_DIR$/admin/model/sale/voucher.php" />
+        <option value="$PROJECT_DIR$/admin/model/sale/voucher_theme.php" />
+        <option value="$PROJECT_DIR$/system/startup.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="23" />
+    <option name="width" value="1281" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="preferences.editor" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="true" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin/view/template/catalog" />
+      <recent name="$PROJECT_DIR$/admin/model/catalog" />
+      <recent name="$PROJECT_DIR$/admin/language/english/catalog" />
+      <recent name="$PROJECT_DIR$/admin/controller/catalog" />
+      <recent name="$PROJECT_DIR$/admin/language/english/sale" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.option.php">
+    <configuration default="false" name="option.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/public_html/admin/model/catalog/option.php">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.option.php" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.option.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d7f25d7-3a95-431e-af17-d7b1f9daff8f" name="Default" comment="" />
+      <created>1422343972567</created>
+      <option name="number" value="Default" />
+      <updated>1422343972567</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Done">
+      <created>1422690724332</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1422690724332</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Done">
+      <created>1422691537523</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1422691537523</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add template">
+      <created>1422757763917</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1422757763917</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Done">
+      <created>1423841952282</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1423841952282</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Done">
+      <created>1423998735223</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1423998735223</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="23" width="1281" height="728" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19043887" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18159807" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18966909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="516" y="118" width="243" height="619" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <confirmMoveToFailedCommit value="2" />
+    <MESSAGE value="add template" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin/view/template/catalog/product_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="79.64286" vertical-offset="21440" max-vertical-offset="30580">
+          <caret line="849" column="3" selection-start-line="849" selection-start-column="3" selection-end-line="849" selection-end-column="3" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#form#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#6;n#div#0;n#form#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#6;n#div#0;n#form#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#7;n#div#0;n#form#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#7;n#div#0;n#form#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1423965567000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1423965567000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1423965567000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/catalog/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.571428" vertical-offset="21628" max-vertical-offset="31000">
+          <caret line="1049" column="27" selection-start-line="1049" selection-start-column="27" selection-end-line="1049" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/language/english/catalog/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.928572" vertical-offset="0" max-vertical-offset="2300">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/language/english/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="2490" max-vertical-offset="3180">
+          <caret line="139" column="52" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/fraud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.586207" vertical-offset="0" max-vertical-offset="400">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding>
+            <marker date="1423967326000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/recurring.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="46.24138" vertical-offset="5321" max-vertical-offset="5900">
+          <caret line="199" column="26" selection-start-line="199" selection-start-column="26" selection-end-line="199" selection-end-column="26" />
+          <folding>
+            <marker date="1423967936000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423967936000" expanded="true" signature="-1:-1" placeholder="SELECT `or`...." />
+            <marker date="1423967936000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_recurring..." />
+            <marker date="1423967936000" expanded="true" signature="-1:-1" placeholder="SELECT amoun..DB_PREFIXorder_recurring_transaction..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/catalog/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="19.551723" vertical-offset="7287" max-vertical-offset="10520">
+          <caret line="336" column="20" selection-start-line="336" selection-start-column="20" selection-end-line="336" selection-end-column="20" />
+          <folding>
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcategory..." />
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcategory..." />
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="SELECT GROUP..DB_PREFIXcategory_path..." />
+            <marker date="1423905359000" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXurl_alias..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/return.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="51.714287" vertical-offset="3756" max-vertical-offset="8480">
+          <caret line="43" column="30" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="30" />
+          <folding>
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT *, CO..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT rs.na..DB_PREFIXreturn_status..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT *, rs..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT rh.da..DB_PREFIXreturn_history..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXreturn_history..." />
+            <marker date="1423981044000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXreturn_history..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/country.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2800">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/currency.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4620">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/geo_zone.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.392055" vertical-offset="3701" max-vertical-offset="4280">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/language.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.834196" vertical-offset="13221" max-vertical-offset="13800">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/length_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13816926" vertical-offset="0" max-vertical-offset="4260">
+          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.103626944" vertical-offset="40" max-vertical-offset="2720">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/order_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="122.10345" vertical-offset="3621" max-vertical-offset="4200">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/return_action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13816926" vertical-offset="20" max-vertical-offset="4180">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/return_reason.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13816926" vertical-offset="20" max-vertical-offset="4500">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/sale/return.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="114.57143" vertical-offset="23756" max-vertical-offset="27460">
+          <caret line="867" column="8" selection-start-line="867" selection-start-column="8" selection-end-line="867" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/return_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0689654" vertical-offset="20" max-vertical-offset="4400">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/stock_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0689654" vertical-offset="20" max-vertical-offset="4340">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/tax_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4520">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/tax_rate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4620">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/weight_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.758621" vertical-offset="740" max-vertical-offset="5360">
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/localisation/zone.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7586207" vertical-offset="0" max-vertical-offset="3620">
+          <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/report/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2020">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT pd.na..DB_PREFIXproduct..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXproduct..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT op.na..DB_PREFIXorder_product..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/report/sale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="309.68967" vertical-offset="8981" max-vertical-offset="9560">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT SUM(t..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT MIN(o..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT MIN(o..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT MIN(o..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/report/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT a.key..CONCAT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/report/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.793104" vertical-offset="9261" max-vertical-offset="9840">
+          <caret line="430" column="21" selection-start-line="430" selection-start-column="21" selection-end-line="430" selection-end-column="21" />
+          <folding>
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT c.cus..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT cr.cu..DB_PREFIXcustomer_reward..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT ct.cu..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT co.ip..DB_PREFIXcustomer_online..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT ca.ac..DB_PREFIXcustomer_activity..." />
+            <marker date="1423994661000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/report/marketing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1400">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT m.mar..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/report/affiliate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7931035" vertical-offset="3841" max-vertical-offset="4440">
+          <caret line="188" column="41" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
+          <folding>
+            <marker date="1423994824000" expanded="true" signature="-1:-1" placeholder="SELECT at.af..DB_PREFIXaffiliate_transaction..." />
+            <marker date="1423994824000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994824000" expanded="true" signature="-1:-1" placeholder="SELECT at.pr..DB_PREFIXaffiliate_transaction..." />
+            <marker date="1423994824000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1423994824000" expanded="true" signature="-1:-1" placeholder="SELECT aa.ac..DB_PREFIXaffiliate_activity..." />
+            <marker date="1423994824000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6896552" vertical-offset="7580" max-vertical-offset="52780">
+          <caret line="380" column="53" selection-start-line="380" selection-start-column="44" selection-end-line="380" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/design/banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="298.65518" vertical-offset="8661" max-vertical-offset="9240">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/design/banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4520">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/setting/setting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1220">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXsetting..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="14.5172415" vertical-offset="421" max-vertical-offset="1000">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="61.41379" vertical-offset="1781" max-vertical-offset="2360">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXupload..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXupload..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXupload..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/backup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="42.793102" vertical-offset="1241" max-vertical-offset="1820">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/user/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="31.758621" vertical-offset="921" max-vertical-offset="1500">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1420969873000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/catalog/attribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4760">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1423842023000" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..DB_PREFIXattribute..." />
+            <marker date="1423842023000" expanded="true" signature="-1:-1" placeholder="SELECT agd.n..DB_PREFIXattribute_group_description..." />
+            <marker date="1423842023000" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..DB_PREFIXattribute..." />
+            <marker date="1423842023000" expanded="true" signature="-1:-1" placeholder="SELECT agd.n..DB_PREFIXattribute_group_description..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/catalog/attribute_group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3280">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/marketing/coupon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7586207" vertical-offset="60" max-vertical-offset="7540">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/marketing/marketing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0689654" vertical-offset="20" max-vertical-offset="4460">
+          <caret line="4" column="98" selection-start-line="4" selection-start-column="98" selection-end-line="4" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/marketing/affiliate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.507246" vertical-offset="13308" max-vertical-offset="13860">
+          <caret line="223" column="42" selection-start-line="223" selection-start-column="42" selection-end-line="223" selection-end-column="42" />
+          <folding>
+            <marker date="1424072920000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/catalog/option.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2753623" vertical-offset="9228" max-vertical-offset="9780">
+          <caret line="276" column="34" selection-start-line="276" selection-start-column="34" selection-end-line="276" selection-end-column="34" />
+          <folding>
+            <marker date="1423998907000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXoption_value..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/user/user_group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="102.10345" vertical-offset="2961" max-vertical-offset="3700">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/catalog/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="36.07143" vertical-offset="2460" max-vertical-offset="37660">
+          <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+          <folding>
+            <marker date="1424073199000" expanded="true" signature="31883:31965" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="31989:32081" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32105:32199" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32223:32314" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32338:32427" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32451:32539" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32563:32652" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32676:32771" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32795:32885" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="32909:32999" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33023:33112" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33136:33226" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33250:33344" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33368:33462" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33486:33578" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33602:33693" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33717:33798" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33822:33888" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="33931:34021" placeholder="DELETE FROM ..." />
+            <marker date="1424073199000" expanded="true" signature="34205:34576" placeholder="SELECT DISTI..DB_PREFIXproduct..." />
+            <marker date="1424073199000" expanded="true" signature="34225:34323" placeholder="SELECT keywo..DB_PREFIXurl_alias..." />
+            <marker date="1424073199000" expanded="true" signature="41743:42072" placeholder="SELECT * FRO..." />
+            <marker date="1424073199000" expanded="true" signature="42241:42370" placeholder="SELECT * FRO..DB_PREFIXproduct_option_value..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/voucher_theme.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-77.24138" vertical-offset="0" max-vertical-offset="4280">
+          <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
+          <folding>
+            <marker date="1424074477000" expanded="true" signature="321:419" placeholder="INSERT INTO ..." />
+            <marker date="1424074477000" expanded="true" signature="810:1015" placeholder="INSERT INTO ..." />
+            <marker date="1424074477000" expanded="true" signature="1474:1586" placeholder="DELETE FROM ..." />
+            <marker date="1424074477000" expanded="true" signature="1882:2087" placeholder="INSERT INTO ..." />
+            <marker date="1424074477000" expanded="true" signature="2345:2445" placeholder="DELETE FROM ..." />
+            <marker date="1424074477000" expanded="true" signature="2471:2583" placeholder="DELETE FROM ..." />
+            <marker date="1424074477000" expanded="true" signature="3076:3367" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme..." />
+            <marker date="1424074477000" expanded="true" signature="3481:3731" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme..." />
+            <marker date="1424074477000" expanded="true" signature="4710:4960" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme..." />
+            <marker date="1424074477000" expanded="true" signature="5612:5726" placeholder="SELECT * FRO..DB_PREFIXvoucher_theme_description..." />
+            <marker date="1424074477000" expanded="true" signature="5963:6023" placeholder="SELECT COUNT..DB_PREFIXvoucher_theme..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/voucher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.62069" vertical-offset="5061" max-vertical-offset="5640">
+          <caret line="242" column="10" selection-start-line="242" selection-start-column="10" selection-end-line="242" selection-end-column="10" />
+          <folding>
+            <marker date="1424073955000" expanded="true" signature="402:954" placeholder="INSERT INTO ..." />
+            <marker date="1424073955000" expanded="true" signature="2077:2159" placeholder="DELETE FROM ..." />
+            <marker date="1424073955000" expanded="true" signature="2183:2273" placeholder="DELETE FROM ..." />
+            <marker date="1424073955000" expanded="true" signature="2516:2609" placeholder="SELECT DISTI..DB_PREFIXvoucher..." />
+            <marker date="1424073955000" expanded="true" signature="2853:2948" placeholder="SELECT DISTI..DB_PREFIXvoucher..." />
+            <marker date="1424073955000" expanded="true" signature="3040:3389" placeholder="SELECT v.vou..DB_PREFIXvoucher..." />
+            <marker date="1424073955000" expanded="true" signature="3120:3313" placeholder="SELECT vtd.n..DB_PREFIXvoucher_theme_description..." />
+            <marker date="1424073955000" expanded="true" signature="8154:8208" placeholder="SELECT COUNT..DB_PREFIXvoucher..." />
+            <marker date="1424073955000" expanded="true" signature="8557:8669" placeholder="SELECT COUNT..DB_PREFIXvoucher..." />
+            <marker date="1424073955000" expanded="true" signature="8898:9203" placeholder="SELECT vh.or..DB_PREFIXvoucher_history..." />
+            <marker date="1424073955000" expanded="true" signature="9544:9652" placeholder="SELECT COUNT..DB_PREFIXvoucher_history..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/template/sale/order_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="164.21428" vertical-offset="47116" max-vertical-offset="57660">
+          <caret line="1896" column="48" selection-start-line="1896" selection-start-column="30" selection-end-line="1896" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/startup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0689654" vertical-offset="0" max-vertical-offset="2060">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="7756" max-vertical-offset="12540">
+          <caret line="374" column="92" selection-start-line="374" selection-start-column="90" selection-end-line="374" selection-end-column="92" />
+          <folding>
+            <marker date="1423995364000" expanded="true" signature="18506:18654" placeholder="SELECT MAX(i..." />
+            <marker date="1423995364000" expanded="true" signature="19249:19612" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

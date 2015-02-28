@@ -1,7 +1,7 @@
 <?php
 class ControllerCommonColumnLeft extends Controller {
 	public function index() {
-		return null;
+		//return null;
 		if (isset($this->request->get['token']) && isset($this->session->data['token']) && ($this->request->get['token'] == $this->session->data['token'])) {
 			$data['profile'] = $this->load->controller('common/profile');
 			$data['menu'] = $this->load->controller('common/menu');

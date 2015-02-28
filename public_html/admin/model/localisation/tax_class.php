@@ -2,11 +2,11 @@
 class ModelLocalisationTaxClass extends Model {
 	public $table = 'tax_class';
 	public $primaryKey = 'tax_class_id';
-	public $fields = array();
+	public $fields = array('tax_class_id', 'title', 'description', 'date_added', 'date_modified');
 
 	public function addTaxClass($data) {
 		$tmp = $this->initData($data);
-		$this->db->set('date_added' , 'NOW', FALSE);
+		$this->db->set('date_added' , 'NOW()', FALSE);
 		$this->db->insert($this->table, $tmp);
 
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "tax_class SET title = '" . $this->db->escape($data['title']) . "', description = '" . $this->db->escape($data['description']) . "', date_added = NOW()");
@@ -31,6 +31,7 @@ class ModelLocalisationTaxClass extends Model {
 	public function editTaxClass($tax_class_id, $data) {
 		$tmp = $this->initData($data);
 		$this->db->where($this->primaryKey, (int)$tax_class_id);
+		$this->db->set('date_modified', 'NOW()', FALSE);
 		$this->db->update($this->table, $tmp);
 
 		//$this->db->query("UPDATE " . DB_PREFIX . "tax_class SET title = '" . $this->db->escape($data['title']) . "', description = '" . $this->db->escape($data['description']) . "', date_modified = NOW() WHERE tax_class_id = '" . (int)$tax_class_id . "'");

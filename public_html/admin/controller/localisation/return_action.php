@@ -157,6 +157,7 @@ class ControllerLocalisationReturnAction extends Controller {
 
 		$data['add'] = $this->url->link('localisation/return_action/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/return_action/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/return_action/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['return_actions'] = array();
 
@@ -352,14 +353,31 @@ class ControllerLocalisationReturnAction extends Controller {
 
 		$this->load->model('sale/return');
 
-		foreach ($this->request->post['selected'] as $return_action_id) {
-			$return_total = $this->model_sale_return->getTotalReturnsByReturnActionId($return_action_id);
-
-			if ($return_total) {
-				$this->error['warning'] = sprintf($this->language->get('error_return'), $return_total);
+		$return_total = 0;
+		if(isset($this->request->post['selected'])) {
+			foreach ($this->request->post['selected'] as $return_action_id) {
+				$return_total = $this->model_sale_return->getTotalReturnsByReturnActionId($return_action_id);
 			}
+		} elseif(isset($this->request->post['return_action_id'])) {
+			$return_total = $this->model_sale_return->getTotalReturnsByReturnActionId($this->request->post['return_action_id']);
+		}
+
+		if ($return_total) {
+			$this->error['warning'] = sprintf($this->language->get('error_return'), $return_total);
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		$return_action_id = (int) $this->request->post['return_action_id'];
+		if($return_action_id > 0) {
+			$this->load->model('localisation/return_action');
+			$this->load->language('localisation/return_action');
+			$this->model_localisation_return_action->deleteReturnAction($return_action_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		//die("{'msg': 'The Language status has been changed.', 'error': 0}");
 	}
 }

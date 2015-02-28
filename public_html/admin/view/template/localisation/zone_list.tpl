@@ -50,7 +50,7 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_code; ?>"><?php echo $column_code; ?></a>
                     <?php } ?></td>
-                  <td class="text-right"><?php if ($sort == 'status') { ?>
+                  <td class="text-right"><?php if ($sort == 'z.status') { ?>
                     <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>

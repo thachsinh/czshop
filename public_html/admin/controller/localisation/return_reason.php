@@ -157,6 +157,7 @@ class ControllerLocalisationReturnReason extends Controller {
 
 		$data['add'] = $this->url->link('localisation/return_reason/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/return_reason/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/return_reason/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['return_reasons'] = array();
 
@@ -361,5 +362,17 @@ class ControllerLocalisationReturnReason extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		$return_reason_id = (int) $this->request->post['return_reason_id'];
+		if($return_reason_id > 0 && $this->validateDelete()) {
+			$this->load->model('localisation/return_reason');
+			$this->load->language('localisation/return_reason');
+			$this->model_localisation_return_reason->deleteReturnReason($return_reason_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		//die("{'msg': 'The Language status has been changed.', 'error': 0}");
 	}
 }

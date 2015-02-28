@@ -157,6 +157,7 @@ class ControllerLocalisationTaxRate extends Controller {
 
 		$data['add'] = $this->url->link('localisation/tax_rate/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/tax_rate/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/tax_rate/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['tax_rates'] = array();
 
@@ -421,14 +422,30 @@ class ControllerLocalisationTaxRate extends Controller {
 
 		$this->load->model('localisation/tax_class');
 
-		foreach ($this->request->post['selected'] as $tax_rate_id) {
-			$tax_rule_total = $this->model_localisation_tax_class->getTotalTaxRulesByTaxRateId($tax_rate_id);
-
-			if ($tax_rule_total) {
-				$this->error['warning'] = sprintf($this->language->get('error_tax_rule'), $tax_rule_total);
+		$tax_rule_total = 0;
+		if(isset($this->request->post['selected'])) {
+			foreach ($this->request->post['selected'] as $tax_rate_id) {
+				$tax_rule_total = $this->model_localisation_tax_class->getTotalTaxRulesByTaxRateId($tax_rate_id);
 			}
+		} elseif(isset($this->request->post['tax_class_id'])) {
+			$tax_rule_total = $this->model_localisation_tax_class->getTotalTaxRulesByTaxRateId($tax_rate_id);
+		}
+		if ($tax_rule_total) {
+			$this->error['warning'] = sprintf($this->language->get('error_tax_rule'), $tax_rule_total);
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		$tax_rate_id = (int) $this->request->post['tax_rate_id'];
+		if($tax_rate_id > 0 && $this->validateDelete()) {
+			$this->load->model('localisation/tax_rate');
+			$this->load->language('localisation/tax_rate');
+			$this->model_localisation_tax_rate->deleteTaxRate($tax_rate_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+
+		//die("{'msg': 'The Language status has been changed.', 'error': 0}");
 	}
 }

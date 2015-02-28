@@ -157,6 +157,7 @@ class ControllerLocalisationTaxClass extends Controller {
 
 		$data['add'] = $this->url->link('localisation/tax_class/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('localisation/tax_class/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('localisation/tax_class/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['tax_classes'] = array();
 
@@ -389,14 +390,30 @@ class ControllerLocalisationTaxClass extends Controller {
 
 		$this->load->model('catalog/product');
 
-		foreach ($this->request->post['selected'] as $tax_class_id) {
-			$product_total = $this->model_catalog_product->getTotalProductsByTaxClassId($tax_class_id);
-
-			if ($product_total) {
-				$this->error['warning'] = sprintf($this->language->get('error_product'), $product_total);
+		$product_total = 0;
+		if(isset($this->request->post['selected'])) {
+			foreach ($this->request->post['selected'] as $tax_class_id) {
+				$product_total = $this->model_catalog_product->getTotalProductsByTaxClassId($tax_class_id);
 			}
+		} elseif(isset($this->request->post['tax_class_id'])) {
+			$tax_class_id = $this->request->post['tax_class_id'];
+			$product_total = $this->model_catalog_product->getTotalProductsByTaxClassId($tax_class_id);
+		}
+		if ($product_total) {
+			$this->error['warning'] = sprintf($this->language->get('error_product'), $product_total);
+		}
+		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		$tax_class_id = (int) $this->request->post['tax_class_id'];
+		if($tax_class_id > 0 && $this->validateDelete()) {
+			$this->load->model('localisation/tax_class');
+			$this->load->language('localisation/tax_class');
+			$this->model_localisation_tax_class->deleteTaxClass($tax_class_id);
+			$this->session->data['success'] = $this->language->get('text_success');
 		}
 
-		return !$this->error;
+		//die("{'msg': 'The Language status has been changed.', 'error': 0}");
 	}
 }

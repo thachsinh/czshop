@@ -2,12 +2,12 @@
 class ModelLocalisationTaxRate extends Model {
 	public $table = 'tax_rate';
 	public $primaryKey = 'tax_rate_id';
-	public $fields = array();
+	public $fields = array('tax_rate_id', 'geo_zone_id', 'name', 'rate', 'type', 'date_added', 'date_modified');
 
 	public function addTaxRate($data) {
 		$tmp = $this->initData($data);
-		$this->db->set('date_added' , 'NOW', FALSE);
-		$this->db->set('date_modified' , 'NOW', FALSE);
+		$this->db->set('date_added' , 'NOW()', FALSE);
+		$this->db->set('date_modified' , 'NOW()', FALSE);
 		$this->db->insert($this->table, $tmp);
 
 		//$this->db->query("INSERT INTO " . DB_PREFIX . "tax_rate SET name = '" . $this->db->escape($data['name']) . "', rate = '" . (float)$data['rate'] . "', `type` = '" . $this->db->escape($data['type']) . "', geo_zone_id = '" . (int)$data['geo_zone_id'] . "', date_added = NOW(), date_modified = NOW()");
@@ -28,6 +28,7 @@ class ModelLocalisationTaxRate extends Model {
 	public function editTaxRate($tax_rate_id, $data) {
 		$tmp = $this->initData($data, TRUE);
 		$this->db->where($this->primaryKey, (int)$tax_rate_id);
+		$this->db->set('date_modified', 'NOW()', FALSE);
 		$this->db->update($this->table, $tmp);
 
 		//$this->db->query("UPDATE " . DB_PREFIX . "tax_rate SET name = '" . $this->db->escape($data['name']) . "', rate = '" . (float)$data['rate'] . "', `type` = '" . $this->db->escape($data['type']) . "', geo_zone_id = '" . (int)$data['geo_zone_id'] . "', date_modified = NOW() WHERE tax_rate_id = '" . (int)$tax_rate_id . "'");

@@ -42,7 +42,7 @@
   <div class="navbar-header">
     <a href="<?php echo $home; ?>" class="navbar-brand"></a>
     <?php if ($logged) { ?>
-    <?php echo $menu; ?>
+    <?php //echo $menu; ?>
     <?php } ?>
   </div>
   <?php if ($logged) { ?>
