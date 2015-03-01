@@ -1,7 +1,12 @@
 <?php
 class ControllerCommonMessage extends Controller {
   public function index() {
-    $message = isset($this->session->data['message']) ? $this->session->data['message'] : array();
+    $message = array();
+    if (isset($this->session->data['message'])) {
+      $message = $this->session->data['message'];
+      unset($this->session->data['message']);
+    }
+    
     return $this->load->view('default/template/common/message.tpl', $message);
   }
 }

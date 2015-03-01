@@ -4,12 +4,15 @@
             <dl>
                 <dt><font><font class=""><?php echo $entry_firstname; ?></font></font></dt>
                 <dd class="name"><font><font><?php echo $customer['firstname']; ?></font></font></dd>
+                <dt><font><font class=""><?php echo $entry_lastname; ?></font></font></dt>
+                <dd class="name"><font><font><?php echo $customer['lastname']; ?></font></font></dd>
                 <dt><font><font><?php echo $entry_telephone; ?></font></font></dt>
                 <dd><font><font><?php echo $customer['telephone']; ?></font></font></dd>
                 <dt><font><font><?php echo $entry_email; ?></font></font></dt>
-                <dd><font><font>khoinv90@gmail.com</font></font></dd>
+                <dd><font><font><?php echo $customer['email']; ?></font></font></dd>
             </dl>
         </div>
+        <div id="snippet--changePassword"></div>
         <p>
             <a class="ajax" href="<?php echo $edit; ?>"><?php echo $text_edit; ?></a><br/>
             <a class="ajax" href="<?php echo $password; ?>"><?php echo $text_password; ?></a><br/>

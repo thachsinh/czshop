@@ -103,7 +103,7 @@ class ModelAccountCustomer extends Model
 	public function editPassword($email, $password) {
 		$this->event->trigger('pre.customer.edit.password');
 
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($password)))) . "' WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = " . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . ", password = " . $this->db->escape(sha1($salt . sha1($salt . sha1($password)))) . " WHERE LOWER(email) = " . $this->db->escape(utf8_strtolower($email)));
 
 		$this->event->trigger('post.customer.edit.password');
 	}
@@ -265,5 +265,17 @@ class ModelAccountCustomer extends Model
 		
 		$this->db->set('date_added', 'NOW()', FALSE);
 		$this->db->insert('customer', $tmp);
-	}	
+	}
+
+	public function editCustomerAjax($data)
+	{
+		$tmp = $this->initData($data, FALSE, array('firstname', 'lastname','email', 'telephone'));
+		$this->event->trigger('pre.customer.edit', $tmp);
+
+		$customer_id = $this->customer->getId();
+		$this->db->where('customer_id', (int) $customer_id);
+		$this->db->update('customer', $tmp);
+
+		$this->event->trigger('post.customer.edit', $customer_id);
+	}
 }
