@@ -129,6 +129,7 @@ class ControllerCatalogCategory extends Controller {
 	}
 
 	protected function getList() {
+		//print_r($this->model_catalog_category->getCategoryTree(35));
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -302,6 +303,7 @@ class ControllerCatalogCategory extends Controller {
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
 		$data['entry_parent'] = $this->language->get('entry_parent');
 		//$data['entry_filter'] = $this->language->get('entry_filter');
+		$data['entry_custom_field_group'] = $this->language->get('entry_custom_field_group');
 		//$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_top'] = $this->language->get('entry_top');
@@ -413,6 +415,37 @@ class ControllerCatalogCategory extends Controller {
 		} else {
 			$data['parent_id'] = 0;
 		}
+
+		$data['custom_field_group_id'] = 0;
+		$data['custom_field_group'] = null;
+		if (isset($this->request->post['custom_field_group_id'])) {
+			$data['custom_field_group_id'] = $this->request->post['custom_field_group_id'];
+		} elseif (!empty($category_info)) {
+			if($category_info['parent_id'] == 0) {
+
+				$this->load->model('catalog/custom_field_group');
+				$data['custom_field_group_id'] = $this->model_catalog_category->getCategoryCustomFieldGroup($category_info['category_id']);
+				$data['custom_field_group_id'] = $data['custom_field_group_id']['custom_field_group_id'];
+				$data['custom_field_group'] = $this->model_catalog_custom_field_group->getCustomFieldGroup($data['custom_field_group_id']);
+				$data['custom_field_group'] = $data['custom_field_group']['name'];
+			}
+		} else {
+			$data['custom_field_group_id'] = 0;
+		}
+
+		//$this->load->model('catalog/custom_field_group');
+		//$data['custom_field_group'] = array();
+
+		/*foreach ($filters as $filter_id) {
+			$filter_info = $this->model_catalog_filter->getFilter($filter_id);
+
+			if ($filter_info) {
+				$data['category_filters'][] = array(
+					'filter_id' => $filter_info['filter_id'],
+					'name'      => $filter_info['group'] . ' &gt; ' . $filter_info['name']
+				);
+			}
+		}*/
 
 		/*$this->load->model('catalog/filter');
 
@@ -602,6 +635,27 @@ class ControllerCatalogCategory extends Controller {
 			foreach ($results as $result) {
 				$json[] = array(
 					'category_id' => $result['category_id'],
+					'name'        => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8'))
+				);
+			}
+		}
+
+		if (isset($this->request->get['custom_field_group_name'])) {
+			$this->load->model('catalog/custom_field_group');
+
+			$filter_data = array(
+				'custom_field_group_name' => $this->request->get['custom_field_group_name'],
+				'sort'        => 'name',
+				'order'       => 'ASC',
+				'start'       => 0,
+				'limit'       => 5
+			);
+
+			$results = $this->model_catalog_custom_field_group->getCustomFieldGroups($filter_data);
+
+			foreach ($results as $result) {
+				$json[] = array(
+					'custom_field_group_id' => $result['custom_field_group_id'],
 					'name'        => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8'))
 				);
 			}

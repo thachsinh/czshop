@@ -89,6 +89,7 @@ class ModelAccountRecurring extends Model {
 	}
 
 	public function getTotalRecurring() {
+
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "order_recurring` `or` LEFT JOIN `" . DB_PREFIX . "order` `o` ON `or`.`order_id` = `o`.`order_id` WHERE `o`.`customer_id` = '" . (int)$this->customer->getId() . "'");
 
 		return $query->row['total'];

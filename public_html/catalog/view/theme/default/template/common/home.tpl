@@ -1,15 +1,11 @@
-<?php echo $header; ?>
 <div class="breadcrumb">
   <div class="container">
     <p>Rohlik.cz - <b>netahejte se s taškami. Za 90 minut Vám doručíme nákup až ke dveřím</b></p>
   </div>
 </div>
-
 <!-- Content -->
 <div class="content home">
   <div class="container">
-    <div id="snippet--flashMessages"></div>
-
     <div id="snippet--referral"></div>
   </div>
   <!-- Slide -->
@@ -346,13 +342,13 @@
     </div>
 
     <div class="imgBanner">
-      <img src="/images/homepage/tema/jezkuv-statek.jpg" alt="Farmářův příběh">
+      <img src="/image/homepage/jezkuv-statek.jpg" alt="Farmářův příběh">
 
       <h3><a title="Jak se dělá jogur na Ježkově statku" href="/tema/jezkuv-statek?_ref=hp-banner"><b>Jak se dělá
             jogurt <i>Příběh jogurtu z Ježkova statku</i></b></a></h3>
     </div>
     <div class="imgBanner">
-      <img src="/images/homepage/tema/tchibo-espresso.jpg" alt="Espresso">
+      <img src="/image/homepage/tchibo-espresso.jpg" alt="Espresso">
 
       <h3><a title="Espresso - 5 otázek, které by Vás mohly zajímat"
              href="/tema/espresso-pet-otazek?_ref=hp-banner"><b>Téma espresso <i>5 otázek, které vás možná
@@ -394,4 +390,3 @@
   </div>
 </div>
 <div class="overlay"></div>
-<?php echo $footer; ?>

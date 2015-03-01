@@ -6,11 +6,11 @@ class ModelReportCoupon extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_date_start'])) {
-			$implode[] = "DATE(ch.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$implode[] = "DATE(ch.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$implode[] = "DATE(ch.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$implode[] = "DATE(ch.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if ($implode) {
@@ -33,7 +33,7 @@ class ModelReportCoupon extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalCoupons($data = array()) {
@@ -42,19 +42,19 @@ class ModelReportCoupon extends Model {
 		$implode = array();
 
 		if (!empty($data['filter_date_start'])) {
-			$implode[] = "DATE(date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$implode[] = "DATE(date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$implode[] = "DATE(date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$implode[] = "DATE(date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if ($implode) {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 }

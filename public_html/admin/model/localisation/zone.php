@@ -2,7 +2,7 @@
 class ModelLocalisationZone extends Model {
 	public $table = 'zone';
 	public $primaryKey = 'zone_id';
-	public $fields = array();
+	public $fields = array('zone_id', 'country_id', 'name', 'code', 'status');
 
 	public function addZone($data) {
 		$data = $this->initData($data, TRUE);

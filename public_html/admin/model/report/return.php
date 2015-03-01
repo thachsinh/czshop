@@ -10,11 +10,11 @@ class ModelReportReturn extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(r.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(r.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(r.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(r.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if (isset($data['filter_group'])) {
@@ -53,7 +53,7 @@ class ModelReportReturn extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalReturns($data = array()) {
@@ -86,15 +86,15 @@ class ModelReportReturn extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 }

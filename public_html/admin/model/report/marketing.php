@@ -10,11 +10,11 @@ class ModelReportMarketing extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o1.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o1.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o1.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o1.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		$sql .= ") AS `orders`, (SELECT SUM(total) FROM `" . DB_PREFIX . "order` o2 WHERE o2.marketing_id = m.marketing_id";
@@ -26,11 +26,11 @@ class ModelReportMarketing extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o2.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o2.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o2.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o2.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		$sql .= " GROUP BY o2.marketing_id) AS `total` FROM `" . DB_PREFIX . "marketing` m ORDER BY m.date_added ASC";
@@ -49,12 +49,12 @@ class ModelReportMarketing extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalMarketing($data = array()) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "marketing`");
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "marketing`")->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 }

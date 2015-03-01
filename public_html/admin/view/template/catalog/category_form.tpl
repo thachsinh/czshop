@@ -87,6 +87,13 @@
                   <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" />
                 </div>
               </div>
+              <div class="form-group" id="form-custom-field-group">
+                <label class="col-sm-2 control-label" for="input-custom_field_group"><?php echo $entry_custom_field_group; ?></label>
+                <div class="col-sm-10">
+                  <input type="text" name="custom_field_group" value="<?php echo $custom_field_group; ?>" placeholder="<?php echo $entry_custom_field_group; ?>" id="input-custom_field_group" class="form-control" />
+                  <input type="hidden" name="custom_field_group_id" value="<?php echo $custom_field_group_id; ?>" />
+                </div>
+              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_keyword; ?>"><?php echo $entry_keyword; ?></span></label>
                 <div class="col-sm-10">
@@ -179,9 +186,50 @@ $('input[name=\'path\']').autocomplete({
 	'select': function(item) {
 		$('input[name=\'path\']').val(item['label']);
 		$('input[name=\'parent_id\']').val(item['value']);
+        // reset custom field group
+        $('input[name=\'custom_field_group\']').val('');
+        $('input[name=\'custom_field_group_id\']').val(0);
+        if(item['value'] > 0) {
+          //alert('Hide');
+          $('#form-custom-field-group').hide();
+        } else {
+          $('#form-custom-field-group').show();
+          //alert('show');
+        }
 	}
 });
 //--></script>
+  <script type="text/javascript"><!--
+    var parent_id = $('input[name=\'parent_id\']').val();
+    if(parent_id > 0) {
+      $('#form-custom-field-group').hide();
+    }
+    $('input[name=\'custom_field_group\']').autocomplete({
+      'source': function(request, response) {
+        $.ajax({
+          url: 'index.php?route=catalog/category/autocomplete&token=<?php echo $token; ?>&custom_field_group_name=' +  encodeURIComponent(request),
+          dataType: 'json',
+          success: function(json) {
+            json.unshift({
+              custom_field_group_id: 0,
+              name: '<?php echo $text_none; ?>'
+            });
+
+            response($.map(json, function(item) {
+              return {
+                label: item['name'],
+                value: item['custom_field_group_id']
+              }
+            }));
+          }
+        });
+      },
+      'select': function(item) {
+        $('input[name=\'custom_field_group\']').val(item['label']);
+        $('input[name=\'custom_field_group_id\']').val(item['value']);
+      }
+    });
+    //--></script>
   <script type="text/javascript"><!--
 $('#language a:first').tab('show');
 //--></script></div>

@@ -2,7 +2,7 @@
 class ModelLocalisationStockStatus extends Model {
 	public $table = 'stock_status';
 	public $primaryKey = 'stock_status_id';
-	public $fields = array();
+	public $fields = array('stock_status_id', 'language_id', 'name');
 
 	public function addStockStatus($data) {
 		foreach ($data['stock_status'] as $language_id => $value) {

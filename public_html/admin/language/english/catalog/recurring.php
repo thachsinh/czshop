@@ -34,6 +34,7 @@ $_['entry_sort_order']		= 'Sort Order';
 $_['column_name']			= 'Name';
 $_['column_sort_order']	    = 'Sort Order';
 $_['column_action']         = 'Action';
+$_['column_status']         = 'Status';
 
 // Error
 $_['error_warning']         = 'Warning: Please check the form carefully for errors!';

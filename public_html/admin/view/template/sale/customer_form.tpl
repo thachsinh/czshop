@@ -107,6 +107,12 @@
                           <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />
                         </div>
                       </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-ip"><?php echo $entry_ip; ?></label>
+                        <div class="col-sm-10">
+                          <input type="text" name="ip" value="<?php echo $ip; ?>" placeholder="<?php echo $entry_ip; ?>" id="input-ip" class="form-control" />
+                        </div>
+                      </div>
                       <?php foreach ($custom_fields as $custom_field) { ?>
                       <?php if ($custom_field['location'] == 'account') { ?>
                       <?php if ($custom_field['type'] == 'select') { ?>

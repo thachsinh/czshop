@@ -25,19 +25,20 @@ $registry = new Registry();
 // Config
 $config = new Config();
 $registry->set('config', $config);
-
-// Database
-//$db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-//echo '<pre>'; print_r($db); die;
-//$registry->set('db', $db);
 $db = DB();
-//var_dump($connectDB);
-//exit;
 $registry->set('db', $db);
-// Settings
-$query = $db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE store_id = '0'");
 
-foreach ($query->result_array() as $setting) {
+// Solr
+$solr = Solarium();
+$registry->set('solr', $solr);
+
+
+
+$db->select('*')
+	->from('setting')
+	->where('store_id', 0);
+
+foreach ($db->get()->result_array() as $setting) {
 	if (!$setting['serialized']) {
 		$config->set($setting['key'], $setting['value']);
 	} else {

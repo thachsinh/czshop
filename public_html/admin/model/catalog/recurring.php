@@ -18,7 +18,7 @@ class ModelCatalogRecurring extends Model {
 		foreach ($data['recurring_description'] as $language_id => $recurring_description) {
 			$this->db->set($this->primaryKey, $recurring_id);
 			$this->db->set('language_id', (int)$language_id);
-			$this->db->set('name', $this->db->escape($recurring_description['name']));
+			$this->db->set('name', $recurring_description['name']);
 			$this->db->insert('recurring_description');
 			//$this->db->query("INSERT INTO `" . DB_PREFIX . "recurring_description` (`recurring_id`, `language_id`, `name`) VALUES (" . (int)$recurring_id . ", " . (int)$language_id . ", '" . $this->db->escape($recurring_description['name']) . "')");
 		}
@@ -26,6 +26,12 @@ class ModelCatalogRecurring extends Model {
 		$this->event->trigger('post.admin.recurring.add', $recurring_id);
 
 		return $recurring_id;
+	}
+
+	public function editStatus($recurring_id, $status) {
+		$this->db->set('status', (int)$status);
+		$this->db->where($this->primaryKey, (int)$recurring_id);
+		$this->db->update($this->table);
 	}
 
 	public function editRecurring($recurring_id, $data) {
@@ -45,7 +51,7 @@ class ModelCatalogRecurring extends Model {
 		foreach ($data['recurring_description'] as $language_id => $recurring_description) {
 			$this->db->set($this->primaryKey, $recurring_id);
 			$this->db->set('language_id', (int)$language_id);
-			$this->db->set('name', $this->db->escape($recurring_description['name']));
+			$this->db->set('name', $recurring_description['name']);
 			$this->db->insert('recurring_description');
 			//$this->db->query("INSERT INTO `" . DB_PREFIX . "recurring_description` (`recurring_id`, `language_id`, `name`) VALUES (" . (int)$recurring_id . ", " . (int)$language_id . ", '" . $this->db->escape($recurring_description['name']) . "')");
 		}
@@ -127,7 +133,8 @@ class ModelCatalogRecurring extends Model {
 		}
 		$sort_data = array(
 			'rd.name',
-			'r.sort_order'
+			'r.sort_order',
+			'r.status'
 		);
 
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {

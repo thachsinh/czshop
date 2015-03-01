@@ -1,38 +1,40 @@
+<?php require_once 'footer_user.tpl'; ?>
+<div class="overlay"></div>
 <!-- Footer -->
 <footer>
   <div class="container">
     <section class="contact">
       <ul>
-        <li class="phone"><strong><span>840&nbsp;730&nbsp;740</span></strong> <span>(Po - Pá&nbsp;10 - 23, So - Ne&nbsp;8.30 - 23)<span>
+        <li class="phone"><strong><span>+420 773 458 888</span></strong> <span>(Po - Pá&nbsp;10 - 23, So - Ne&nbsp;8.30 - 23)<span>
         </li>
-        <li class="mail"><a href="mailto:zakaznici@rohlik.cz">zakaznici@rohlik.cz</a> <span>Na e-mail se snažíme odpovídat okamžitě</span>
+        <li class="mail"><a href="mailto:tde@tamda.eu">tde@tamda.eu</a> <span>Na e-mail se snažíme odpovídat okamžitě</span>
         </li>
       </ul>
     </section>
     <div class="cols">
       <section class="custommers">
-        <h5>Pro zákazníky</h5>
+        <h5><?php echo $text_account; ?></h5>
         <ul>
-          <li><a title="Garance spokojenosti" href="/stranka/garance">Garance spokojenosti</a></li>
-          <li><a title="Doprava a mapa dovozu" href="/stranka/doprava">Doprava a mapa dovozu</a></li>
-          <li><a title="Doprava na první objednávku zdarma" href="/promo/prvni-objednavka">Doprava na první
-              objednávku zdarma</a></li>
-          <li><a title="Nakoupíme za Vás" href="/stranka/nakupni-seznam">Nakoupíme za Vás</a></li>
+          <li><a title="<?php echo $text_account; ?>" href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+          <li><a title="<?php echo $text_order; ?>" href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+          <li><a title="<?php echo $text_wishlist; ?>" href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
+          <li><a title="<?php echo $text_newsletter; ?>" href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
         </ul>
       </section>
       <section class="about">
-        <h5>O nás</h5>
+        <h5><?php echo $text_service; ?></h5>
         <ul>
-          <li><a title="Kontakt" href="/stranka/kontakt">Kontakt</a></li>
-          <li><a title="Podmínky užití" href="/stranka/podminky-uziti">Podmínky užití</a></li>
+          <li><a title="<?php echo $text_contact; ?>" href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+          <li><a title="<?php echo $text_return; ?>" href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
+          <li><a title="<?php echo $text_sitemap; ?>" href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
         </ul>
       </section>
 
-      <p>Alkohol a cigarety prodáváme pouze osobám starším 18 let. Při převzetí zboží bude ověřen váš věk.</p>
+      <p><?php echo $powered; ?></p>
 
     </div>
     <section class="fb">
-      <div class="fb-like-box" data-href="https://www.facebook.com/damerohlik" data-colorscheme="light"
+      <div class="fb-like-box" data-href="https://www.facebook.com/tamda.eu" data-colorscheme="light"
            data-width="292" data-height="180" data-show-faces="true" data-stream="false" data-header="false"
            data-show-border="false"></div>
     </section>

@@ -2,7 +2,7 @@
 class ModelLocalisationReturnReason extends Model {
 	public $table = 'return_reason';
 	public $primaryKey = 'return_reason_id';
-	public $fields = array();
+	public $fields = array('return_reason_id', 'language_id', 'name');
 
 	public function addReturnReason($data) {
 		foreach ($data['return_reason'] as $language_id => $value) {

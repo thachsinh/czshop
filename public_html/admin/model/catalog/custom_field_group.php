@@ -41,13 +41,17 @@ class ModelCatalogCustomFieldGroup extends Model {
 	}
 
 	public function getCustomFieldGroup($custom_field_group_id) {
+		//echo $custom_field_group_id;
 		$this->db->select('*');
 		$this->db->from($this->table . ' cg');
 		$this->db->join($this->desc_table . ' cgd', 'cg.custom_field_group_id = cgd.custom_field_group_id', 'left');
 		$this->db->where('cg.custom_field_group_id', (int)$custom_field_group_id);
 		$this->db->where('cgd.language_id', (int)$this->config->get('config_language_id'));
-		
+
 		return $this->db->get()->row_array();
+		//var_dump($data);
+		//return $data;
+		//echo $this->db->last_query();
 	}
 
 	public function getCustomFieldGroups($data = array()) {
@@ -55,6 +59,10 @@ class ModelCatalogCustomFieldGroup extends Model {
 		$this->db->from($this->table . ' cg');
 		$this->db->join($this->desc_table . ' cgd', 'cg.custom_field_group_id = cgd.custom_field_group_id', 'left');
 		$this->db->where('cgd.language_id', (int)$this->config->get('config_language_id'));
+
+		if (!empty($data['custom_field_group_name'])) {
+			$this->db->like('cgd.name', $data['custom_field_group_name']);
+		}
 
 		$sort_data = array(
 			'cgd.name',

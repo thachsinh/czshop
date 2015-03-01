@@ -1,7 +1,13 @@
 <?php
 class ModelAccountTransaction extends Model {
+	public $table = 'customer_transaction';
+
 	public function getTransactions($data = array()) {
-		$sql = "SELECT * FROM `" . DB_PREFIX . "customer_transaction` WHERE customer_id = '" . (int)$this->customer->getId() . "'";
+		$this->db->select('*')
+			->from($this->table)
+			->where('customer_id', (int)$this->customer->getId());
+
+		//$sql = "SELECT * FROM `" . DB_PREFIX . "customer_transaction` WHERE customer_id = '" . (int)$this->customer->getId() . "'";
 
 		$sort_data = array(
 			'amount',
@@ -9,16 +15,15 @@ class ModelAccountTransaction extends Model {
 			'date_added'
 		);
 
-		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
-			$sql .= " ORDER BY " . $data['sort'];
-		} else {
-			$sql .= " ORDER BY date_added";
+		$order = 'ASC';
+		if (isset($data['order']) && ($data['order'] == 'DESC')) {
+			$order = 'DESC';
 		}
 
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC";
+		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
+			$this->db->order_by($data['sort'], $order);
 		} else {
-			$sql .= " ASC";
+			$this->db->order_by('date_added', $order);
 		}
 
 		if (isset($data['start']) || isset($data['limit'])) {
@@ -30,27 +35,37 @@ class ModelAccountTransaction extends Model {
 				$data['limit'] = 20;
 			}
 
-			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+			$this->db->limit($data['limit'], $data['start']);
 		}
-
-		$query = $this->db->query($sql);
-
-		return $query->rows;
+		return $this->db->get()->result_array();
 	}
 
 	public function getTotalTransactions() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "customer_transaction` WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+		$this->db->select('COUNT(*) AS total')
+			->from($this->table)
+			->where('customer_id', (int)$this->customer->getId());
+		$data = $this->db->get()->row_array();
+		return $data['total'];
 
-		return $query->row['total'];
+		//$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "customer_transaction` WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+
+		//return $query->row['total'];
 	}
 
 	public function getTotalAmount() {
-		$query = $this->db->query("SELECT SUM(amount) AS total FROM `" . DB_PREFIX . "customer_transaction` WHERE customer_id = '" . (int)$this->customer->getId() . "' GROUP BY customer_id");
+		$this->db->select('SUM(amount) AS total')
+			->from($this->table)
+			->where('customer_id', (int)$this->customer->getId())
+			->group_by('customer_id');
+		$data = $this->db->get()->row_array();
+		return $data['total'];
+
+		/*$query = $this->db->query("SELECT SUM(amount) AS total FROM `" . DB_PREFIX . "customer_transaction` WHERE customer_id = '" . (int)$this->customer->getId() . "' GROUP BY customer_id");
 
 		if ($query->num_rows) {
 			return $query->row['total'];
 		} else {
 			return 0;
-		}
+		}*/
 	}
 }

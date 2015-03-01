@@ -2,7 +2,7 @@
 class ModelLocalisationLocation extends Model {
 	public $table = 'location';
 	public $primaryKey = 'location_id';
-	public $fields = array();
+	public $fields = array('location_id', 'name', 'address', 'telephone', 'fax', 'geocode', 'image', 'open', 'comment');
 
 	public function addLocation($data) {
 		$data = $this->initData($data, TRUE);

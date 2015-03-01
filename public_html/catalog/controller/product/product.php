@@ -3,16 +3,20 @@ class ControllerProductProduct extends Controller {
 	private $error = array();
 
 	public function index() {
+		$data = array();
+
 		$this->load->language('product/product');
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => strip_tags($this->language->get('text_home')),
 			'href' => $this->url->link('common/home')
 		);
 
-		$this->load->model('catalog/category');
+		$data['breadcrumbs_class'] = 'aside';
+
+		/*$this->load->model('catalog/category');
 
 		if (isset($this->request->get['path'])) {
 			$path = '';
@@ -36,9 +40,10 @@ class ControllerProductProduct extends Controller {
 						'href' => $this->url->link('product/category', 'path=' . $path)
 					);
 				}
-			}
+			}*/
 
 			// Set the last category breadcrumb
+			/*
 			$category_info = $this->model_catalog_category->getCategory($category_id);
 
 			if ($category_info) {
@@ -65,8 +70,9 @@ class ControllerProductProduct extends Controller {
 					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url)
 				);
 			}
-		}
+		}*/
 
+		/*
 		$this->load->model('catalog/manufacturer');
 
 		if (isset($this->request->get['manufacturer_id'])) {
@@ -146,7 +152,7 @@ class ControllerProductProduct extends Controller {
 				'text' => $this->language->get('text_search'),
 				'href' => $this->url->link('product/search', $url)
 			);
-		}
+		}*/
 
 		if (isset($this->request->get['product_id'])) {
 			$product_id = (int)$this->request->get['product_id'];
@@ -158,9 +164,9 @@ class ControllerProductProduct extends Controller {
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
-		if ($product_info) {
+		if (!empty($product_info)) {
 			$url = '';
-
+			/*
 			if (isset($this->request->get['path'])) {
 				$url .= '&path=' . $this->request->get['path'];
 			}
@@ -208,11 +214,33 @@ class ControllerProductProduct extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
+			*/
+			//print_r($product_info);
+			$this->load->model('catalog/category');
+			$categoryPath = $this->model_catalog_category->buildPath($product_info['category_id']);
 
-			$data['breadcrumbs'][] = array(
-				'text' => $product_info['name'],
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
-			);
+			if(!empty($categoryPath)) {
+				foreach($categoryPath as $item) {
+					$data['breadcrumbs'][] = array(
+						'text' => $item['name'],
+						'href' => ''
+					);
+				}
+
+				if(count($categoryPath) >= 2) {
+					$lastCategory = $categoryPath[count($categoryPath) - 2];
+					$data['sub_categories'] = $this->model_catalog_category->getCategories($lastCategory['category_id']);
+					//print_r($data['sub_categories']); exit;
+					$data['active_category'] = $categoryPath[count($categoryPath) - 1];
+				}
+
+				$data['parent_category'] = $categoryPath[0];
+
+				$data['left_menu'] = $this->load->frontView('product/left_menu', $data);
+			}
+
+
+
 
 			$this->document->setTitle($product_info['meta_title']);
 			$this->document->setDescription($product_info['meta_description']);
@@ -224,8 +252,17 @@ class ControllerProductProduct extends Controller {
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
 			$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
 
-			$data['heading_title'] = $product_info['name'];
+			$this->document->setSiteName($this->config->get('config_name'));
+			if ($this->request->server['HTTPS']) {
+				$this->document->setSiteBase($this->config->get('config_ssl'));
+			} else {
+				$this->document->setSiteBase($this->config->get('config_url'));
+			}
 
+			$data['lang'] = $this->language->assign();
+
+			$data['heading_title'] = $product_info['name'];
+			/*
 			$data['text_select'] = $this->language->get('text_select');
 			$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 			$data['text_model'] = $this->language->get('text_model');
@@ -256,12 +293,13 @@ class ControllerProductProduct extends Controller {
 			$data['button_compare'] = $this->language->get('button_compare');
 			$data['button_upload'] = $this->language->get('button_upload');
 			$data['button_continue'] = $this->language->get('button_continue');
-
+			*/
 			$this->load->model('catalog/review');
 
+			/*
 			$data['tab_description'] = $this->language->get('tab_description');
 			$data['tab_attribute'] = $this->language->get('tab_attribute');
-			$data['tab_review'] = sprintf($this->language->get('tab_review'), $product_info['reviews']);
+			$data['tab_review'] = sprintf($this->language->get('tab_review'), $product_info['reviews']);*/
 
 			$data['product_id'] = (int)$this->request->get['product_id'];
 			$data['manufacturer'] = $product_info['manufacturer'];
@@ -269,6 +307,8 @@ class ControllerProductProduct extends Controller {
 			$data['model'] = $product_info['model'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
+			$data['sku'] = $product_info['sku'];
+			$data['product'] = $product_info;
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
@@ -464,12 +504,17 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['main_content'] = $this->load->frontView('product/product', $data);
+			$data['navigation'] = $this->load->controller('common/menu');
+			$data['breadcrumbs'] = $this->load->frontView('common/breadcrumbs', $data);
+			$this->load->layout($data);
 
+			/*
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/product.tpl', $data));
 			} else {
 				$this->response->setOutput($this->load->view('default/template/product/product.tpl', $data));
-			}
+			}*/
 		} else {
 			$url = '';
 
@@ -544,6 +589,7 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			//$data['main_content'] = $this->load->frontView('')
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
@@ -658,7 +704,8 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
-	public function write() {
+	public function write()
+	{
 		$this->load->language('product/product');
 
 		$json = array();

@@ -157,6 +157,7 @@ class ControllerCatalogManufacturer extends Controller {
 		
 		$data['add'] = $this->url->link('catalog/manufacturer/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('catalog/manufacturer/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('catalog/manufacturer/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['manufacturers'] = array();
 
@@ -270,7 +271,7 @@ class ControllerCatalogManufacturer extends Controller {
 		$data['text_amount'] = $this->language->get('text_amount');
 
 		$data['entry_name'] = $this->language->get('entry_name');
-		$data['entry_store'] = $this->language->get('entry_store');
+		//$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
 		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_sort_order'] = $this->language->get('entry_sort_order');
@@ -347,7 +348,7 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['name'] = '';
 		}
 
-		$this->load->model('setting/store');
+		/*$this->load->model('setting/store');
 
 		$data['stores'] = $this->model_setting_store->getStores();
 
@@ -357,7 +358,7 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['manufacturer_store'] = $this->model_catalog_manufacturer->getManufacturerStores($this->request->get['manufacturer_id']);
 		} else {
 			$data['manufacturer_store'] = array(0);
-		}
+		}*/
 
 		if (isset($this->request->post['keyword'])) {
 			$data['keyword'] = $this->request->post['keyword'];
@@ -444,6 +445,26 @@ class ControllerCatalogManufacturer extends Controller {
 		}
 
 		return !$this->error;
+	}
+
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'catalog/manufacturer')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+		$this->load->model('catalog/product');
+		//var_dump($this->request->post);
+		$manufacturer_id = $this->request->post['manufacturer_id'];
+		if($manufacturer_id > 0) {
+			$product_total = $this->model_catalog_product->getTotalProductsByManufacturerId($manufacturer_id);
+			if ($product_total) {
+				$this->error['warning'] = sprintf($this->language->get('error_product'), $product_total);
+				exit;
+			}
+			$this->load->model('catalog/manufacturer');
+			$this->model_catalog_manufacturer->deleteManufacturer($manufacturer_id);
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
 	}
 
 	public function autocomplete() {

@@ -2,7 +2,7 @@
 class ModelLocalisationLengthClass extends Model {
 	public $table = 'length_class';
 	public $primaryKey = 'length_class_id';
-	public $fields = array();
+	public $fields = array('length_class_id', 'value');
 
 	public function addLengthClass($data) {
 		$tmp = $this->initData($data, TRUE);

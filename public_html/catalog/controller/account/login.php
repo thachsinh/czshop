@@ -89,7 +89,7 @@ class ControllerAccountLogin extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => strip_tags($this->language->get('text_home')),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -102,6 +102,8 @@ class ControllerAccountLogin extends Controller {
 			'text' => $this->language->get('text_login'),
 			'href' => $this->url->link('account/login', '', 'SSL')
 		);
+
+		$data['breadcrumbs'] = $this->load->frontView('common/breadcrumbs', $data);
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
@@ -165,12 +167,16 @@ class ControllerAccountLogin extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['navigation'] = $this->load->controller('common/menu');
+		$data['main_content'] = $this->load->frontView('account/login', $data);
+		$this->load->layout($data);
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/login.tpl')) {
+
+		/*if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/login.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/login.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/account/login.tpl', $data));
-		}
+		}*/
 	}
 
 	protected function validate() {

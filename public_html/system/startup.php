@@ -77,7 +77,6 @@ function autoload($class) {
 		return false;
 	}
 }
-
 spl_autoload_register('autoload');
 spl_autoload_extensions('.php');
 
@@ -89,7 +88,8 @@ require_once(modification(DIR_SYSTEM . 'engine/front.php'));
 require_once(modification(DIR_SYSTEM . 'engine/loader.php'));
 require_once(modification(DIR_SYSTEM . 'engine/model.php'));
 require_once(modification(DIR_SYSTEM . 'engine/registry.php'));
-require_once(modification(DIR_SYSTEM . '/database/DB.php'));
+require_once(modification(DIR_SYSTEM . 'database/DB.php'));
+require_once(modification(DIR_SYSTEM . 'library/solarium.php'));
 
 // Helper
 require_once(DIR_SYSTEM . 'helper/json.php');

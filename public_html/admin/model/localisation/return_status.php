@@ -2,7 +2,7 @@
 class ModelLocalisationReturnStatus extends Model {
 	public $table = 'return_status';
 	public $primaryKey = 'return_status_id';
-	public $fields = array();
+	public $fields = array('return_status_id', 'language_id', 'name');
 
 	public function addReturnStatus($data) {
 		foreach ($data['return_status'] as $language_id => $value) {
@@ -64,6 +64,7 @@ class ModelLocalisationReturnStatus extends Model {
 	}
 
 	public function getReturnStatuses($data = array()) {
+
 		if ($data) {
 			$this->db->select('*');
 			$this->db->from($this->table);
@@ -79,12 +80,14 @@ class ModelLocalisationReturnStatus extends Model {
 				$sql .= " ASC";
 			}*/
 
-			$this->db->order_by('name', $order);
+
 
 			$order = 'ASC';
 			if (isset($data['order']) && ($data['order'] == 'DESC')) {
 				$order = 'DESC';
 			}
+
+			$this->db->order_by('name', $order);
 
 
 
@@ -115,7 +118,7 @@ class ModelLocalisationReturnStatus extends Model {
 				$this->db->from($this->table);
 				$this->db->where('language_id', (int)$this->config->get('config_language_id'));
 				$this->db->order_by('name', 'ASC');
-				$return_reason_data = $this->db->get()->result_array();
+				$return_status_data = $this->db->get()->result_array();
 
 				//$return_status_data = $query->rows;
 

@@ -32,6 +32,9 @@ $registry->set('config', $config);
 $db = DB();
 $registry->set('db', $db);
 
+$solr = Solarium();
+$registry->set('solr', $solr);
+
 // Store, edited by SUN
 if (isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTPS'] == '1'))) {
 	$store_query = $db->select('*')
@@ -246,6 +249,7 @@ $registry->set('encryption', new Encryption($config->get('config_encryption')));
 
 //OpenBay Pro
 $registry->set('openbay', new Openbay($registry));
+
 
 // Event
 $event = new Event($registry);

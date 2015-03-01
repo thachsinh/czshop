@@ -5,19 +5,19 @@ class ModelReportSale extends Model {
 		$sql = "SELECT SUM(total) AS total FROM `" . DB_PREFIX . "order` WHERE order_status_id > '0'";
 
 		if (!empty($data['filter_date_added'])) {
-			$sql .= " AND DATE(date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
+			$sql .= " AND DATE(date_added) = DATE('" . ($data['filter_date_added']) . "')";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 		
 	// Map
 	public function getTotalOrdersByCountry() {
 		$query = $this->db->query("SELECT COUNT(*) AS total, SUM(o.total) AS amount, c.iso_code_2 FROM `" . DB_PREFIX . "order` o LEFT JOIN `" . DB_PREFIX . "country` c ON (o.payment_country_id = c.country_id) WHERE o.order_status_id > '0' GROUP BY o.payment_country_id");
 
-		return $query->rows;
+		return $query->result_array();
 	}
 		
 	// Orders
@@ -39,7 +39,7 @@ class ModelReportSale extends Model {
 				
 		$query = $this->db->query("SELECT COUNT(*) AS total, HOUR(date_added) AS hour FROM `" . DB_PREFIX . "order` WHERE order_status_id IN(" . implode(",", $implode) . ") AND DATE(date_added) = DATE(NOW()) GROUP BY HOUR(date_added) ORDER BY date_added ASC");
 
-		foreach ($query->rows as $result) {
+		foreach ($query->result_array() as $result) {
 			$order_data[$result['hour']] = array(
 				'hour'  => $result['hour'],
 				'total' => $result['total']
@@ -69,9 +69,9 @@ class ModelReportSale extends Model {
 			);
 		}
 
-		$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "order` WHERE order_status_id IN(" . implode(",", $implode) . ") AND DATE(date_added) >= DATE('" . $this->db->escape(date('Y-m-d', $date_start)) . "') GROUP BY DAYNAME(date_added)");
+		$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "order` WHERE order_status_id IN(" . implode(",", $implode) . ") AND DATE(date_added) >= DATE('" . (date('Y-m-d', $date_start)) . "') GROUP BY DAYNAME(date_added)");
 
-		foreach ($query->rows as $result) {
+		foreach ($query->result_array() as $result) {
 			$order_data[date('w', strtotime($result['date_added']))] = array(
 				'day'   => date('D', strtotime($result['date_added'])),
 				'total' => $result['total']
@@ -99,9 +99,9 @@ class ModelReportSale extends Model {
 			);
 		}
 
-		$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "order` WHERE order_status_id IN(" . implode(",", $implode) . ") AND DATE(date_added) >= '" . $this->db->escape(date('Y') . '-' . date('m') . '-1') . "' GROUP BY DATE(date_added)");
+		$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "order` WHERE order_status_id IN(" . implode(",", $implode) . ") AND DATE(date_added) >= '" . (date('Y') . '-' . date('m') . '-1') . "' GROUP BY DATE(date_added)");
 
-		foreach ($query->rows as $result) {
+		foreach ($query->result_array() as $result) {
 			$order_data[date('j', strtotime($result['date_added']))] = array(
 				'day'   => date('d', strtotime($result['date_added'])),
 				'total' => $result['total']
@@ -129,7 +129,7 @@ class ModelReportSale extends Model {
 
 		$query = $this->db->query("SELECT COUNT(*) AS total, date_added FROM `" . DB_PREFIX . "order` WHERE order_status_id IN(" . implode(",", $implode) . ") AND YEAR(date_added) = YEAR(NOW()) GROUP BY MONTH(date_added)");
 
-		foreach ($query->rows as $result) {
+		foreach ($query->result_array() as $result) {
 			$order_data[date('n', strtotime($result['date_added']))] = array(
 				'month' => date('M', strtotime($result['date_added'])),
 				'total' => $result['total']
@@ -149,11 +149,11 @@ class ModelReportSale extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
 		if (!empty($data['filter_group'])) {
@@ -194,7 +194,7 @@ class ModelReportSale extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalOrders($data = array()) {
@@ -227,16 +227,16 @@ class ModelReportSale extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(date_added) >= '" . $data['filter_date_start'] . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(date_added) <= '" . $data['filter_date_end'] . "'";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getTaxes($data = array()) {
@@ -249,11 +249,11 @@ class ModelReportSale extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . $data['filter_date_start'] . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . $data['filter_date_end'] . "'";
 		}
 
 		if (!empty($data['filter_group'])) {
@@ -292,7 +292,7 @@ class ModelReportSale extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalTaxes($data = array()) {
@@ -327,16 +327,16 @@ class ModelReportSale extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . $data['filter_date_start'] . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . $data['filter_date_end'] . "'";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 
 	public function getShipping($data = array()) {
@@ -349,11 +349,11 @@ class ModelReportSale extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . $data['filter_date_start'] . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . $data['filter_date_end'] . "'";
 		}
 
 		if (!empty($data['filter_group'])) {
@@ -392,7 +392,7 @@ class ModelReportSale extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->rows;
+		return $query->result_array();
 	}
 
 	public function getTotalShipping($data = array()) {
@@ -427,15 +427,15 @@ class ModelReportSale extends Model {
 		}
 
 		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
+			$sql .= " AND DATE(o.date_added) >= '" . ($data['filter_date_start']) . "'";
 		}
 
 		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
+			$sql .= " AND DATE(o.date_added) <= '" . ($data['filter_date_end']) . "'";
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->db->query($sql)->row_array();
 
-		return $query->row['total'];
+		return $query['total'];
 	}
 }

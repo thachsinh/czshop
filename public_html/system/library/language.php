@@ -12,7 +12,7 @@ class Language {
 		return (isset($this->data[$key]) ? $this->data[$key] : $key);
 	}
 	
-	public function load($filename) {
+	public function load($filename, &$data = null) {
 		$_ = array();
 
 		$file = DIR_LANGUAGE . $this->default . '/' . $filename . '.php';
@@ -29,6 +29,14 @@ class Language {
 
 		$this->data = array_merge($this->data, $_);
 
+		if($data != null) {
+			$this->asign($data);
+		}
+
+		return $this->data;
+	}
+
+	public function assign() {
 		return $this->data;
 	}
 }

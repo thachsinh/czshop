@@ -709,6 +709,7 @@ class ControllerSaleCustomer extends Controller {
 		$data['entry_description'] = $this->language->get('entry_description');
 		$data['entry_amount'] = $this->language->get('entry_amount');
 		$data['entry_points'] = $this->language->get('entry_points');
+		$data['entry_ip'] = $this->language->get('entry_ip');
 
 		$data['help_safe'] = $this->language->get('help_safe');
 		$data['help_points'] = $this->language->get('help_points');
@@ -897,6 +898,14 @@ class ControllerSaleCustomer extends Controller {
 			$data['fax'] = $customer_info['fax'];
 		} else {
 			$data['fax'] = '';
+		}
+
+		if (isset($this->request->post['ip'])) {
+			$data['ip'] = $this->request->post['ip'];
+		} elseif (!empty($customer_info)) {
+			$data['ip'] = $customer_info['ip'];
+		} else {
+			$data['ip'] = '';
 		}
 
 		// Custom Fields

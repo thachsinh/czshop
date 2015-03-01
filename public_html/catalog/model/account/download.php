@@ -1,5 +1,8 @@
 <?php
 class ModelAccountDownload extends Model {
+	public $table = 'download';
+	public $primaryKey = 'download_id';
+
 	public function getDownload($download_id) {
 		$implode = array();
 

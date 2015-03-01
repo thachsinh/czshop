@@ -2441,6 +2441,7 @@ class ControllerSaleOrder extends Controller {
 			$url = HTTPS_CATALOG;
 		}
 
+
 		if (isset($this->session->data['cookie']) && isset($this->request->get['api'])) {
 			// Include any URL perameters
 			$url_data = array();

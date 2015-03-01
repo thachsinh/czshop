@@ -2,7 +2,7 @@
 class ModelLocalisationReturnAction extends Model {
 	public $table = 'return_action';
 	public $primaryKey = 'return_action_id';
-	public $fields = array();
+	public $fields = array('return_action_id', 'language_id', 'name');
 
 	public function addReturnAction($data) {
 		foreach ($data['return_action'] as $language_id => $value) {
@@ -107,7 +107,7 @@ class ModelLocalisationReturnAction extends Model {
 				//$query = $this->db->query("SELECT return_action_id, name FROM " . DB_PREFIX . "return_action WHERE language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY name");
 
 				//$return_action_data = $query->rows;
-				$return_action_data = $this->db->get()->row_array();
+				$return_action_data = $this->db->get()->result_array();
 
 				$this->cache->set('return_action.' . (int)$this->config->get('config_language_id'), $return_action_data);
 			}

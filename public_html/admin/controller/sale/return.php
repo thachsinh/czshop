@@ -140,6 +140,22 @@ class ControllerSaleReturn extends Controller {
 		$this->getForm();
 	}
 
+	public function ajaxDelete() {
+		if (!$this->user->hasPermission('modify', 'sale/return')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+			exit;
+		}
+
+		$this->load->language('sale/return');
+		$this->load->model('sale/return');
+		$return_id = $this->request->post['return_id'];
+		if($return_id > 0) {
+			$this->model_sale_return->deleteReturn($return_id);
+			//echo $category_id;
+			$this->session->data['success'] = $this->language->get('text_success');
+		}
+	}
+
 	public function delete() {
 		$this->load->language('sale/return');
 
@@ -333,6 +349,7 @@ class ControllerSaleReturn extends Controller {
 
 		$data['add'] = $this->url->link('sale/return/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$data['delete'] = $this->url->link('sale/return/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['ajax_delete'] = $this->url->linkajax('sale/return/ajaxdelete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 		$data['returns'] = array();
 
@@ -355,6 +372,15 @@ class ControllerSaleReturn extends Controller {
 
 		$results = $this->model_sale_return->getReturns($filter_data);
 
+		// Load return status
+		$this->load->model('localisation/return_status');
+
+		$return_status = array();
+		$return_status_arr = $this->model_localisation_return_status->getReturnStatuses();
+		foreach($return_status_arr as $item) {
+			$return_status[$item['return_status_id']] = $item['name'];
+		}
+
 		foreach ($results as $result) {
 			$data['returns'][] = array(
 				'return_id'     => $result['return_id'],
@@ -362,7 +388,7 @@ class ControllerSaleReturn extends Controller {
 				'customer'      => $result['customer'],
 				'product'       => $result['product'],
 				'model'         => $result['model'],
-				'status'        => $result['status'],
+				'status'        => $return_status[$result['return_status_id']],
 				'date_added'    => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
 				'edit'          => $this->url->link('sale/return/edit', 'token=' . $this->session->data['token'] . '&return_id=' . $result['return_id'] . $url, 'SSL')
@@ -845,7 +871,7 @@ class ControllerSaleReturn extends Controller {
 		$this->load->model('localisation/return_action');
 
 		$data['return_actions'] = $this->model_localisation_return_action->getReturnActions();
-
+		//print_r($data['return_actions']);
 		if (isset($this->request->post['comment'])) {
 			$data['comment'] = $this->request->post['comment'];
 		} elseif (!empty($return_info)) {
@@ -865,7 +891,7 @@ class ControllerSaleReturn extends Controller {
 		$this->load->model('localisation/return_status');
 
 		$data['return_statuses'] = $this->model_localisation_return_status->getReturnStatuses();
-
+		//print_r($data['return_statuses']);
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
