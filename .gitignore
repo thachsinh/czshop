@@ -5,4 +5,5 @@ public_html/config.php
 public_html/system/cache/*
 public_html/system/logs/*
 public_html/.idea/*
+public_html/image/cache/*
 .gitignore
