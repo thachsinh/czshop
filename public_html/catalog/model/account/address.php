@@ -15,6 +15,7 @@ class ModelAccountAddress extends Model
 		$this->event->trigger('pre.customer.add.address', $data);
 
 		$item = $this->initData($data, true);
+		$item['customer_id'] = $this->customer->getId();
 		$this->db->insert($this->table, $item);
 		$address_id = $this->db->insert_id();
 

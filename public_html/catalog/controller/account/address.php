@@ -26,13 +26,10 @@ class ControllerAccountAddress extends Controller
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['message'] = $this->load->controller('common/message');
+		$data['main_content'] = $this->load->frontView('account/address_list', $data);
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/address_list.tpl')) {
-			$data['content'] = $this->load->view($this->config->get('config_template') . '/template/account/address_list.tpl', $data);
-		} else {
-			$data['content'] = $this->load->view('default/template/account/address_list.tpl', $data);
-		}
-		$this->response->setOutput($this->load->view('default/template/account/layout.tpl', $data));
+		$this->load->layout($data);
 	}
 
 	public function add()
@@ -50,6 +47,8 @@ class ControllerAccountAddress extends Controller
 		$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
 
 		$this->load->model('account/address');
+
+		//echo "xxx"; exit;
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_account_address->addAddress($this->request->post);
@@ -164,11 +163,9 @@ class ControllerAccountAddress extends Controller
 			);
 
 			$this->model_account_activity->addActivity('address_delete', $activity_data);
-
-			$this->response->redirect($this->url->link('account/address', '', 'SSL'));
 		}
 
-		$this->getList();
+		$this->response->redirect($this->url->link('account/address', '', 'SSL'));
 	}
 
 	protected function getList(&$data) {
@@ -250,7 +247,7 @@ class ControllerAccountAddress extends Controller
 
 			$data['addresses'][] = array(
 				'address_id' => $result['address_id'],
-				'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
+				'address'    => str_replace(array("\r\n", "\r", "\n"), ', ', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), ', ', trim(str_replace($find, $replace, $format)))),
 				'update'     => $this->url->link('account/address/edit', 'address_id=' . $result['address_id'], 'SSL'),
 				'delete'     => $this->url->link('account/address/delete', 'address_id=' . $result['address_id'], 'SSL')
 			);
@@ -477,13 +474,9 @@ class ControllerAccountAddress extends Controller
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['main_content'] = $this->load->frontView('account/address_form', $data);
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/address_form.tpl')) {
-			$data['content'] = $this->load->view($this->config->get('config_template') . '/template/account/address_form.tpl', $data);
-		} else {
-			$data['content'] = $this->load->view('default/template/account/address_form.tpl', $data);
-		}
-		$this->response->setOutput($this->load->view('default/template/account/layout.tpl', $data));
+		$this->load->layout($data);
 	}
 
 	protected function validateForm() {
@@ -535,13 +528,13 @@ class ControllerAccountAddress extends Controller
 
 	protected function validateDelete() {
 		if ($this->model_account_address->getTotalAddresses() == 1) {
-			$this->error['warning'] = $this->language->get('error_delete');
+			$this->session->data['message']['error_warning'] = $this->language->get('error_delete');
 		}
 
 		if ($this->customer->getAddressId() == $this->request->get['address_id']) {
-			$this->error['warning'] = $this->language->get('error_default');
+			$this->session->data['message']['error_warning'] = $this->language->get('error_default');
 		}
 
-		return !$this->error;
+		return !$this->session->data['message'];
 	}
 }
