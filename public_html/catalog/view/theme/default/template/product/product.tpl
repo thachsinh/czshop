@@ -7,30 +7,43 @@
                 <span class="discount">-22%</span>
             </span>
             <div class="col">
-                <div class="overlay-on-ajax">
-                        <ul class="buy expire">
+                <div id="snippet-product-<?php echo $product_id;?>-basket" class="overlay-on-ajax">
+                    <form data-name="product-<?php echo $product_id;?>-basketForm" id="frm-product-<?php echo $product_id;?>-basketForm" novalidate=""
+                          method="post" action="<?php echo $action; ?>"
+                          data-gtm-event="{'event': 'rohlik.basketAdd', 'basket.source':':Front:Product:default-product', 'basket.product.title':'Dušená šunka z kýty Naše Miroslav - poctivá šunka nejvyšší jakosti 100g'}" class="ajax">
+                        <ul class="buy">
                             <li class="price">
-                                <span></span>
-                                <strong class="unitPrice"><?php echo $price; ?></strong></li>
-                            <li>
-                                <a href="javascript:;" class="amount remove decreasePieces">-</a>
-                                <input data-max-amount="103" type="text" name="amount" value="1">
-                                <a class="amount add increasePieces">+</a>
+                                <span>USD</span>
+                                <strong class="unitPrice">(Unit Price)</strong>
+                                <?php echo $price; ?>
+                            </li>
+
+                            <li><a rel="#pieces-product-<?php echo $product_id, '-', $product_id;?>" class="amount remove decreasePieces" href="javascript:;">−</a>
+                                <input type="text" class="maxAmountValidate" data-basket-amount="0" value="<?php echo $minimum; ?>" name="quantity"
+                                       data-max-amount="<?php echo $quantity; ?>" id="pieces-product-<?php echo $product_id, '-', $product_id;?>" autocomplete="off">
+                                <a rel="#pieces-product-<?php echo $product_id, '-', $product_id;?>" class="amount add increasePieces" href="javascript:;">+</a>
                             </li>
                             <li>
-                                <button title="Add to cart" type="submit" name="add"><?php echo $lang['button_cart']; ?></button>
+                                <button id="frm-product-<?php echo $product_id;?>-basketForm-add" name="add" type="submit" title="<?php echo $lang['button_cart']; ?>">
+                                    <?php echo $lang['button_cart']; ?>
+                                </button>
                             </li>
-                            <li class="alert">Expiration Date January 28, 2015</li>
+                            
+                            <li class="alert" style="clear:both;">Expiration Date: <?php echo $product['date_available']; ?></li>
                         </ul>
+                        <div>
+                            <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" />
+                            <input type="hidden" value="product-<?php echo $product_id;?>-basketForm-submit" name="do">
+                            <!--[if IE]><input type=IEbug disabled style="display:none"><![endif]-->
+                        </div>
+                    </form>
                 </div>
 
                 <div class="like">
                     <div>
                         <a href="#" onclick="wishlist.add('<?php echo $product_id; ?>');"><b>♥ </b> <span><?php echo $lang['button_wishlist']; ?></span></a>
                     </div>
-
                     <br>
-
                     <div class="fb-like" data-href="" data-width="400" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
                 </div>
                 <ul class="info">
@@ -39,26 +52,14 @@
             </div>
         </article>
         <section>
-            <div>
                 <h6><?php echo $lang['tab_description']; ?></h6>
-                <?php echo $description; ?>
-            </div>
-            <div>
-                <h6><?php echo $lang['tab_description']; ?></h6>
-                <?php echo $description; ?>
-            </div>
+                <?php echo str_replace('div>', 'p>', $description); ?>
         </section>
     </div>
 
     <?php if(isset($left_menu)) echo $left_menu; ?>
+    <?php echo $cart; ?>
 
-    <div id="snippet-cart-cart">
-        <div class="basket overlay-on-ajax">
-            <div class="header">
-                <h6>Your basket is empty.</h6>
-            </div>
-        </div>
-    </div>
     <div class="badge">
         <a title="Get up to CZK 2000" href="#">Get up to CZK 2000</a>
     </div>

@@ -46,7 +46,7 @@
     <script type="text/javascript" src="static/js/main.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&subset=latin-ext'
           rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <?php if($this->document->getStyles()): ?>
     <?php foreach ($this->document->getStyles() as $style): ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
@@ -74,7 +74,7 @@
 <?php echo (isset($breadcrumbs) && is_string($breadcrumbs)) ? $breadcrumbs : ''; ?>
 <!-- End Breadcrumb -->
 <!-- Message -->
-<?php echo $message; ?>
+<?php echo isset($message) ? $message : ''; ?>
 <!-- End Message -->
 <!-- Main Content -->
 <?php echo isset($main_content) ? $main_content : ''; ?>

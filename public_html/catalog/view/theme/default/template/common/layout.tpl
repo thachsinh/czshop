@@ -37,7 +37,7 @@
     <![endif]-->
     <script type="text/javascript" src="static/js/main.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&subset=latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <body class="next " data-basepath="" data-baseurl="https://www.rohlik.cz" data-cookie-domain=".rohlik.cz">
 <script>document.body.className += ' js'</script>

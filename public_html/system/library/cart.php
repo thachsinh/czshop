@@ -17,6 +17,10 @@ class Cart {
 		}
 	}
 
+    /**
+     * @modified SUN
+     * @return array
+     */
 	public function getProducts() {
 		if (!$this->data) {
 			foreach ($this->session->data['cart'] as $key => $quantity) {
@@ -40,7 +44,16 @@ class Cart {
 					$recurring_id = 0;
 				}
 
-				$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.product_id = '" . (int)$product_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.date_available <= NOW() AND p.status = '1'");
+				$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd
+				    ON (p.product_id = pd.product_id) WHERE p.product_id = '" . (int)$product_id . "'
+				    AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "'
+				    AND p.date_available <= NOW() AND p.status = '1'"
+                )->row_array();
+
+                $product_query = (object) array(
+                    'num_rows' => (int) $product_query,
+                    'row' => $product_query
+                );
 
 				if ($product_query->num_rows) {
 					$option_price = 0;
@@ -203,7 +216,16 @@ class Cart {
 					// Downloads
 					$download_data = array();
 
-					$download_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_to_download p2d LEFT JOIN " . DB_PREFIX . "download d ON (p2d.download_id = d.download_id) LEFT JOIN " . DB_PREFIX . "download_description dd ON (d.download_id = dd.download_id) WHERE p2d.product_id = '" . (int)$product_id . "' AND dd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+					$download_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_to_download p2d LEFT JOIN " .
+                        DB_PREFIX . "download d ON (p2d.download_id = d.download_id) LEFT JOIN " .
+                        DB_PREFIX . "download_description dd ON (d.download_id = dd.download_id) WHERE p2d.product_id = '" . (int)$product_id .
+                        "' AND dd.language_id = '" . (int)$this->config->get('config_language_id') . "'"
+                    )->result_array();
+
+                    $download_query = (object) array(
+                        'num_rows' => count($download_query),
+                        'rows' => $download_query
+                    );
 
 					foreach ($download_query->rows as $download) {
 						$download_data[] = array(

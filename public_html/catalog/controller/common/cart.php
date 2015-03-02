@@ -45,6 +45,8 @@ class ControllerCommonCart extends Controller {
 		$data['text_recurring'] = $this->language->get('text_recurring');
 		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
 		$data['text_loading'] = $this->language->get('text_loading');
+        $data['items_amount'] = $this->cart->countProducts();
+        $data['total'] = $this->currency->format($total);
 
 		$data['button_remove'] = $this->language->get('button_remove');
 
@@ -135,10 +137,10 @@ class ControllerCommonCart extends Controller {
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/cart.tpl')) {
-			return $this->load->view($this->config->get('config_template') . '/template/common/cart.tpl', $data);
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/minicart.tpl')) {
+			return $this->load->view($this->config->get('config_template') . '/template/common/minicart.tpl', $data);
 		} else {
-			return $this->load->view('default/template/common/cart.tpl', $data);
+			return $this->load->view('default/template/common/minicart.tpl', $data);
 		}
 	}
 

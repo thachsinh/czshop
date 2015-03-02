@@ -53,4 +53,19 @@ class Url {
 
 		return $url;
 	}
+
+    public function ajaxLink($route, $args = '') {
+
+        $url = 'index.php?route=' . $route;
+        if ($args) {
+            //$url .= str_replace('&', '&amp;', '&' . ltrim($args, '&'));
+            $url .= str_replace('&', '&', '&' . ltrim($args, '&'));
+        }
+
+        foreach ($this->rewrite as $rewrite) {
+            $url = $rewrite->rewrite($url);
+        }
+
+        return $url;
+    }
 }

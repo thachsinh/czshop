@@ -209,7 +209,9 @@ class Customer {
 
 	public function getRewardPoints()
 	{
-		$row = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$this->customer_id . "'");
+		$row = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward
+		    WHERE customer_id = '" . (int)$this->customer_id . "'"
+        )->row_array();
 
 		return $row['total'];
 	}
